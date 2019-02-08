@@ -50,7 +50,3 @@ I moved my old `content` files to the new site - those had already converted fro
 I then created a new script, but it defaults to the old, unbundled, format. I found out that in order to use the new page bundle functionality,
 one needs to set an option `options(blogdown.new_bundle=TRUE)`. I've done that and then created the new post again and it create the page bundle as expected. 
 (This is actually that post).
-
-## So what about Rmd, does it work?
-
-[Hold my beer]({{< ref "/post/2019-02-08-does-r-markdown-work.html" >}})

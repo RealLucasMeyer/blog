@@ -11,24 +11,6 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Does R Markdown work?</title>
-      <link>/post/does-r-markdown-work/</link>
-      <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/does-r-markdown-work/</guid>
-      <description>
-
-
-&lt;p&gt;This is a simple post trying R Markdown in the new Hugo Academic.&lt;/p&gt;
-&lt;p&gt;We have data about 53940 diamonds. Only
-126 are larger than
-2.5 carats. The distribution of the remainder is shown
-below:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-02-08-does-r-markdown-work_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Upgrading blogdown and Hugo Academic</title>
       <link>/post/2019-02-08-will-it-render/will-it-render/</link>
       <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
@@ -72,10 +54,6 @@ I moved my old &lt;code&gt;content&lt;/code&gt; files to the new site - those ha
 &lt;p&gt;I then created a new script, but it defaults to the old, unbundled, format. I found out that in order to use the new page bundle functionality,
 one needs to set an option &lt;code&gt;options(blogdown.new_bundle=TRUE)&lt;/code&gt;. I&amp;rsquo;ve done that and then created the new post again and it create the page bundle as expected.
 (This is actually that post).&lt;/p&gt;
-
-&lt;h2 id=&#34;so-what-about-rmd-does-it-work&#34;&gt;So what about Rmd, does it work?&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;/post/does-r-markdown-work/&#34; target=&#34;_blank&#34;&gt;Hold my beer&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -651,6 +629,22 @@ hardcore stuff.&lt;/p&gt;
 to be used as your primary machine. For me, it&amp;rsquo;s near the top limit of a computer that is comfortable
 to travel with, but still &lt;em&gt;within&lt;/em&gt; that limit. I got used to it in no time and completely gave up my
 desktop workstation.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The three types of gifts in Buddhism</title>
+      <link>/post/2018-02-20-the-three-types-of-gifts-in-buddhism/the-three-types-of-gifts-in-buddhism/</link>
+      <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-02-20-the-three-types-of-gifts-in-buddhism/the-three-types-of-gifts-in-buddhism/</guid>
+      <description>&lt;p&gt;From &amp;ldquo;For a future to be possible&amp;rdquo;, by Thich Nhat Hanh:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In Buddhism, there are three kinds of gifts. The first is the gift of material resources. The second is to help people rely on themselves, to offer them the technology and know-how to stand on their own feet. (&amp;hellip;)&lt;/p&gt;
+
+&lt;p&gt;The third is the gift of non-fear. We are afraid of many things. We feel insecure, afraid of being alone, afraid of sickness and dying. To help people not be destroyed by their fears, we practice the third kind of gift-giving.&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     

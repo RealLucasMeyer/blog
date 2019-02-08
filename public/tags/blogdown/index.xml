@@ -13,16 +13,6 @@
     
     
     <item>
-      <title>Does R Markdown work?</title>
-      <link>/post/does-r-markdown-work/</link>
-      <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/does-r-markdown-work/</guid>
-      <description>This is a simple post trying R Markdown in the new Hugo Academic.
-We have data about 53940 diamonds. Only 126 are larger than 2.5 carats. The distribution of the remainder is shown below:</description>
-    </item>
-    
-    <item>
       <title>Upgrading blogdown and Hugo Academic</title>
       <link>/post/2019-02-08-will-it-render/will-it-render/</link>
       <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
