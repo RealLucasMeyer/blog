@@ -1,0 +1,38 @@
+---
+title: Does R Markdown work?
+author: Lucas A. Meyer
+date: '2019-02-08'
+slug: does-r-markdown-work
+categories:
+  - Blogdown
+  - R
+  - R Markdown
+tags:
+  - Blogdown
+  - R
+  - R Markdown
+image:
+  caption: ''
+  focal_point: ''
+---
+
+This is a simple post trying R Markdown in the new Hugo Academic.
+
+```{r setup, include = FALSE}
+library(ggplot2)
+library(dplyr)
+
+smaller <- diamonds %>% 
+  filter(carat <= 2.5)
+```
+
+We have data about `r nrow(diamonds)` diamonds. Only 
+`r nrow(diamonds) - nrow(smaller)` are larger than
+2.5 carats. The distribution of the remainder is shown
+below:
+
+```{r, echo = FALSE}
+smaller %>% 
+  ggplot(aes(carat)) + 
+  geom_freqpoly(binwidth = 0.01)
+```

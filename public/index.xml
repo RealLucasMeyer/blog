@@ -11,23 +11,32 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Will it render</title>
-      <link>/post/will-it-render/</link>
+      <title>Does R Markdown work?</title>
+      <link>/post/does-r-markdown-work/</link>
       <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/will-it-render/</guid>
-      <description></description>
+      <guid>/post/does-r-markdown-work/</guid>
+      <description>
+
+
+&lt;p&gt;This is a simple post trying R Markdown in the new Hugo Academic.&lt;/p&gt;
+&lt;p&gt;We have data about 53940 diamonds. Only
+126 are larger than
+2.5 carats. The distribution of the remainder is shown
+below:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-02-08-does-r-markdown-work_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Will it render</title>
+      <title>Upgrading blogdown and Hugo Academic</title>
       <link>/post/2019-02-08-will-it-render/will-it-render/</link>
       <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/2019-02-08-will-it-render/will-it-render/</guid>
       <description>
 
-&lt;p&gt;I&amp;rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions. I&amp;rsquo;m wondering if it will render.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions.&lt;/p&gt;
 
 &lt;h2 id=&#34;it-was-not-trivial&#34;&gt;It was not trivial&lt;/h2&gt;
 
@@ -35,31 +44,38 @@
 are a lot of breaking changes between version 2.4 and version 3.3. One of the main breaking changes is that now you can use page bundles
 instead of a single page per post. This allows one to keep resources (such as images) together with each post. Now each post creates a new
 directory. The new &lt;code&gt;hugo-academic&lt;/code&gt; theme comes with a script to convert your posts to the page bundle format, it&amp;rsquo;s called &lt;code&gt;update-academic.sh&lt;/code&gt;. It doesn&amp;rsquo;t
-work on R Markdown files, but I didn&amp;rsquo;t have any.&lt;/p&gt;
+work on R Markdown files, but I didn&amp;rsquo;t have any. Although this is described in the Hugo documentation as a breaking change, if you &lt;strong&gt;don&amp;rsquo;t&lt;/strong&gt; convert,
+apparently nothing bad happens. Maybe the Hugo people and I have a different definition of breaking.&lt;/p&gt;
 
-&lt;p&gt;Another breaking change is that the configurations are now in a different directory. Instead of a single giant &lt;code&gt;config.toml&lt;/code&gt; in the root
-directory, we have several different files under the &lt;code&gt;config&lt;/code&gt; directory: &lt;code&gt;config.toml&lt;/code&gt;, &lt;code&gt;params.toml&lt;/code&gt;, &lt;code&gt;menus.toml&lt;/code&gt;.So I opened my old
+&lt;p&gt;The most relevant breaking change is that the configurations are now in a different directory. Instead of a single giant &lt;code&gt;config.toml&lt;/code&gt; in the root
+directory, we have several different files under the &lt;code&gt;config&lt;/code&gt; directory: &lt;code&gt;config.toml&lt;/code&gt;, &lt;code&gt;params.toml&lt;/code&gt;, &lt;code&gt;menus.toml&lt;/code&gt;. So I followed the instructions: opened my old
 &lt;code&gt;config.toml&lt;/code&gt; file in one window, and spread its configuration out into the other files. I uploaded to Netlify and was glad to see that
 the website published.&lt;/p&gt;
 
-&lt;p&gt;However, &lt;code&gt;blogdown&lt;/code&gt; was not down with the new changes. Blogdown requires the &lt;code&gt;config.toml&lt;/code&gt; file to be in the root of the repository. I thought
-it would be as easy as moving it but somehow, it wasn&amp;rsquo;t. There&amp;rsquo;s a &lt;a href=&#34;https://github.com/rstudio/blogdown/commit/de0bcf501cbdc5e81a960dd8ff3228fcb6fc807f&#34; target=&#34;_blank&#34;&gt;commit&lt;/a&gt;
+&lt;p&gt;However, &lt;code&gt;blogdown&lt;/code&gt; was not down with the new changes. When I opened my site in RStudio, blogdown required the &lt;code&gt;config.toml&lt;/code&gt; file to be in the root of
+the repository. I thought it would be as easy as simply moving it, but somehow, it wasn&amp;rsquo;t. &lt;code&gt;blogdown&lt;/code&gt; complained that my site was broken and suggested
+generating a new one. There&amp;rsquo;s a  &lt;a href=&#34;https://github.com/rstudio/blogdown/commit/de0bcf501cbdc5e81a960dd8ff3228fcb6fc807f&#34; target=&#34;_blank&#34;&gt;commit&lt;/a&gt;
 addressing the issue, but apparently it&amp;rsquo;s just for new sites. So I decided to create a new site, because that should be easy.&lt;/p&gt;
 
 &lt;h2 id=&#34;new-blogdown-site&#34;&gt;New blogdown site&lt;/h2&gt;
 
 &lt;p&gt;My next attempt was to create a new project, install &lt;code&gt;packrat&lt;/code&gt;, install &lt;code&gt;blogdown&lt;/code&gt; and then start a new site. It didn&amp;rsquo;t work out. When I
-tried to create a new site, &lt;code&gt;blogdown&lt;/code&gt; complained that there was already content there (the packrat directory, I assume).&lt;/p&gt;
+tried to create a new site, &lt;code&gt;blogdown&lt;/code&gt; complained that there was already content there (the packrat directory, I assume). So I decided to create
+yet another new site.&lt;/p&gt;
 
 &lt;h2 id=&#34;newer-blogdown-site&#34;&gt;Newer blogdown site&lt;/h2&gt;
 
-&lt;p&gt;So I created a new site with blogdown in RStudio, using the option to use the &lt;code&gt;gcushen/hugo-academic&lt;/code&gt; team. That one worked. I then moved my
+&lt;p&gt;So I created a yet another new site, now using blogdown in RStudio, using the option to use the &lt;code&gt;gcushen/hugo-academic&lt;/code&gt; team. That one worked. I then moved my
 configuration files to the appropriate places (&lt;code&gt;config.toml&lt;/code&gt; to root and the other &lt;code&gt;.toml&lt;/code&gt; files to &lt;code&gt;config/_default&lt;/code&gt;). To make things work
 I moved my old &lt;code&gt;content&lt;/code&gt; files to the new site - those had already converted from page to bundle using the &lt;code&gt;update-academic.sh&lt;/code&gt; script.&lt;/p&gt;
 
 &lt;p&gt;I then created a new script, but it defaults to the old, unbundled, format. I found out that in order to use the new page bundle functionality,
-one needs to set an option &lt;code&gt;options(blogdown.new_bundle=TRUE)&lt;/code&gt;. Then I created the new post again and it create the page bundle as expected.
+one needs to set an option &lt;code&gt;options(blogdown.new_bundle=TRUE)&lt;/code&gt;. I&amp;rsquo;ve done that and then created the new post again and it create the page bundle as expected.
 (This is actually that post).&lt;/p&gt;
+
+&lt;h2 id=&#34;so-what-about-rmd-does-it-work&#34;&gt;So what about Rmd, does it work?&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;/post/does-r-markdown-work/&#34; target=&#34;_blank&#34;&gt;Hold my beer&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

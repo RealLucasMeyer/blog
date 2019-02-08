@@ -13,21 +13,22 @@
     
     
     <item>
-      <title>Will it render</title>
-      <link>/post/will-it-render/</link>
+      <title>Does R Markdown work?</title>
+      <link>/post/does-r-markdown-work/</link>
       <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/will-it-render/</guid>
-      <description></description>
+      <guid>/post/does-r-markdown-work/</guid>
+      <description>This is a simple post trying R Markdown in the new Hugo Academic.
+We have data about 53940 diamonds. Only 126 are larger than 2.5 carats. The distribution of the remainder is shown below:</description>
     </item>
     
     <item>
-      <title>Will it render</title>
+      <title>Upgrading blogdown and Hugo Academic</title>
       <link>/post/2019-02-08-will-it-render/will-it-render/</link>
       <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/2019-02-08-will-it-render/will-it-render/</guid>
-      <description>I&amp;rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions. I&amp;rsquo;m wondering if it will render.
+      <description>I&amp;rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions.
 It was not trivial My first attempt was to simply rename the old academic theme in the themes directory and download a new one. However, there are a lot of breaking changes between version 2.4 and version 3.3. One of the main breaking changes is that now you can use page bundles instead of a single page per post.</description>
     </item>
     

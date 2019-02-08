@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="I&rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions. I&rsquo;m wondering if it will render.
+  <meta name="description" content="I&rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions.
 It was not trivial My first attempt was to simply rename the old academic theme in the themes directory and download a new one. However, there are a lot of breaking changes between version 2.4 and version 3.3. One of the main breaking changes is that now you can use page bundles instead of a single page per post.">
 
   
@@ -133,8 +133,8 @@ It was not trivial My first attempt was to simply rename the old academic theme 
   
   <meta property="og:site_name" content="Lucas A. Meyer - Blog">
   <meta property="og:url" content="/post/2019-02-08-will-it-render/will-it-render/">
-  <meta property="og:title" content="Will it render | Lucas A. Meyer - Blog">
-  <meta property="og:description" content="I&rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions. I&rsquo;m wondering if it will render.
+  <meta property="og:title" content="Upgrading blogdown and Hugo Academic | Lucas A. Meyer - Blog">
+  <meta property="og:description" content="I&rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions.
 It was not trivial My first attempt was to simply rename the old academic theme in the themes directory and download a new one. However, there are a lot of breaking changes between version 2.4 and version 3.3. One of the main breaking changes is that now you can use page bundles instead of a single page per post."><meta property="og:image" content="/img/bias.jpg">
   <meta property="og:locale" content="en-us">
   
@@ -147,7 +147,7 @@ It was not trivial My first attempt was to simply rename the old academic theme 
 
   
 
-  <title>Will it render | Lucas A. Meyer - Blog</title>
+  <title>Upgrading blogdown and Hugo Academic | Lucas A. Meyer - Blog</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -306,7 +306,7 @@ It was not trivial My first attempt was to simply rename the old academic theme 
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Will it render</h1>
+  <h1 itemprop="name">Upgrading blogdown and Hugo Academic</h1>
 
   
 
@@ -369,7 +369,7 @@ It was not trivial My first attempt was to simply rename the old academic theme 
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Will%20it%20render&amp;url=%2fpost%2f2019-02-08-will-it-render%2fwill-it-render%2f"
+         href="https://twitter.com/intent/tweet?text=Upgrading%20blogdown%20and%20Hugo%20Academic&amp;url=%2fpost%2f2019-02-08-will-it-render%2fwill-it-render%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
@@ -383,21 +383,21 @@ It was not trivial My first attempt was to simply rename the old academic theme 
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2f2019-02-08-will-it-render%2fwill-it-render%2f&amp;title=Will%20it%20render"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2f2019-02-08-will-it-render%2fwill-it-render%2f&amp;title=Upgrading%20blogdown%20and%20Hugo%20Academic"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fpost%2f2019-02-08-will-it-render%2fwill-it-render%2f&amp;title=Will%20it%20render"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2f2019-02-08-will-it-render%2fwill-it-render%2f&amp;title=Upgrading%20blogdown%20and%20Hugo%20Academic"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Will%20it%20render&amp;body=%2fpost%2f2019-02-08-will-it-render%2fwill-it-render%2f">
+         href="mailto:?subject=Upgrading%20blogdown%20and%20Hugo%20Academic&amp;body=%2fpost%2f2019-02-08-will-it-render%2fwill-it-render%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -437,7 +437,7 @@ It was not trivial My first attempt was to simply rename the old academic theme 
     <div class="article-style" itemprop="articleBody">
       
 
-<p>I&rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions. I&rsquo;m wondering if it will render.</p>
+<p>I&rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions.</p>
 
 <h2 id="it-was-not-trivial">It was not trivial</h2>
 
@@ -445,31 +445,38 @@ It was not trivial My first attempt was to simply rename the old academic theme 
 are a lot of breaking changes between version 2.4 and version 3.3. One of the main breaking changes is that now you can use page bundles
 instead of a single page per post. This allows one to keep resources (such as images) together with each post. Now each post creates a new
 directory. The new <code>hugo-academic</code> theme comes with a script to convert your posts to the page bundle format, it&rsquo;s called <code>update-academic.sh</code>. It doesn&rsquo;t
-work on R Markdown files, but I didn&rsquo;t have any.</p>
+work on R Markdown files, but I didn&rsquo;t have any. Although this is described in the Hugo documentation as a breaking change, if you <strong>don&rsquo;t</strong> convert,
+apparently nothing bad happens. Maybe the Hugo people and I have a different definition of breaking.</p>
 
-<p>Another breaking change is that the configurations are now in a different directory. Instead of a single giant <code>config.toml</code> in the root
-directory, we have several different files under the <code>config</code> directory: <code>config.toml</code>, <code>params.toml</code>, <code>menus.toml</code>.So I opened my old
+<p>The most relevant breaking change is that the configurations are now in a different directory. Instead of a single giant <code>config.toml</code> in the root
+directory, we have several different files under the <code>config</code> directory: <code>config.toml</code>, <code>params.toml</code>, <code>menus.toml</code>. So I followed the instructions: opened my old
 <code>config.toml</code> file in one window, and spread its configuration out into the other files. I uploaded to Netlify and was glad to see that
 the website published.</p>
 
-<p>However, <code>blogdown</code> was not down with the new changes. Blogdown requires the <code>config.toml</code> file to be in the root of the repository. I thought
-it would be as easy as moving it but somehow, it wasn&rsquo;t. There&rsquo;s a <a href="https://github.com/rstudio/blogdown/commit/de0bcf501cbdc5e81a960dd8ff3228fcb6fc807f" target="_blank">commit</a>
+<p>However, <code>blogdown</code> was not down with the new changes. When I opened my site in RStudio, blogdown required the <code>config.toml</code> file to be in the root of
+the repository. I thought it would be as easy as simply moving it, but somehow, it wasn&rsquo;t. <code>blogdown</code> complained that my site was broken and suggested
+generating a new one. There&rsquo;s a  <a href="https://github.com/rstudio/blogdown/commit/de0bcf501cbdc5e81a960dd8ff3228fcb6fc807f" target="_blank">commit</a>
 addressing the issue, but apparently it&rsquo;s just for new sites. So I decided to create a new site, because that should be easy.</p>
 
 <h2 id="new-blogdown-site">New blogdown site</h2>
 
 <p>My next attempt was to create a new project, install <code>packrat</code>, install <code>blogdown</code> and then start a new site. It didn&rsquo;t work out. When I
-tried to create a new site, <code>blogdown</code> complained that there was already content there (the packrat directory, I assume).</p>
+tried to create a new site, <code>blogdown</code> complained that there was already content there (the packrat directory, I assume). So I decided to create
+yet another new site.</p>
 
 <h2 id="newer-blogdown-site">Newer blogdown site</h2>
 
-<p>So I created a new site with blogdown in RStudio, using the option to use the <code>gcushen/hugo-academic</code> team. That one worked. I then moved my
+<p>So I created a yet another new site, now using blogdown in RStudio, using the option to use the <code>gcushen/hugo-academic</code> team. That one worked. I then moved my
 configuration files to the appropriate places (<code>config.toml</code> to root and the other <code>.toml</code> files to <code>config/_default</code>). To make things work
 I moved my old <code>content</code> files to the new site - those had already converted from page to bundle using the <code>update-academic.sh</code> script.</p>
 
 <p>I then created a new script, but it defaults to the old, unbundled, format. I found out that in order to use the new page bundle functionality,
-one needs to set an option <code>options(blogdown.new_bundle=TRUE)</code>. Then I created the new post again and it create the page bundle as expected.
+one needs to set an option <code>options(blogdown.new_bundle=TRUE)</code>. I&rsquo;ve done that and then created the new post again and it create the page bundle as expected.
 (This is actually that post).</p>
+
+<h2 id="so-what-about-rmd-does-it-work">So what about Rmd, does it work?</h2>
+
+<p><a href="/post/does-r-markdown-work/" target="_blank">Hold my beer</a></p>
 
     </div>
 
@@ -596,7 +603,7 @@ one needs to set an option <code>options(blogdown.new_bundle=TRUE)</code>. Then 
         <h3>Related</h3>
         <ul>
           
-          <li><a href="/post/will-it-render/">Will it render</a></li>
+          <li><a href="/post/does-r-markdown-work/">Does R Markdown work?</a></li>
           
         </ul>
       </div>
@@ -609,7 +616,7 @@ one needs to set an option <code>options(blogdown.new_bundle=TRUE)</code>. Then 
   
   <div class="post-nav-item">
     <div class="meta-nav">Next</div>
-    <a href="/post/will-it-render/" rel="next">Will it render</a>
+    <a href="/post/does-r-markdown-work/" rel="next">Does R Markdown work?</a>
   </div>
   
   
