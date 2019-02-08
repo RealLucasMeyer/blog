@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Lucas A. Meyer - Blog</title>
+    <link>/categories/python/</link>
+    <description>Recent content in Python on Lucas A. Meyer - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
+    <lastBuildDate>Tue, 29 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tricks using Python in Azure Functions</title>
+      <link>/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/</link>
+      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/</guid>
+      <description>If you don&amp;rsquo;t know anything about Azure Functions, this is a good place to start.
+ Azure Functions is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events. Learn how to use Azure Functions with our quickstarts, tutorials, and samples.
+ Here are some tricks to use Azure Functions with Python, which is currently (May 2018) under &amp;ldquo;experimental&amp;rdquo; support.</description>
+    </item>
+    
+  </channel>
+</rss>

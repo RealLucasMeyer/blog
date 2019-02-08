@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lucas A. Meyer - Blog on Lucas A. Meyer - Blog</title>
+    <link>/</link>
+    <description>Recent content in Lucas A. Meyer - Blog on Lucas A. Meyer - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
+    <lastBuildDate>Fri, 08 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Will it render</title>
+      <link>/post/will-it-render/</link>
+      <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/will-it-render/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Will it render</title>
+      <link>/post/2019-02-08-will-it-render/will-it-render/</link>
+      <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-08-will-it-render/will-it-render/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions. I&amp;rsquo;m wondering if it will render.&lt;/p&gt;
+
+&lt;h2 id=&#34;it-was-not-trivial&#34;&gt;It was not trivial&lt;/h2&gt;
+
+&lt;p&gt;My first attempt was to simply rename the old &lt;code&gt;academic&lt;/code&gt; theme in the &lt;code&gt;themes&lt;/code&gt; directory and download a new one. However, there
+are a lot of breaking changes between version 2.4 and version 3.3. One of the main breaking changes is that now you can use page bundles
+instead of a single page per post. This allows one to keep resources (such as images) together with each post. Now each post creates a new
+directory. The new &lt;code&gt;hugo-academic&lt;/code&gt; theme comes with a script to convert your posts to the page bundle format, it&amp;rsquo;s called &lt;code&gt;update-academic.sh&lt;/code&gt;. It doesn&amp;rsquo;t
+work on R Markdown files, but I didn&amp;rsquo;t have any.&lt;/p&gt;
+
+&lt;p&gt;Another breaking change is that the configurations are now in a different directory. Instead of a single giant &lt;code&gt;config.toml&lt;/code&gt; in the root
+directory, we have several different files under the &lt;code&gt;config&lt;/code&gt; directory: &lt;code&gt;config.toml&lt;/code&gt;, &lt;code&gt;params.toml&lt;/code&gt;, &lt;code&gt;menus.toml&lt;/code&gt;.So I opened my old
+&lt;code&gt;config.toml&lt;/code&gt; file in one window, and spread its configuration out into the other files. I uploaded to Netlify and was glad to see that
+the website published.&lt;/p&gt;
+
+&lt;p&gt;However, &lt;code&gt;blogdown&lt;/code&gt; was not down with the new changes. Blogdown requires the &lt;code&gt;config.toml&lt;/code&gt; file to be in the root of the repository. I thought
+it would be as easy as moving it but somehow, it wasn&amp;rsquo;t. There&amp;rsquo;s a &lt;a href=&#34;https://github.com/rstudio/blogdown/commit/de0bcf501cbdc5e81a960dd8ff3228fcb6fc807f&#34; target=&#34;_blank&#34;&gt;commit&lt;/a&gt;
+addressing the issue, but apparently it&amp;rsquo;s just for new sites. So I decided to create a new site, because that should be easy.&lt;/p&gt;
+
+&lt;h2 id=&#34;new-blogdown-site&#34;&gt;New blogdown site&lt;/h2&gt;
+
+&lt;p&gt;My next attempt was to create a new project, install &lt;code&gt;packrat&lt;/code&gt;, install &lt;code&gt;blogdown&lt;/code&gt; and then start a new site. It didn&amp;rsquo;t work out. When I
+tried to create a new site, &lt;code&gt;blogdown&lt;/code&gt; complained that there was already content there (the packrat directory, I assume).&lt;/p&gt;
+
+&lt;h2 id=&#34;newer-blogdown-site&#34;&gt;Newer blogdown site&lt;/h2&gt;
+
+&lt;p&gt;So I created a new site with blogdown in RStudio, using the option to use the &lt;code&gt;gcushen/hugo-academic&lt;/code&gt; team. That one worked. I then moved my
+configuration files to the appropriate places (&lt;code&gt;config.toml&lt;/code&gt; to root and the other &lt;code&gt;.toml&lt;/code&gt; files to &lt;code&gt;config/_default&lt;/code&gt;). To make things work
+I moved my old &lt;code&gt;content&lt;/code&gt; files to the new site - those had already converted from page to bundle using the &lt;code&gt;update-academic.sh&lt;/code&gt; script.&lt;/p&gt;
+
+&lt;p&gt;I then created a new script, but it defaults to the old, unbundled, format. I found out that in order to use the new page bundle functionality,
+one needs to set an option &lt;code&gt;options(blogdown.new_bundle=TRUE)&lt;/code&gt;. Then I created the new post again and it create the page bundle as expected.
+(This is actually that post).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A story about my father</title>
+      <link>/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</link>
+      <pubDate>Mon, 04 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</guid>
+      <description>
+
+&lt;p&gt;My father passed away a few years ago. I don&amp;rsquo;t even remember exactly when. I think it was in 2013 or 2014. We were not close when he died, and I don&amp;rsquo;t remember we ever being close. To my memory, he was mostly away since I was around 7, and he left home when I was 13. Not having a father made a lot of things harder in my life, which I imagine made me more capable in some respects.&lt;/p&gt;
+
+&lt;h2 id=&#34;my-original-case-for-a-two-parent-household&#34;&gt;My original case for a two-parent household&lt;/h2&gt;
+
+&lt;p&gt;Well, it&amp;rsquo;s not necessarily a case for a &lt;em&gt;father&lt;/em&gt;, but more a case for a household with two parents, no matter their genders. When I was a teenager, the only opinion I had was my mom&amp;rsquo;s, right or wrong. Not having another parent in the house made it more expensive for me to validate my mother&amp;rsquo;s opinions. One example was when I wanted to leave a low-income, dead-end job for another job. My mom was of the opinion that &amp;ldquo;job longevity&amp;rdquo; and loyalty were very valuable traits - that one shouldn&amp;rsquo;t leave a job after a short period of time. My questionings didn&amp;rsquo;t go very far. In that case I ended up not folowing my mother&amp;rsquo;s opinion and changed jobs. I&amp;rsquo;m sure the change had a positive impact in my career, but I was terrified.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A model for task execution under uncertainty</title>
+      <link>/post/2019-02-03-a-model-for-task-execution-under-uncertainty/a-model-for-task-execution-under-uncertainty/</link>
+      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-03-a-model-for-task-execution-under-uncertainty/a-model-for-task-execution-under-uncertainty/</guid>
+      <description>
+
+
+&lt;p&gt;A company wants to execute a series of profitable tasks. Managers receive tasks and can route these tasks to either experts or non-experts. Manages’ ability determines how well they can tell experts from non-experts. Non-experts have a small chance to succeed, a chance of failure, and a small chance of catastrophic failure. Whenever non-experts succeed, managers’ ability goes &lt;em&gt;down&lt;/em&gt;. When non-experts fail catastrophically, managers’ experience will go up. Experts can have exceptional success, sucess or failure, but they’ll never fail catastrophically. When experts have exceptional success, managers will gain experience. When experts fail, managers will lose experience.&lt;/p&gt;
+&lt;p&gt;Workers (experts and non-experts) always know their true experience level. (This is a simplification, as it might be interesting for non-experts to be overly confident). Managers ability will be a standard deviation applied to the level of expertise of their employees. Competent managers will have a low standard deviation, where incompetent ones will have high standard deviation. Underutilized experts quit, reducing the company’s expert pool. Again, for simplification, experts and non-experts are paid the same (it may be interesting to reward experts and non-experts based on their perceived expertise)&lt;/p&gt;
+&lt;p&gt;This problem has been in my head for a lot longer than it should. This is a rough draft, but I think that if I do not commit it to “paper”, I won’t make progress on it.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The complicated incentives on Northam</title>
+      <link>/post/2019-02-03-the-complicated-incentives-on-northam/the-complicated-incentives-on-northam/</link>
+      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-03-the-complicated-incentives-on-northam/the-complicated-incentives-on-northam/</guid>
+      <description>
+
+&lt;p&gt;In February 1st 2019, it was found that the Governor of the Commonwealth of Virginia, Whatever Northam, had a picture in his medical school yearbook that contained a person in black face and another person wearing a Klu-Klux-Klan hood. Many people of all party affiliations called for his immediate resignation. By February 3rd, 2019, Northam had not yet resigned.&lt;/p&gt;
+
+&lt;p&gt;There was, of course, a lot of debate on social media. Should Northam stay? Should he go?&lt;/p&gt;
+
+&lt;h2 id=&#34;the-players&#34;&gt;The players&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Northam himself:&lt;/strong&gt; it&amp;rsquo;s hard to know his utility function, but with some assumptions we can construct a simple one. We could assume that  Northam is &amp;ldquo;untouchable&amp;rdquo; and that his career is essentially done, so he gets utility by staying in place as long as he can. We could instead assume that if he were to &amp;ldquo;fall on his sword&amp;rdquo; he would be rewarded by his party.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Democrats&lt;/strong&gt;: for the Democrats, the utility function is simple. Northam must go. If he stays, he will enrage the democratic party base. The party can replace him by another democrat that can, in theory, enact the same policies. Perhaps this replacement is not as competent as &amp;ldquo;Untainted Northam&amp;rdquo; (and this is why Northam was elected in the first place), but now Northam is tainted and can be presumed ineffective.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Society&lt;/strong&gt;: This is, presumably, the hardest one to construct an utility function for, as so much will depend on assumptions. The first assumption I&amp;rsquo;ll make will be that Northam is a competent administrator. I&amp;rsquo;m also going to assume that a racist administrator would be considered incompetent by society. Although this may seem obvious, a racist society could prefer a racist administrator to a competent one, so embedded in the &amp;ldquo;competent administrator&amp;rdquo; assumption there&amp;rsquo;s an assumption that the society is not racist. Another assumption is that racism is an immutable trait. This is the assumption I&amp;rsquo;m least comfortable with.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Other administrators&lt;/strong&gt;: these are people that could be candidates like Northam. The assumptions are that we have &amp;ldquo;competent administrators&amp;rdquo;, &amp;ldquo;racist administrators&amp;rdquo; (that could pass as competent) and &amp;ldquo;incompetent administrators&amp;rdquo;. We will assume that being in power is a desirable good, and that &amp;ldquo;racist administrators&amp;rdquo; can feign competency better than &amp;ldquo;incompetent administrators&amp;rdquo;. We will also assume that a &amp;ldquo;racist administrator&amp;rdquo; is even worse than an &amp;ldquo;incompetent administrator&amp;rdquo; for society.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;how-many-models-do-we-have-here&#34;&gt;How many models do we have here?&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installing Arch Linux</title>
+      <link>/post/2019-01-29-installing-arch-linux/installing-arch-linux/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-01-29-installing-arch-linux/installing-arch-linux/</guid>
+      <description>
+
+&lt;p&gt;Even though I work at Microsoft and really love Windows, I&amp;rsquo;ve recently installed Arch Linux as a dual boot. A lot of data scientists and software developers I know prefer OS X, and Windows doesn&amp;rsquo;t get that much love. Although many people provide many reasons not to use Windows, I was always able to work around whatever those issues were. Sometimes this required Cygwin, Git Bash, and more recently, &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/install-win10&#34; target=&#34;_blank&#34;&gt;WSL&lt;/a&gt; (the Windows Subsystem for Linux). I can&amp;rsquo;t remember any software that I was ever unable to use in Windows: LaTeX, git, Inkscape&amp;hellip; everything I need had a decent Windows version, even if I had to compile it from source.&lt;/p&gt;
+
+&lt;p&gt;Weirdly, because I can do so much with Windows, I find that I take too many shortcuts. The most damaging shortcuts are the ones that damage reproducibility, especially when creating documentation for my projects. It&amp;rsquo;s too easy to copy and paste into PowerPoint and be done with the communications for a talk. Some of my talks, especially about my &lt;a href=&#34;https://treasurytoday.com/asa-2017-winners/judges-choice-winner-microsoft&#34; target=&#34;_blank&#34;&gt;most successful product&lt;/a&gt;, have many similar versions with one or two slides changed. Someone asks me for a slightly shorter or slightly longer talk and I suddenly have a new file with one or two extra (or hidden) slides that I may need to maintain. It&amp;rsquo;s not lost on me that this is a lack of discipline on my part, but if you were to invite me to a &lt;a href=&#34;https://en.wikipedia.org/wiki/Brigadeiro&#34; target=&#34;_blank&#34;&gt;brigadeiro&lt;/a&gt; store, it would be hypocritical of you to accuse me of having no self-control.&lt;/p&gt;
+
+&lt;h2 id=&#34;why-arch&#34;&gt;Why Arch&lt;/h2&gt;
+
+&lt;p&gt;I first got into contact with Arch through a German friend back in 2010. When trying to install it, I quickly learned that Arch requires you to understand what you&amp;rsquo;re doing, and especially, that if you &lt;strong&gt;don&amp;rsquo;t&lt;/strong&gt; understand what you&amp;rsquo;re doing, things break. Over time, I found that although some things have a steep learning curve, the return on the time investment was very positive. I also tried Ubuntu, Fedora and Red Hat, and although I could get productive more quickly, keeping them configured to my taste later was harder - when something broke it took me longer to understand what it was.&lt;/p&gt;
+
+&lt;p&gt;There are several things that still don&amp;rsquo;t work well in Linux. One of the most vexing is having a high-DPI display. It&amp;rsquo;s somewhat hard to configure it. It works well in KDE, but KDE has tearing issues. It doesn&amp;rsquo;t work too well in GNOME unless you use Wayland, which brings a host of different issues. You can make everything a lot worse by using the NVidia proprietary driver with Wayland, but it&amp;rsquo;s needed if you want to use the GPU efficiently.&lt;/p&gt;
+
+&lt;p&gt;So although I managed to configure my Arch installation to use GNOME under Wayland and use the NVidia proprietary driver, it&amp;rsquo;s very unstable. Native applications tend to run, but many applications crash in comical ways: resizing Google Chrome under Wayland is a sure way to cause a crash, for example.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Example Page</title>
+      <link>/tutorial/example/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/tutorial/example/</guid>
+      <description>
+
+&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Yo, Stroop!</title>
+      <link>/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</link>
+      <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/RealLucasMeyer/yostroop&#34; target=&#34;_blank&#34;&gt;YoStroop&lt;/a&gt; is a bot that allows members of a slack channel to give rewards to each other, usually as a way of saying &amp;ldquo;thank you&amp;rdquo; for help and valuable contributions.
+It was developed using Python, Azure Functions v2.0 and Cosmos DB.&lt;/p&gt;
+
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+
+&lt;p&gt;One of the Data Science Slack channels I&amp;rsquo;m a member of tried several different tools to keep track of the valuable contributions of its members. Some of the tools that we used to to track contributions became quite expensive and we started looking for an alternative. Since most people in the channel can program in R and Python, I thought we might develop our own Slack bot. Developing a Slack Bot is really straightforward. You essentially need a HTTP server that will receive JSONs and call Web APIs. I wanted to create a Slack bot that was:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Written in a language that most Data Scientists are familiar with (e.g. Python or R)&lt;/li&gt;
+&lt;li&gt;Virtually free to run&lt;/li&gt;
+&lt;li&gt;Serverless&lt;/li&gt;
+&lt;li&gt;Based on very well known technologies (e.g., &lt;code&gt;pyodbc&lt;/code&gt; for databases)&lt;/li&gt;
+&lt;li&gt;Easy to modify from GitHub with no hassle&lt;/li&gt;
+&lt;li&gt;Developed and maintained in any major platform: Windows, macOS or Linux&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I have failed to achieve almost all of the goals above, but maybe will achieve most in the near future.&lt;/p&gt;
+
+&lt;h2 id=&#34;azure-functions-v2&#34;&gt;Azure Functions v2&lt;/h2&gt;
+
+&lt;p&gt;Microsoft recently released a &lt;a href=&#34;https://github.com/Azure/azure-functions-python-worker&#34; target=&#34;_blank&#34;&gt;Python worker&lt;/a&gt; for the
+&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/azure-functions/functions-versions&#34; target=&#34;_blank&#34;&gt;Azure Functions runtime v2&lt;/a&gt;.
+As of this writing (2018-08-23), both Azure Functions v2 and the python worker are in &amp;ldquo;preview mode&amp;rdquo;. The Azure Functions v1 runtime supports development and hosting only in the portal or on Windows. The v2 runtime runs on .NET Core, and therefore can run on Windows, macOS and Linux. Microsoft provides a
+&lt;a href=&#34;https://github.com/Azure/azure-functions-core-tools&#34; target=&#34;_blank&#34;&gt;set of tools&lt;/a&gt; based on Node.JS and .NET Core that make it easy to develop in any platform. That takes care of objectives #1, #3 and #6. Although knocking off three objectives simply by selecting Azure Functions v2 sounded very promising to begin with, that&amp;rsquo;s as many objectives as I could achieve.&lt;/p&gt;
+
+&lt;h3 id=&#34;linux-host&#34;&gt;Linux host&lt;/h3&gt;
+
+&lt;p&gt;Regardless of the platform you develop on, Python function apps need to be hosted on
+&lt;a href=&#34;https://blogs.msdn.microsoft.com/appserviceteam/2017/11/15/functions-on-linux-preview/&#34; target=&#34;_blank&#34;&gt;Azure Functions on Linux&lt;/a&gt;. Running on Linux has a couple downsides:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;You have to access the Azure Portal using a
+&lt;a href=&#34;https://ms.portal.azure.com/?websitesextension_pythonFunctions=true&#34; target=&#34;_blank&#34;&gt;secret code&lt;/a&gt; to enable Azure to offer Linux hosts&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;As of this writing (2018-08-23), Linux hosts can only be dedicated. Azure Functions can normally run in two modes: &amp;ldquo;Consumption&amp;rdquo; and &amp;ldquo;Dedicated&amp;rdquo;. Consumption is virtually free, but the &amp;ldquo;dedicated&amp;rdquo; mode costs approximately $35 per month for the cheapest version. According to the &lt;a href=&#34;https://github.com/Azure/azure-functions-python-worker/blob/dev/README.md&#34; target=&#34;_blank&#34;&gt;README&lt;/a&gt; the &amp;ldquo;Consumption&amp;rdquo; mode is upcoming, and I have a small allowance due to my MSDN subscription, so I caved.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And there goes objective #2. But it seems temporary, so we&amp;rsquo;re probably good.&lt;/p&gt;
+
+&lt;h3 id=&#34;developing-a-slack-bot&#34;&gt;Developing a Slack Bot&lt;/h3&gt;
+
+&lt;p&gt;A Slack bot is essentially an HTTP server that will receive JSONs and perform actions through HTTP requests. Azure Functions have an HTTP Trigger template, so this takes care of most of the plumbing. I created a Slack app using the instructions &lt;a href=&#34;https://api.slack.com/bot-users&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. This bot subscribes to events, which are sent to an URL. I&amp;rsquo;ve created the HTTP Server that provides that URL using the instructions on &lt;a href=&#34;https://github.com/Azure/azure-functions-python-worker/wiki/Create-Function-(CLI)&#34; target=&#34;_blank&#34;&gt;how to create a function using the command line interface&lt;/a&gt;, and creating a &lt;a href=&#34;https://github.com/Azure/azure-functions-python-worker/tree/dev/tests/http_functions&#34; target=&#34;_blank&#34;&gt;sample based on the HttpTrigger&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Specifically, my Azure Function receives JSONs for each message, parses them to see if they have a &lt;code&gt;:stroopwafel:&lt;/code&gt;, and if they do, parses the mentions (@user) in the message. For each mention, we log a :stroopwafel: gift in a database, from which we can build reports at the end of a period.&lt;/p&gt;
+
+&lt;h3 id=&#34;pyodbc&#34;&gt;PyODBC&lt;/h3&gt;
+
+&lt;p&gt;The original idea was tha whenever a message mentioned a &lt;code&gt;:stroopwafel:&lt;/code&gt;, the bot would use &lt;code&gt;pyodbc&lt;/code&gt; to save the message in a database. Databases are usually not free, but Azure offers SQL Server for as low as $5 per month, and that seemed acceptable. The problem is that &lt;code&gt;pyodbc&lt;/code&gt; does not have a linux wheel, and currently Azure Functions for Linux &lt;a href=&#34;https://github.com/Azure/azure-functions-core-tools/issues/640&#34; target=&#34;_blank&#34;&gt;requires wheels&lt;/a&gt;. There&amp;rsquo;s a way of compiling the package on the fly, but it currently has a bug. And I don&amp;rsquo;t know how long it will take to fix that bug.&lt;/p&gt;
+
+&lt;p&gt;I searched for alternatives to PyODBC, and the best alternative was to use &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/cosmos-db/introduction&#34; target=&#34;_blank&#34;&gt;Cosmos DB&lt;/a&gt;, since its Python package &lt;code&gt;pydocumentdb&lt;/code&gt; has a wheel. The downside is that the cheapest Cosmos DB plan as of this writing costs $25. And now we&amp;rsquo;re far away from objective #2, and we&amp;rsquo;re also not doing great with objective #4. However, I found Cosmos DB a pleasure to use.&lt;/p&gt;
+
+&lt;h3 id=&#34;github&#34;&gt;GitHub&lt;/h3&gt;
+
+&lt;p&gt;Once I was done with my development, which &lt;a href=&#34;https://github.com/Azure/azure-functions-core-tools&#34; target=&#34;_blank&#34;&gt;Azure Functions Core Tools&lt;/a&gt; made really convenient by setting a local test server whenever I run &lt;code&gt;func host start&lt;/code&gt;, I pushed &lt;a href=&#34;https://github.com/RealLucasMeyer/yostroop&#34; target=&#34;_blank&#34;&gt;my repository to GitHub&lt;/a&gt; and configured the Azure Function app to consume it using Continuous Deployment, which is something that you can set up in Azure with just a few clicks. However, &lt;a href=&#34;https://github.com/Azure/azure-functions-core-tools/issues/640&#34; target=&#34;_blank&#34;&gt;it doesn&amp;rsquo;t yet work&lt;/a&gt; (sad trombone). Luckily, deploying without GitHub is not that bad. Again, Azure Functions Core Tools provides a command-line interface utility that pushes your application to the server: &lt;code&gt;func azure functionapp publish &amp;lt;app-name&amp;gt;&lt;/code&gt;, and you&amp;rsquo;re done in a couple of minutes. But I also don&amp;rsquo;t fulfill objective #5.&lt;/p&gt;
+
+&lt;h2 id=&#34;verdict&#34;&gt;Verdict&lt;/h2&gt;
+
+&lt;p&gt;Although I was so far unable to fulfill half of my initial objectives, it looks like I&amp;rsquo;ll get there soon. There&amp;rsquo;s something magical about Azure Functions. It does a lot of the hard work for you, and if you&amp;rsquo;re familiar with one of the many languages available, you can deploy your program to production really fast. I had never developed a Slack bot before, and I&amp;rsquo;ve started the bot during a sleepless night and finished it in an afternoon. All in, it took me less than two days of work to get an app to production. There are still some kinks to be worked out but Azure Functions v2 has already proved to be useful to me.&lt;/p&gt;
+
+&lt;p&gt;I wrote about Azure Functions before, specifically about &lt;a href=&#34;https://meyerperin.com/post/installing-python-packages-in-azure-functions/&#34; target=&#34;_blank&#34;&gt;using Python in Azure Functions v1&lt;/a&gt;. Azure Functions can be very useful for Data Scientists: it&amp;rsquo;s an easy way to deploy a model to production, perform scheduled maintenance, update datasets on a schedule, etc. With v2, Python became a first class player. I&amp;rsquo;m sure I&amp;rsquo;ll use it a lot.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Praising Conway&#39;s Data Science Venn Diagram</title>
+      <link>/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</guid>
+      <description>
+
+&lt;p&gt;Drew Conway&amp;rsquo;s &lt;a href=&#34;http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram&#34; target=&#34;_blank&#34;&gt;Data Science Venn Diagram&lt;/a&gt; is perhaps the most well-known description of data science.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/Data_Science_VD.png&#34; alt=&#34;Drew Conway&#39;s Data Science Venn Diagram&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Drew published it more than five years ago. Since then, a ridiculous number of Venn diagrams have been created, &lt;a href=&#34;https://www.datasciencecentral.com/profiles/blogs/the-data-science-venn-diagram-revisited&#34; target=&#34;_blank&#34;&gt;one&lt;/a&gt; &lt;a href=&#34;https://whatsthebigdata.com/2016/07/08/the-new-data-scientist-venn-diagram/&#34; target=&#34;_blank&#34;&gt;worse&lt;/a&gt; &lt;a href=&#34;https://twitter.com/kirkdborne/status/961452846821597184&#34; target=&#34;_blank&#34;&gt;than&lt;/a&gt; &lt;a href=&#34;https://twitter.com/kirkdborne/status/739446818233327616&#34; target=&#34;_blank&#34;&gt;the&lt;/a&gt; &lt;a href=&#34;https://blog.zhaw.ch/datascience/files/2014/06/SkillSet.png&#34; target=&#34;_blank&#34;&gt;other&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Five years later, people still struggle with the definition of Data Science. A recent famous example was Lyft &lt;a href=&#34;https://eng.lyft.com/whats-in-a-name-ce42f419d16c&#34; target=&#34;_blank&#34;&gt;changing the titles&lt;/a&gt; of their Data Scientists, Data Analysts and Research Scientists.&lt;/p&gt;
+
+&lt;h2 id=&#34;should-we-care&#34;&gt;Should we care?&lt;/h2&gt;
+
+&lt;p&gt;There&amp;rsquo;s a lot of information asymmetry in the Data Science market, the position being so new, and &lt;a href=&#34;https://www.jstor.org/stable/1882010&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Michael Spence signaling&amp;rdquo;&lt;/a&gt; matters. Having a &amp;ldquo;Data Scientist&amp;rdquo; title from a reputable company is an important signal. For example, a medium-sized company might not be aware that Lyft &lt;a href=&#34;https://eng.lyft.com/whats-in-a-name-ce42f419d16c&#34; target=&#34;_blank&#34;&gt;recently changed&lt;/a&gt; their data analysts title to &amp;ldquo;Data Scientist&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Part of the problem is that the &amp;ldquo;Data Scientist&amp;rdquo; title is itself poorly defined, as shown by the litany of Venn and not-Venn diagrams listed above. A short, non-comprehensive list of alternative titles for Data Scientists I&amp;rsquo;ve met in the last month:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Tableau/Power BI Report Designer&lt;/li&gt;
+&lt;li&gt;Machine Learning Researcher&lt;/li&gt;
+&lt;li&gt;Python Programmer who knows how to call scikit-learn functions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using the same name for vastly different abilities makes matching between employers and employees difficult. In addition, it may make career progression difficult. For example, job responsibilities and objectives are likely to be related to a company&amp;rsquo;s interpretation of the title of &amp;ldquo;Data Scientist&amp;rdquo;. Employees in that company may be &amp;ldquo;Data Scientists&amp;rdquo; under other interpretations, and may be really good, but may have their performance evaluated under different guidelines: &lt;em&gt;&amp;ldquo;I know your ML model saved $1B for our company, but the color scheme of your Tableau reports is horrible!&amp;rdquo;&lt;/em&gt; As per the (not really) Albert Einstein&amp;rsquo;s quote &amp;ldquo;(&amp;hellip;) if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid.&amp;rdquo;&lt;/p&gt;
+
+&lt;h2 id=&#34;conway-s-venn-to-the-rescue&#34;&gt;Conway&amp;rsquo;s Venn to the rescue!&lt;/h2&gt;
+
+&lt;p&gt;Here&amp;rsquo;s where I think Conway&amp;rsquo;s Venn diagram comes to the rescue in a useful way. We could rule out the Tableau Designer if they lack programming or statistical skills. We could rule out the ML Researcher if they don&amp;rsquo;t have domain expertise. We could rule out the Python programmer if they don&amp;rsquo;t know Math and/or have domain expertise. Perhaps this makes Data Scientists hard to find (it would justify their salary)!&lt;/p&gt;
+
+&lt;p&gt;Depending what the company you work for was before the Data Science profession started, a lot of people from different jobs may have re-branded themselves as data scientists. I think Conway&amp;rsquo;s diagram is helpful as it points to where people should focus their development in order to be more effective as data scientists. For example, former Economists most likely need more hacking skills, former computer scientists need more Statistics and domain expertise, and former management/technical consultants likely need more Statistics.&lt;/p&gt;
+
+&lt;p&gt;It can also serve as a check for inclusiveness. For example, a team of former machine learning engineers is struggling to deliver meaningful projects because they lack domain expertise. However, they can&amp;rsquo;t hire domain experts because the domain experts keep failing the machine learning interviews. Comically, the machine learning engineers think that domain expertise &amp;ldquo;is easy&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/here_to_help.png&#34; alt=&#34;Everything you don&#39;t know is easy&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The most useful part of Conway&amp;rsquo;s diagram for me is that I&amp;rsquo;ve time and again observed projects that don&amp;rsquo;t have representatives that can communicate well with each other in all three areas to fail. Conway&amp;rsquo;s diagram even makes it easy to show how the project failed (&amp;ldquo;nobody with domain expertise&amp;rdquo;, &amp;ldquo;missing knowledge of statistics&amp;rdquo;). Having a single person that can do all three is difficult, but it certainly solves the communication problem. That being hard or impossible, having specialists that can communicate with each other will usually be sufficient.&lt;/p&gt;
+
+&lt;h2 id=&#34;but-conway-s-venn-is-missing-something&#34;&gt;But Conway&amp;rsquo;s Venn is missing something!!!&lt;/h2&gt;
+
+&lt;p&gt;True to the famous Box aphorism that &amp;ldquo;all models are wrong but some are useful&amp;rdquo;, Conway&amp;rsquo;s Venn is not perfect. In my experience, one of the things that I usually miss is &amp;ldquo;intensity&amp;rdquo;. Someone that knows how to write a &amp;ldquo;Hello World!&amp;rdquo;, knows how to take averages, and know how to calculate compound interest has knowledge in all three areas of the Venn diagram, but is probably not the ideal person to lead a data science project in Finance. Conway&amp;rsquo;s is best used to tell you what&amp;rsquo;s missing for career development, for a team, for a project, but it will not solve all problems.&lt;/p&gt;
+
+&lt;p&gt;It will, however, solve many problems that matter, and will provide useful information very elegantly. You can&amp;rsquo;t ask much more from a model.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Centralized vs. Distributed Data Science Teams</title>
+      <link>/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</link>
+      <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</guid>
+      <description>
+
+&lt;p&gt;In a recent &lt;a href=&#34;https://www.datacamp.com/community/podcast/organizing-data-science-teams&#34; target=&#34;_blank&#34;&gt;DataFramed podcast&lt;/a&gt;, &lt;a href=&#34;https://github.com/hugobowne&#34; target=&#34;_blank&#34;&gt;Hugo Bowne-Anderson&lt;/a&gt; and
+&lt;a href=&#34;https://github.com/jnolis&#34; target=&#34;_blank&#34;&gt;Jonathan Nolis&lt;/a&gt; discuss whether data scientist teams should be centralized or distributed. I have my own opinions about that question.&lt;/p&gt;
+
+&lt;h2 id=&#34;should-data-science-teams-be-centralized-or-distributed&#34;&gt;Should data science teams be centralized or distributed?&lt;/h2&gt;
+
+&lt;p&gt;I was happy to find that Jonathan Nolis has the same opinion as I do: that a data science team works best when distributed into client areas. In addition, we agree that if you distribute your data science team among several different client areas, you have to find a way of keeping the data scientists feeling as if they&amp;rsquo;re part of a cohesive group. And that&amp;rsquo;s hard.&lt;/p&gt;
+
+&lt;p&gt;For me, a key part of the argument to distribute data scientists in client areas relies on Drew Conway&amp;rsquo;s (ancient) &lt;a href=&#34;http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram&#34; target=&#34;_blank&#34;&gt;Data Science Venn diagram&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=750w&#34; alt=&#34;Data Science Venn Diagram&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Assigning data scientists to a client area will help build the &amp;ldquo;Substantive Expertise&amp;rdquo; part of the diagram. A common trap here is &amp;ldquo;Well, we can do the same if we keep the data scientists centralized and give them specializations that match the client areas.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Although I think that &lt;em&gt;can&lt;/em&gt; work, I worry about what happens when data scientists have downtime.&lt;/p&gt;
+
+&lt;h3 id=&#34;incentives-for-client-areas-and-centralized-data-science-teams&#34;&gt;Incentives for client areas and centralized data science teams&lt;/h3&gt;
+
+&lt;p&gt;In my observations (low sample size), the client areas usually have a better sense of ROI&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:In-Finance-circl&#34;&gt;&lt;a href=&#34;#fn:In-Finance-circl&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; - if they invest resources on something, they expect returns. On the other hand, most centralized data science teams I&amp;rsquo;ve seen have two problems: data scientists hired without a clear purpose and an incentive to overengineering: a current example is to use Deep Learning where a regression would do.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/2000/1*YfxWi5QZkShNHS0XLuKlMQ.png&#34; alt=&#34;Overengineering&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It may be simply that client areas are more mature and battle worn than centralized data science groups, at least in my experience. I think that if a data scientist is assigned to a client area and there&amp;rsquo;s downtime, they&amp;rsquo;ll put the data scientist to work in business intelligence or decision analysis. On the other hand, if the data scientist is assigned to a centralized data science group, they&amp;rsquo;ll be pulled into a project away from their &amp;ldquo;client area specialization&amp;rdquo; or will find a way to work in something novel that&amp;rsquo;s cool (as of 2018, autoencoders, GANs or something with &amp;ldquo;Bayesian&amp;rdquo; in its name).&lt;/p&gt;
+
+&lt;p&gt;And here the ROI appears again: as the data scientist works through the BI project, they&amp;rsquo;ll learn more about the data and more about the business and its data, and that investment has a large likelihood of return in their next project in the same group. Whereas if they spend this time learning a new technique, the return is uncertain.&lt;/p&gt;
+
+&lt;h3 id=&#34;but-wait-if-you-do-that-data-scientists-will-never-learn-something-new&#34;&gt;But wait, if you do that, data scientists will never learn something new&lt;/h3&gt;
+
+&lt;p&gt;Here&amp;rsquo;s where the hard part of keeping a data scientist community pays off. That community may be weekly &amp;ldquo;Lunch &amp;amp; Learns&amp;rdquo; if the number of data scientists is small, or quarterly conferences if the number of data scientists is very big and your company is very, very rich.&lt;/p&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t forcefully push towards having such a community, it&amp;rsquo;s very likely that data scientists will reinvent the wheel over and over again, and if their time is as precious as their high salary indicates, that will be a waste of money. For example, if you have 5 data scientists It&amp;rsquo;s better to spend $50k on travel to bring them together a few times a year than to have one of them wasting three months reinventing something that another of them already done.&lt;/p&gt;
+
+&lt;h3 id=&#34;where-i-disagree-with-jonathan-nolis&#34;&gt;Where I disagree with Jonathan Nolis&lt;/h3&gt;
+
+&lt;p&gt;In the podcast, Jonathan suggests that the data scientists should be assigned to client areas and report &amp;ldquo;solid line&amp;rdquo; to a Chief Data Scientist, while reporting &amp;ldquo;dotted line&amp;rdquo; to the client areas. I would do the opposite. However, listening to the podcast, it seems that Jonathan didn&amp;rsquo;t have a strong opinion that one is better than the other, and again in agreement, neither do I.&lt;/p&gt;
+
+&lt;p&gt;One big advantage of having a &amp;ldquo;solid line&amp;rdquo; group of data scientists is career advancement. It&amp;rsquo;s easier to compare data scientists with other data scientists. Leaving them in the client areas will require to compare them with other members of the client area, and they may be seen as wizards (and overvalued) or &amp;ldquo;too hard to understand&amp;rdquo;, and be undervalued.&lt;/p&gt;
+
+&lt;p&gt;One disadvantage is estimating the value of the data scientist to the client area. Data scientists that are more creative in their value calculations or less scrupulous are probably going to get ahead. I&amp;rsquo;ve lost count of the times that a data science project saved more revenue than the customer ever had.&lt;/p&gt;
+
+&lt;h3 id=&#34;so-what-do-i-do&#34;&gt;So, what do I do?&lt;/h3&gt;
+
+&lt;p&gt;Honestly, if you&amp;rsquo;re starting a data science team, your best bet is to hire someone like Jonathan or Drew Conway to plan the team for you. You&amp;rsquo;re going to spend a lot of money on Data Science, and it&amp;rsquo;s important to make sure that it will be well spent.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re on a budget and all you can invest is the time to read some blog posts, well&amp;hellip; you probably don&amp;rsquo;t have enough money to hire data scientists. But if you do, I recommend assigning them to the client areas and keeping them there. Even when they&amp;rsquo;re not doing modeling or machine learning, they&amp;rsquo;re learning more about the business and its data.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:In-Finance-circl&#34;&gt;In Finance circles, we use NPV, but the idea is the same &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:In-Finance-circl&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Frankfurt - Spring 2018</title>
+      <link>/post/2018-06-09-frankfurt-spring-2018/frankfurt-spring-2018/</link>
+      <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-09-frankfurt-spring-2018/frankfurt-spring-2018/</guid>
+      <description>
+
+&lt;p&gt;I gave two short talks for the 10th Arvato Financial Services Telekommunikationsforum in Baden-Baden. The way ticket prices worked out, it was US$ 1000 cheaper to return on Sunday than it was to return on Saturday, so I was able to spend a full day in Frankfurt.&lt;/p&gt;
+
+&lt;p&gt;I hope to come back.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/frankfurt.jpeg&#34; alt=&#34;Frankfurt&#34; /&gt;
+&lt;img src=&#34;/img/frankfurt-euro.jpeg&#34; alt=&#34;Euro&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-great-base-for-european-adventures&#34;&gt;A great base for European adventures&lt;/h2&gt;
+
+&lt;p&gt;One of the things I liked the most about Frankfurt was how integrated the transportation system was. I landed at the Frankfurt airport, where I could stay at pretty good and reasonably priced hotels (Hilton, Hilton Garden Inn and Sheraton), had a supermarket and restaurants, and could take trains and planes to anywhere else in Europe.&lt;/p&gt;
+
+&lt;p&gt;I stayed at the Hilton, which had the unexpected advantage of having a lot of British and American channels available on the TV and the truly appreciated advantage of having a good air-conditioning system.&lt;/p&gt;
+
+&lt;h2 id=&#34;frankfurt-itself&#34;&gt;Frankfurt Itself&lt;/h2&gt;
+
+&lt;p&gt;Frankfurt itself was touristic enough for me: the city center has plenty of attractions. Several museums, a Zoo, &amp;ldquo;The Cathedral&amp;rdquo;, and all those great restaurants that you expect to exist in the center of a city in Europe. Saturday had street vendors all over downtown. I could have done a better job of planning what to do, but spending a day in the city center was plenty of fun, so I just took a train from the Airport to downtown and spent the day there enjoying the museums, the downtown and the restaurants.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tricks using Python in Azure Functions</title>
+      <link>/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/</link>
+      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/</guid>
+      <description>
+
+&lt;p&gt;If you don&amp;rsquo;t know anything about Azure Functions, &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/azure-functions/&#34; target=&#34;_blank&#34;&gt;this&lt;/a&gt; is a good place to start.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Azure Functions is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events. Learn how to use Azure Functions with our quickstarts, tutorials, and samples.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here are some tricks to use Azure Functions with Python, which is currently (May 2018) under &amp;ldquo;experimental&amp;rdquo; support. Azure Functions, being serverless, are inexpensive but still very useful. I have used Azure Functions to create APIs for my data science projects (e.g., trigger a retraining, evaluate a submission online) and to create a Twitter Bot that posts a few random pictures every day. The major limitation of Azure Functions is that the free version will only run for 10-15 minutes.&lt;/p&gt;
+
+&lt;h4 id=&#34;installing-a-more-recent-version-of-python-for-your-azure-functions&#34;&gt;Installing a more recent version of Python for your Azure Functions&lt;/h4&gt;
+
+&lt;p&gt;The default Python version in Azure Functions is pretty old. As of this writing (May 2018), it&amp;rsquo;s still on version 2.7. You can install newer versions of Python using the procedure below. This procedure installs Python 3.5.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Open the &lt;a href=&#34;https://portal.azure.com&#34; target=&#34;_blank&#34;&gt;Azure Portal&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Select your function App (usually under App Services)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Select &amp;ldquo;Platform Features&amp;rdquo; on top
+&lt;img src=&#34;/img/python-platform.png&#34; alt=&#34;Platform Features&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Select &amp;ldquo;Advanced Tools (Kudu)&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/python-kudu1.png&#34; alt=&#34;Select Kudu&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Select &amp;ldquo;CMD&amp;rdquo; on the &amp;ldquo;Debug Console&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/python-kudu.png&#34; alt=&#34;Debug Console -&amp;gt; CMD&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now the fun part starts. Thanks to &lt;a href=&#34;https://ourwayoflyf.com/running-python-code-on-azure-functions-app/&#34; target=&#34;_blank&#34;&gt;Our Way of Lyf&lt;/a&gt; for providing instructions.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We first download and install Python using Nuget. To see all possible versions, please check the following website: &lt;a href=&#34;https://www.siteextensions.net/profiles/steve.dower&#34; target=&#34;_blank&#34;&gt;https://www.siteextensions.net/profiles/steve.dower&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;nuget.exe install -Source https://www.siteextensions.net/api/v2/ -OutputDirectory D:\home\site\tools python352x64 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For me, this step took approximately 4 minutes.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Successfully installed &amp;lsquo;python352x64 3.5.2.6&amp;rsquo; to D:\home\site\tools&lt;/p&gt;
+
+&lt;p&gt;Executing nuget actions took 3.99 min&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We now move Python to its proper place:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mv /d/home/site/tools/python352x64.3.5.2.6/content/python35/* /d/home/site/tools/
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;From now on, whatever function we write using Python in this app will use the new version. To verify, let&amp;rsquo;s create a function using Python and check its version. Remember that in order to create Azure Functions using Python, we first have to enable &amp;ldquo;Experimental Language Support&amp;rdquo;). For this test, I&amp;rsquo;ll create a function with an HTTP trigger, which I&amp;rsquo;ll later change to a Timer trigger.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/python-new-function.png&#34; alt=&#34;create new function&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
+import platform
+
+message = &amp;quot;Using Python version {0}&amp;quot;.format(platform.python_version())
+print(message)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;2018-05-30T01:34:29.954 [Info] Function started (Id=c7edfee9-b370-4dfb-bf89-2912cd09a109)&lt;/p&gt;
+
+&lt;p&gt;2018-05-30T01:34:35.923 [Info] Using Python version 3.5.2&lt;/p&gt;
+
+&lt;p&gt;2018-05-30T01:34:35.955 [Info] Function completed (Success, Id=c7edfee9-b370-4dfb-bf89-2912cd09a109, Duration=6011ms)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;installing-packages&#34;&gt;Installing packages&lt;/h4&gt;
+
+&lt;p&gt;Now that we have a recent version of Python, we can install whatever packages we want. For example, we can install pyodbc and python-twitter.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;D:\home\site\tools\python.exe -m pip install pyodbc
+D:\home\site\tools\python.exe -m pip install python-twitter
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With these packages installed, for example, I can connect to a SQL (or SQL Azure) database and write a Python script that tweets parts of its content.&lt;/p&gt;
+
+&lt;h4 id=&#34;converting-an-http-trigger-to-a-time-trigger&#34;&gt;Converting an HTTP Trigger to a time trigger&lt;/h4&gt;
+
+&lt;p&gt;By default, Python functions don&amp;rsquo;t have a timer trigger. But that&amp;rsquo;s no big deal. Start with an HTTP trigger (see picture above), and then go to &amp;ldquo;Integrate&amp;rdquo; and delete the trigger.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/python-delete-trigger.png&#34; alt=&#34;Delete trigger&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you delete the trigger, you&amp;rsquo;ll be able to add a new trigger, which can be a Timer trigger.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/python-new-trigger.png&#34; alt=&#34;Timer trigger&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can configure the trigger using the usual &lt;code&gt;cron&lt;/code&gt; syntax:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/python-timer-trigger.png&#34; alt=&#34;Configuring timer trigger&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the example above, I&amp;rsquo;m triggering the function every 15 seconds. I did not change the code from before, so this will result simply in Python printing its version to the log every 15 seconds.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/python-timer-trigger-results.png&#34; alt=&#34;Configuring timer trigger&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;a-few-ideas-on-how-to-use-this&#34;&gt;A few ideas on how to use this&lt;/h4&gt;
+
+&lt;p&gt;If you know Python and have an Azure subscription, here&amp;rsquo;s a few things that you do for free or nearly for free with this. You can:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;trigger a Python function that wakes up every day and performs some database maintentance (e.g., triggers a stored procedure that deletes old records)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;send a message in Twitter every day, for example &amp;ldquo;Since yesterday, we&amp;rsquo;ve acquired X followers&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Read new data from a database, run a model that creates a forecast and save it back to the database every 2 hours&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Serverless computing is extremely convenient: although there are limitations on what the free tier can do, they&amp;rsquo;re not too restrictive.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A reflection on FY18 and FY19 plans</title>
+      <link>/post/2018-05-28-a-reflection-on-fy18-and-fy19-plans/a-reflection-on-fy18-and-fy19-plans/</link>
+      <pubDate>Mon, 28 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-05-28-a-reflection-on-fy18-and-fy19-plans/a-reflection-on-fy18-and-fy19-plans/</guid>
+      <description>
+
+&lt;h1 id=&#34;reflecting-on-fy18-and-planning-for-fy19&#34;&gt;Reflecting on FY18 and planning for FY19&lt;/h1&gt;
+
+&lt;p&gt;I have worked at Microsoft for long enough that it&amp;rsquo;s easier for me to make plans in tandem with the Microsoft fiscal calendar. It runs from July to June, so we&amp;rsquo;re very close to the end of FY18 and starting FY19.&lt;/p&gt;
+
+&lt;h2 id=&#34;fy18-recap&#34;&gt;FY18 Recap&lt;/h2&gt;
+
+&lt;p&gt;Looking back, FY18 was a year of recovery, as was FY17. We&amp;rsquo;ve had our share of health-related scares at my home, and we&amp;rsquo;re still working through some of those. However, on the positive side, it finally feels like I have some time to think (and have hope) about the future.&lt;/p&gt;
+
+&lt;p&gt;I also got a promotion right at the start of FY18, mostly because of my chatbot.&lt;/p&gt;
+
+&lt;h3 id=&#34;chatbots&#34;&gt;Chatbots&lt;/h3&gt;
+
+&lt;p&gt;In July 2018, the very beginning of FY18, a chatbot I wrote in FY17 won the &lt;a href=&#34;http://treasurytoday.com/adamsmith/2017/winners/jc-winner-microsoft&#34; target=&#34;_blank&#34;&gt;Adam Smith Judge&amp;rsquo;s Choice Award&lt;/a&gt;. That&amp;rsquo;s not me in the picture, by the way If I were to advertise this chatbot, I&amp;rsquo;d say its main feature is how fast it was created. It was written in about a week. Its main business feature is that it saves time by putting together information that took a few queries (and more than a few minutes) to combine. Although the chatbot could be replaced by a well-done report, it&amp;rsquo;s easier to train user to use a chatbot (the chatbot itself helps) than to use a report. This chatbot later became a platform for additional use cases.&lt;/p&gt;
+
+&lt;p&gt;This chatbot was the inspiration, and in some cases, the initial source code, for several other chatbots, including another one that won the Adam Smith award in 2018. One of the coolest features of this new chatbot is that it will ask the old chatbot when it doesn&amp;rsquo;t know the answer to a question.&lt;/p&gt;
+
+&lt;h3 id=&#34;forecasting&#34;&gt;Forecasting&lt;/h3&gt;
+
+&lt;p&gt;In another short project, I&amp;rsquo;ve created a time series forecasting platform that is used by several groups. Although it does not use super-recent time series forecasting algorithms and has quite a few restrictions on the data it can handle, it is general enough to solve a wide range of problems that we commonly face, so it was adopted by several groups.&lt;/p&gt;
+
+&lt;h3 id=&#34;data&#34;&gt;Data&lt;/h3&gt;
+
+&lt;p&gt;In large companies, data can always be combined in smarter and more useful ways. In FY18 we combined such data for two large opportunities: one to help streamline sales, and another one for data mastering. Both were widely adopted.&lt;/p&gt;
+
+&lt;h3 id=&#34;ai-school-advanced-projects&#34;&gt;AI School Advanced Projects&lt;/h3&gt;
+
+&lt;p&gt;In April of 2018, one of my project proposals was accepted to the AI-611 Advanced Projects course, an internal course that selects top engineers and teaches them advanced concepts in machine learning, mostly related to deep learning. The project was completed in less than two months and was recently put in production.&lt;/p&gt;
+
+&lt;h3 id=&#34;conferences&#34;&gt;Conferences&lt;/h3&gt;
+
+&lt;p&gt;With all the healthcare uncertainty, I had been out of conferences for a while. The last one I had presented was an internal conference in FY16. It&amp;rsquo;s time for a change, so I&amp;rsquo;m presenting in Baden-Baden in June 2018.&lt;/p&gt;
+
+&lt;p&gt;On the positive side, I&amp;rsquo;ve attended the &lt;a href=&#34;https://datascience.salon/miami11-18/&#34; target=&#34;_blank&#34;&gt;Data Science Salon&lt;/a&gt; in Miami, and it was way better than I expected it to be.&lt;/p&gt;
+
+&lt;h2 id=&#34;fy19-plans&#34;&gt;FY19 Plans&lt;/h2&gt;
+
+&lt;h3 id=&#34;data-science-officially&#34;&gt;Data Science, officially&lt;/h3&gt;
+
+&lt;p&gt;For many years, I&amp;rsquo;ve been (perhaos incorrectly) proud of not being in the Data Science track at Microsoft. I was able to keep my career as &amp;ldquo;Finance&amp;rdquo;. Apparently this will change in FY19, and perhaps it&amp;rsquo;s for the better. One consequence is that I&amp;rsquo;ll be expected to publish some articles and present more in conferences.&lt;/p&gt;
+
+&lt;h3 id=&#34;move&#34;&gt;Move?&lt;/h3&gt;
+
+&lt;p&gt;There are advantages and disadvantages of being in a place that is a work in progress for Data Science, like Florida currently is. One of the advantages is that I can help shape how Data Science in Florida will be, and I can know many of the people in Florida that do Data Science. One disadvantage is that there&amp;rsquo;s not that many people to talk to. Florida is also very spread out, so it&amp;rsquo;s not uncommon that when something happens, it will be 90 minutes away and of uncertain quality.&lt;/p&gt;
+
+&lt;p&gt;Another disadvantage of Florida is that where we live (Broward County) doesn&amp;rsquo;t seem to be an ideal place for K-12, and we are worried about the effect on the kids.&lt;/p&gt;
+
+&lt;p&gt;Perhaps there&amp;rsquo;s a place with better K-12 and more Data Science in our future. Seattle would make sense, given it&amp;rsquo;s where Microsoft is, but it&amp;rsquo;s expensive enough to give us pause.&lt;/p&gt;
+
+&lt;h3 id=&#34;call-for-papers&#34;&gt;Call for Papers&lt;/h3&gt;
+
+&lt;p&gt;As part of my likely move to a Data Science career profile, I&amp;rsquo;ll need to write papers and submit talks to conferences. Today I&amp;rsquo;ve created my &lt;a href=&#34;http://easychair.org&#34; target=&#34;_blank&#34;&gt;EasyChair&lt;/a&gt; account, but I was not fast enough to realize that most of 2018 is already gone. I&amp;rsquo;m likely going to need to create several proposals so I can have some acceptances in early 2019.&lt;/p&gt;
+
+&lt;p&gt;So far the ideas are:
+    * The (super-cheap) Twitter Art Bot
+    * Chatbots that talk to each other
+    * Something about our deep learning project fro AI-611
+    * Something about time-series forecasting&lt;/p&gt;
+
+&lt;h3 id=&#34;finally-a-few-challenges-for-fy19&#34;&gt;Finally, a few challenges for FY19&lt;/h3&gt;
+
+&lt;p&gt;Creativity is like breathing. You got to breath out, and you got to breath in. It may be time to breath out again, This coming fiscal year, I hope to have:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;24 blog posts, that is, at least two per month&lt;/li&gt;
+&lt;li&gt;4 presentations in local meetups&lt;/li&gt;
+&lt;li&gt;2 external conference presentations&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Lenovo P51 - the Data Scientist&#39;s laptop</title>
+      <link>/post/2017-11-17-lenovo-p51-the-data-scientist-laptop/lenovo-p51-the-data-scientist-laptop/</link>
+      <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017-11-17-lenovo-p51-the-data-scientist-laptop/lenovo-p51-the-data-scientist-laptop/</guid>
+      <description>&lt;p&gt;Recently, as part of a computer refresh, I have moved from a Microsoft Surface Pro 3 to a Lenovo P51.
+The Microsoft Surface Pro 3 was the right computer for me at the time I
+got it, but as time went by my position changed substantially, and it ceased to be appropriate for me.&lt;/p&gt;
+
+&lt;p&gt;When I got the Surface, the core of my work consisted in traveling, having conference calls and
+light emailing and spreadsheet work. As time went by, my work went back to creating analytics,
+creating presentations about analytics, and traveling. There is where the screen of the Surface
+becomes a liability at 12 inches. I wanted something bigger.&lt;/p&gt;
+
+&lt;p&gt;And boy, is the P51 bigger. It has a 15-inch screen and a power brick that alone is twice as heavy
+as the Surface Pro. It&amp;rsquo;s big enough to have a keyboard that comes with a numeric keypad. Since I still
+have to travel a lot, I chose the P51 over the beefier 17-inch P71. The P71 won&amp;rsquo;t even fit in my
+somewhat large Osprey backpack. The P51 barely fits.&lt;/p&gt;
+
+&lt;p&gt;Due to some standardization constraints, my P51 is the 1920x1080 version with touch screen. It has
+32 Gb of RAM and a 500 Gb SSD. It has the i7 7820HQ running at 2.9 GHz and a Quadro M2200 GPU. If I
+had the option, I&amp;rsquo;d choose the 4K screen and the Xeon processor, but I did not have that option.&lt;/p&gt;
+
+&lt;p&gt;The battery life is surprisingly good. For the kind of things that I do in planes (writing blog posts,
+editing presentations, light programming), the battery seems to last well over 8h without Wi-Fi and about 7h
+with Wi-Fi. I have yet to run out of battery in a flight. I have read that the earlier version
+of the P51, the P50, would trip the circuit breaker of a plane if you tried to plug it in. I have not
+attempted to plug in the P51 yet.&lt;/p&gt;
+
+&lt;p&gt;The P51 is usable in the Premium Economy seats and, of course, in business and first class seats,
+but I have the impression that it would not fit well in the economy class of carriers that have
+a very small distance between seats (like American Airlines domestic flights), especially if the
+person in front of you reclines their seat. It works well in exit seats.&lt;/p&gt;
+
+&lt;p&gt;One gripe I had about the Surface Pro 3 was that I always had to travel with a USB hub, a mouse, and
+a couple mini-DisplayPort adapters. The P51 comes with a mechanical keyboard, the beloved TrackPoint,
+a good TouchPad, 4 USB ports, a Thunderbolt 3 port, an Ethernet port, an HDMI port, and, to my surprise,
+a mini-DisplayPort, so I get to keep all the adapters I had for the Surface.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve also considered the P51-S. The slimmer version trades off some power (it goes from quad-core to
+dual-core) for a thinner, lighter frame. I think the P51-S would also have been a solid choice, but I
+think it would force me to do most of my work from a workstation and/or a server that I&amp;rsquo;d need to
+remote into frequently, adding to the stress of versioning and synchronizing. Somewhat
+counter-intuitively, I chose the heavier computer &lt;em&gt;because&lt;/em&gt; I travel a lot, as it has enough power
+for me to do the vast majority of my work on it and use a server or workstation just for the real
+hardcore stuff.&lt;/p&gt;
+
+&lt;p&gt;In summary, the Lenovo P51 is a great computer for the traveling data scientist. It&amp;rsquo;s powerful enough
+to be used as your primary machine. For me, it&amp;rsquo;s near the top limit of a computer that is comfortable
+to travel with, but still &lt;em&gt;within&lt;/em&gt; that limit. I got used to it in no time and completely gave up my
+desktop workstation.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

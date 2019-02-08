@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Lucas A. Meyer - Blog</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Lucas A. Meyer - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
+    <lastBuildDate>Fri, 08 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Will it render</title>
+      <link>/post/will-it-render/</link>
+      <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/will-it-render/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Will it render</title>
+      <link>/post/2019-02-08-will-it-render/will-it-render/</link>
+      <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-08-will-it-render/will-it-render/</guid>
+      <description>I&amp;rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions. I&amp;rsquo;m wondering if it will render.
+It was not trivial My first attempt was to simply rename the old academic theme in the themes directory and download a new one. However, there are a lot of breaking changes between version 2.4 and version 3.3. One of the main breaking changes is that now you can use page bundles instead of a single page per post.</description>
+    </item>
+    
+    <item>
+      <title>A story about my father</title>
+      <link>/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</link>
+      <pubDate>Mon, 04 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</guid>
+      <description>My father passed away a few years ago. I don&amp;rsquo;t even remember exactly when. I think it was in 2013 or 2014. We were not close when he died, and I don&amp;rsquo;t remember we ever being close. To my memory, he was mostly away since I was around 7, and he left home when I was 13. Not having a father made a lot of things harder in my life, which I imagine made me more capable in some respects.</description>
+    </item>
+    
+    <item>
+      <title>A model for task execution under uncertainty</title>
+      <link>/post/2019-02-03-a-model-for-task-execution-under-uncertainty/a-model-for-task-execution-under-uncertainty/</link>
+      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-03-a-model-for-task-execution-under-uncertainty/a-model-for-task-execution-under-uncertainty/</guid>
+      <description>A company wants to execute a series of profitable tasks. Managers receive tasks and can route these tasks to either experts or non-experts. Manages’ ability determines how well they can tell experts from non-experts. Non-experts have a small chance to succeed, a chance of failure, and a small chance of catastrophic failure. Whenever non-experts succeed, managers’ ability goes down. When non-experts fail catastrophically, managers’ experience will go up. Experts can have exceptional success, sucess or failure, but they’ll never fail catastrophically.</description>
+    </item>
+    
+    <item>
+      <title>The complicated incentives on Northam</title>
+      <link>/post/2019-02-03-the-complicated-incentives-on-northam/the-complicated-incentives-on-northam/</link>
+      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-03-the-complicated-incentives-on-northam/the-complicated-incentives-on-northam/</guid>
+      <description>In February 1st 2019, it was found that the Governor of the Commonwealth of Virginia, Whatever Northam, had a picture in his medical school yearbook that contained a person in black face and another person wearing a Klu-Klux-Klan hood. Many people of all party affiliations called for his immediate resignation. By February 3rd, 2019, Northam had not yet resigned.
+There was, of course, a lot of debate on social media.</description>
+    </item>
+    
+    <item>
+      <title>Installing Arch Linux</title>
+      <link>/post/2019-01-29-installing-arch-linux/installing-arch-linux/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-01-29-installing-arch-linux/installing-arch-linux/</guid>
+      <description>Even though I work at Microsoft and really love Windows, I&amp;rsquo;ve recently installed Arch Linux as a dual boot. A lot of data scientists and software developers I know prefer OS X, and Windows doesn&amp;rsquo;t get that much love. Although many people provide many reasons not to use Windows, I was always able to work around whatever those issues were. Sometimes this required Cygwin, Git Bash, and more recently, WSL (the Windows Subsystem for Linux).</description>
+    </item>
+    
+    <item>
+      <title>Yo, Stroop!</title>
+      <link>/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</link>
+      <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</guid>
+      <description>YoStroop is a bot that allows members of a slack channel to give rewards to each other, usually as a way of saying &amp;ldquo;thank you&amp;rdquo; for help and valuable contributions. It was developed using Python, Azure Functions v2.0 and Cosmos DB.
+Motivation One of the Data Science Slack channels I&amp;rsquo;m a member of tried several different tools to keep track of the valuable contributions of its members. Some of the tools that we used to to track contributions became quite expensive and we started looking for an alternative.</description>
+    </item>
+    
+    <item>
+      <title>Praising Conway&#39;s Data Science Venn Diagram</title>
+      <link>/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</guid>
+      <description>Drew Conway&amp;rsquo;s Data Science Venn Diagram is perhaps the most well-known description of data science.
+Drew published it more than five years ago. Since then, a ridiculous number of Venn diagrams have been created, one worse than the other.
+Five years later, people still struggle with the definition of Data Science. A recent famous example was Lyft changing the titles of their Data Scientists, Data Analysts and Research Scientists.</description>
+    </item>
+    
+    <item>
+      <title>Centralized vs. Distributed Data Science Teams</title>
+      <link>/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</link>
+      <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</guid>
+      <description>In a recent DataFramed podcast, Hugo Bowne-Anderson and Jonathan Nolis discuss whether data scientist teams should be centralized or distributed. I have my own opinions about that question.
+Should data science teams be centralized or distributed? I was happy to find that Jonathan Nolis has the same opinion as I do: that a data science team works best when distributed into client areas. In addition, we agree that if you distribute your data science team among several different client areas, you have to find a way of keeping the data scientists feeling as if they&amp;rsquo;re part of a cohesive group.</description>
+    </item>
+    
+    <item>
+      <title>Frankfurt - Spring 2018</title>
+      <link>/post/2018-06-09-frankfurt-spring-2018/frankfurt-spring-2018/</link>
+      <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-09-frankfurt-spring-2018/frankfurt-spring-2018/</guid>
+      <description>I gave two short talks for the 10th Arvato Financial Services Telekommunikationsforum in Baden-Baden. The way ticket prices worked out, it was US$ 1000 cheaper to return on Sunday than it was to return on Saturday, so I was able to spend a full day in Frankfurt.
+I hope to come back.
+A great base for European adventures One of the things I liked the most about Frankfurt was how integrated the transportation system was.</description>
+    </item>
+    
+    <item>
+      <title>Tricks using Python in Azure Functions</title>
+      <link>/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/</link>
+      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/</guid>
+      <description>If you don&amp;rsquo;t know anything about Azure Functions, this is a good place to start.
+ Azure Functions is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events. Learn how to use Azure Functions with our quickstarts, tutorials, and samples.
+ Here are some tricks to use Azure Functions with Python, which is currently (May 2018) under &amp;ldquo;experimental&amp;rdquo; support.</description>
+    </item>
+    
+    <item>
+      <title>A reflection on FY18 and FY19 plans</title>
+      <link>/post/2018-05-28-a-reflection-on-fy18-and-fy19-plans/a-reflection-on-fy18-and-fy19-plans/</link>
+      <pubDate>Mon, 28 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-05-28-a-reflection-on-fy18-and-fy19-plans/a-reflection-on-fy18-and-fy19-plans/</guid>
+      <description>Reflecting on FY18 and planning for FY19 I have worked at Microsoft for long enough that it&amp;rsquo;s easier for me to make plans in tandem with the Microsoft fiscal calendar. It runs from July to June, so we&amp;rsquo;re very close to the end of FY18 and starting FY19.
+FY18 Recap Looking back, FY18 was a year of recovery, as was FY17. We&amp;rsquo;ve had our share of health-related scares at my home, and we&amp;rsquo;re still working through some of those.</description>
+    </item>
+    
+    <item>
+      <title>Lenovo P51 - the Data Scientist&#39;s laptop</title>
+      <link>/post/2017-11-17-lenovo-p51-the-data-scientist-laptop/lenovo-p51-the-data-scientist-laptop/</link>
+      <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017-11-17-lenovo-p51-the-data-scientist-laptop/lenovo-p51-the-data-scientist-laptop/</guid>
+      <description>Recently, as part of a computer refresh, I have moved from a Microsoft Surface Pro 3 to a Lenovo P51. The Microsoft Surface Pro 3 was the right computer for me at the time I got it, but as time went by my position changed substantially, and it ceased to be appropriate for me.
+When I got the Surface, the core of my work consisted in traveling, having conference calls and light emailing and spreadsheet work.</description>
+    </item>
+    
+    <item>
+      <title>The three types of gifts in Buddhism</title>
+      <link>/post/2018-02-20-the-three-types-of-gifts-in-buddhism/the-three-types-of-gifts-in-buddhism/</link>
+      <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-02-20-the-three-types-of-gifts-in-buddhism/the-three-types-of-gifts-in-buddhism/</guid>
+      <description>From &amp;ldquo;For a future to be possible&amp;rdquo;, by Thich Nhat Hanh:
+ In Buddhism, there are three kinds of gifts. The first is the gift of material resources. The second is to help people rely on themselves, to offer them the technology and know-how to stand on their own feet. (&amp;hellip;)
+The third is the gift of non-fear. We are afraid of many things. We feel insecure, afraid of being alone, afraid of sickness and dying.</description>
+    </item>
+    
+    <item>
+      <title>Hurricane Irma</title>
+      <link>/post/2017-09-11-hurricane-irma/hurricane-irma/</link>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017-09-11-hurricane-irma/hurricane-irma/</guid>
+      <description>Florida has nice weather most of the time, but also has extreme weather occasionally.
+Hurricane Irma happened when I was out on a business trip, and my family was in Parkland, FL. Forecasts went from &amp;ldquo;maybe it will hit you&amp;rdquo; to &amp;ldquo;if you stay you&amp;rsquo;ll surely die&amp;rdquo; to &amp;ldquo;I think it&amp;rsquo;s not going to hit you anymore&amp;rdquo; to &amp;ldquo;Phew, it will miss&amp;rdquo; in four days.
+We did a lot of preparation using conditional probabilities.</description>
+    </item>
+    
+    <item>
+      <title>My complicated relationship with the second amendment</title>
+      <link>/post/2018-02-23-my-complicated-relationship-with-the-second-amendment/my-complicated-relationship-with-the-second-amendment/</link>
+      <pubDate>Tue, 23 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-02-23-my-complicated-relationship-with-the-second-amendment/my-complicated-relationship-with-the-second-amendment/</guid>
+      <description>I&amp;rsquo;m writing this on 2018-02-26, after thinking a lot about guns after the Parkland School Shooting, but I&amp;rsquo;m burying this article in the past because there&amp;rsquo;s a lot of passion around this topic.
+ I live in Parkland, FL, and I have three kids. When the Parkland School Shooting happened, my kids were in elementary school, and out of danger. Many of our friends and their kids were not so lucky as we were.</description>
+    </item>
+    
+  </channel>
+</rss>

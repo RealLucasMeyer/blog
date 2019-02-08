@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.3.0">
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Lucas A. Meyer">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="YoStroop is a bot that allows members of a slack channel to give rewards to each other, usually as a way of saying &ldquo;thank you&rdquo; for help and valuable contributions. It was developed using Python, Azure Functions v2.0 and Cosmos DB.
+Motivation One of the Data Science Slack channels I&rsquo;m a member of tried several different tools to keep track of the valuable contributions of its members. Some of the tools that we used to to track contributions became quite expensive and we started looking for an alternative.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-75015365-3', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Lucas A. Meyer - Blog">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Lucas A. Meyer - Blog">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@real_lucas_meyer">
+  <meta property="twitter:creator" content="@real_lucas_meyer">
+  
+  <meta property="og:site_name" content="Lucas A. Meyer - Blog">
+  <meta property="og:url" content="/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/">
+  <meta property="og:title" content="Yo, Stroop! | Lucas A. Meyer - Blog">
+  <meta property="og:description" content="YoStroop is a bot that allows members of a slack channel to give rewards to each other, usually as a way of saying &ldquo;thank you&rdquo; for help and valuable contributions. It was developed using Python, Azure Functions v2.0 and Cosmos DB.
+Motivation One of the Data Science Slack channels I&rsquo;m a member of tried several different tools to keep track of the valuable contributions of its members. Some of the tools that we used to to track contributions became quite expensive and we started looking for an alternative."><meta property="og:image" content="/img/bias.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-08-23T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2018-08-23T00:00:00&#43;00:00">
+  
+
+  
+
+  
+
+  <title>Yo, Stroop! | Lucas A. Meyer - Blog</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Lucas A. Meyer - Blog</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>About</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Yo, Stroop!</h1>
+
+  
+
+  
+    
+
+
+
+<meta content="2018-08-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2018-08-23 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2018-08-23</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/bots/">Bots</a>
+    
+  </span>
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Yo%2c%20Stroop%21&amp;url=%2fpost%2f2018-08-23-yo-stroopwafel%2fyo-stroopwafel%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2f2018-08-23-yo-stroopwafel%2fyo-stroopwafel%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2f2018-08-23-yo-stroopwafel%2fyo-stroopwafel%2f&amp;title=Yo%2c%20Stroop%21"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2f2018-08-23-yo-stroopwafel%2fyo-stroopwafel%2f&amp;title=Yo%2c%20Stroop%21"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Yo%2c%20Stroop%21&amp;body=%2fpost%2f2018-08-23-yo-stroopwafel%2fyo-stroopwafel%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p><a href="https://github.com/RealLucasMeyer/yostroop" target="_blank">YoStroop</a> is a bot that allows members of a slack channel to give rewards to each other, usually as a way of saying &ldquo;thank you&rdquo; for help and valuable contributions.
+It was developed using Python, Azure Functions v2.0 and Cosmos DB.</p>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>One of the Data Science Slack channels I&rsquo;m a member of tried several different tools to keep track of the valuable contributions of its members. Some of the tools that we used to to track contributions became quite expensive and we started looking for an alternative. Since most people in the channel can program in R and Python, I thought we might develop our own Slack bot. Developing a Slack Bot is really straightforward. You essentially need a HTTP server that will receive JSONs and call Web APIs. I wanted to create a Slack bot that was:</p>
+
+<ol>
+<li>Written in a language that most Data Scientists are familiar with (e.g. Python or R)</li>
+<li>Virtually free to run</li>
+<li>Serverless</li>
+<li>Based on very well known technologies (e.g., <code>pyodbc</code> for databases)</li>
+<li>Easy to modify from GitHub with no hassle</li>
+<li>Developed and maintained in any major platform: Windows, macOS or Linux</li>
+</ol>
+
+<p>I have failed to achieve almost all of the goals above, but maybe will achieve most in the near future.</p>
+
+<h2 id="azure-functions-v2">Azure Functions v2</h2>
+
+<p>Microsoft recently released a <a href="https://github.com/Azure/azure-functions-python-worker" target="_blank">Python worker</a> for the
+<a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-versions" target="_blank">Azure Functions runtime v2</a>.
+As of this writing (2018-08-23), both Azure Functions v2 and the python worker are in &ldquo;preview mode&rdquo;. The Azure Functions v1 runtime supports development and hosting only in the portal or on Windows. The v2 runtime runs on .NET Core, and therefore can run on Windows, macOS and Linux. Microsoft provides a
+<a href="https://github.com/Azure/azure-functions-core-tools" target="_blank">set of tools</a> based on Node.JS and .NET Core that make it easy to develop in any platform. That takes care of objectives #1, #3 and #6. Although knocking off three objectives simply by selecting Azure Functions v2 sounded very promising to begin with, that&rsquo;s as many objectives as I could achieve.</p>
+
+<h3 id="linux-host">Linux host</h3>
+
+<p>Regardless of the platform you develop on, Python function apps need to be hosted on
+<a href="https://blogs.msdn.microsoft.com/appserviceteam/2017/11/15/functions-on-linux-preview/" target="_blank">Azure Functions on Linux</a>. Running on Linux has a couple downsides:</p>
+
+<ol>
+<li><p>You have to access the Azure Portal using a
+<a href="https://ms.portal.azure.com/?websitesextension_pythonFunctions=true" target="_blank">secret code</a> to enable Azure to offer Linux hosts</p></li>
+
+<li><p>As of this writing (2018-08-23), Linux hosts can only be dedicated. Azure Functions can normally run in two modes: &ldquo;Consumption&rdquo; and &ldquo;Dedicated&rdquo;. Consumption is virtually free, but the &ldquo;dedicated&rdquo; mode costs approximately $35 per month for the cheapest version. According to the <a href="https://github.com/Azure/azure-functions-python-worker/blob/dev/README.md" target="_blank">README</a> the &ldquo;Consumption&rdquo; mode is upcoming, and I have a small allowance due to my MSDN subscription, so I caved.</p></li>
+</ol>
+
+<p>And there goes objective #2. But it seems temporary, so we&rsquo;re probably good.</p>
+
+<h3 id="developing-a-slack-bot">Developing a Slack Bot</h3>
+
+<p>A Slack bot is essentially an HTTP server that will receive JSONs and perform actions through HTTP requests. Azure Functions have an HTTP Trigger template, so this takes care of most of the plumbing. I created a Slack app using the instructions <a href="https://api.slack.com/bot-users" target="_blank">here</a>. This bot subscribes to events, which are sent to an URL. I&rsquo;ve created the HTTP Server that provides that URL using the instructions on <a href="https://github.com/Azure/azure-functions-python-worker/wiki/Create-Function-(CLI)" target="_blank">how to create a function using the command line interface</a>, and creating a <a href="https://github.com/Azure/azure-functions-python-worker/tree/dev/tests/http_functions" target="_blank">sample based on the HttpTrigger</a>.</p>
+
+<p>Specifically, my Azure Function receives JSONs for each message, parses them to see if they have a <code>:stroopwafel:</code>, and if they do, parses the mentions (@user) in the message. For each mention, we log a :stroopwafel: gift in a database, from which we can build reports at the end of a period.</p>
+
+<h3 id="pyodbc">PyODBC</h3>
+
+<p>The original idea was tha whenever a message mentioned a <code>:stroopwafel:</code>, the bot would use <code>pyodbc</code> to save the message in a database. Databases are usually not free, but Azure offers SQL Server for as low as $5 per month, and that seemed acceptable. The problem is that <code>pyodbc</code> does not have a linux wheel, and currently Azure Functions for Linux <a href="https://github.com/Azure/azure-functions-core-tools/issues/640" target="_blank">requires wheels</a>. There&rsquo;s a way of compiling the package on the fly, but it currently has a bug. And I don&rsquo;t know how long it will take to fix that bug.</p>
+
+<p>I searched for alternatives to PyODBC, and the best alternative was to use <a href="https://docs.microsoft.com/en-us/azure/cosmos-db/introduction" target="_blank">Cosmos DB</a>, since its Python package <code>pydocumentdb</code> has a wheel. The downside is that the cheapest Cosmos DB plan as of this writing costs $25. And now we&rsquo;re far away from objective #2, and we&rsquo;re also not doing great with objective #4. However, I found Cosmos DB a pleasure to use.</p>
+
+<h3 id="github">GitHub</h3>
+
+<p>Once I was done with my development, which <a href="https://github.com/Azure/azure-functions-core-tools" target="_blank">Azure Functions Core Tools</a> made really convenient by setting a local test server whenever I run <code>func host start</code>, I pushed <a href="https://github.com/RealLucasMeyer/yostroop" target="_blank">my repository to GitHub</a> and configured the Azure Function app to consume it using Continuous Deployment, which is something that you can set up in Azure with just a few clicks. However, <a href="https://github.com/Azure/azure-functions-core-tools/issues/640" target="_blank">it doesn&rsquo;t yet work</a> (sad trombone). Luckily, deploying without GitHub is not that bad. Again, Azure Functions Core Tools provides a command-line interface utility that pushes your application to the server: <code>func azure functionapp publish &lt;app-name&gt;</code>, and you&rsquo;re done in a couple of minutes. But I also don&rsquo;t fulfill objective #5.</p>
+
+<h2 id="verdict">Verdict</h2>
+
+<p>Although I was so far unable to fulfill half of my initial objectives, it looks like I&rsquo;ll get there soon. There&rsquo;s something magical about Azure Functions. It does a lot of the hard work for you, and if you&rsquo;re familiar with one of the many languages available, you can deploy your program to production really fast. I had never developed a Slack bot before, and I&rsquo;ve started the bot during a sleepless night and finished it in an afternoon. All in, it took me less than two days of work to get an app to production. There are still some kinks to be worked out but Azure Functions v2 has already proved to be useful to me.</p>
+
+<p>I wrote about Azure Functions before, specifically about <a href="https://meyerperin.com/post/installing-python-packages-in-azure-functions/" target="_blank">using Python in Azure Functions v1</a>. Azure Functions can be very useful for Data Scientists: it&rsquo;s an easy way to deploy a model to production, perform scheduled maintenance, update datasets on a schedule, etc. With v2, Python became a first class player. I&rsquo;m sure I&rsquo;ll use it a lot.</p>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/bots/">Bots</a>
+  
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  
+  <img class="portrait mr-3" src="/author/admin/avatar_hud7a4b8dda3158f2aeba31bae87b004a5_1706114_250x250_fill_q75_box_center.jpg" itemprop="image" alt="Avatar">
+  
+
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/authors/admin">Lucas A. Meyer</a></h5>
+    <h6 class="card-subtitle">Data Scientist</h6>
+    <p class="card-text" itemprop="description">Data Scientist for Finance at Microsoft</p>
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="/#contact" >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/lucas_a_meyer" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.linkedin.com/in/lucasameyer" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/RealLucasMeyer" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+      
+      
+    
+
+    
+    <div class="article-widget">
+      <div class="post-nav">
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/post/2019-01-29-installing-arch-linux/installing-arch-linux/" rel="next">Installing Arch Linux</a>
+  </div>
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/" rel="prev">Praising Conway&#39;s Data Science Venn Diagram</a>
+  </div>
+  
+</div>
+
+    </div>
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "meyerperin" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; Lucas A. Meyer 2016-present &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//meyerperin.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.7903dc64949b0cecbfa70e940e162fa7.js"></script>
+
+  </body>
+</html>
+

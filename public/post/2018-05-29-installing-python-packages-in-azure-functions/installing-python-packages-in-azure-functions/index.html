@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.3.0">
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Lucas A. Meyer">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="If you don&rsquo;t know anything about Azure Functions, this is a good place to start.
+ Azure Functions is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events. Learn how to use Azure Functions with our quickstarts, tutorials, and samples.
+ Here are some tricks to use Azure Functions with Python, which is currently (May 2018) under &ldquo;experimental&rdquo; support.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-75015365-3', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Lucas A. Meyer - Blog">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Lucas A. Meyer - Blog">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@real_lucas_meyer">
+  <meta property="twitter:creator" content="@real_lucas_meyer">
+  
+  <meta property="og:site_name" content="Lucas A. Meyer - Blog">
+  <meta property="og:url" content="/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/">
+  <meta property="og:title" content="Tricks using Python in Azure Functions | Lucas A. Meyer - Blog">
+  <meta property="og:description" content="If you don&rsquo;t know anything about Azure Functions, this is a good place to start.
+ Azure Functions is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events. Learn how to use Azure Functions with our quickstarts, tutorials, and samples.
+ Here are some tricks to use Azure Functions with Python, which is currently (May 2018) under &ldquo;experimental&rdquo; support."><meta property="og:image" content="/img/bias.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-05-29T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2018-05-29T00:00:00&#43;00:00">
+  
+
+  
+
+  
+
+  <title>Tricks using Python in Azure Functions | Lucas A. Meyer - Blog</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Lucas A. Meyer - Blog</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>About</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Tricks using Python in Azure Functions</h1>
+
+  
+
+  
+    
+
+
+
+<meta content="2018-05-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2018-05-29 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2018-05-29</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/data-science/">Data Science</a>, 
+    
+    <a href="/categories/python/">Python</a>
+    
+  </span>
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Tricks%20using%20Python%20in%20Azure%20Functions&amp;url=%2fpost%2f2018-05-29-installing-python-packages-in-azure-functions%2finstalling-python-packages-in-azure-functions%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2f2018-05-29-installing-python-packages-in-azure-functions%2finstalling-python-packages-in-azure-functions%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2f2018-05-29-installing-python-packages-in-azure-functions%2finstalling-python-packages-in-azure-functions%2f&amp;title=Tricks%20using%20Python%20in%20Azure%20Functions"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2f2018-05-29-installing-python-packages-in-azure-functions%2finstalling-python-packages-in-azure-functions%2f&amp;title=Tricks%20using%20Python%20in%20Azure%20Functions"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Tricks%20using%20Python%20in%20Azure%20Functions&amp;body=%2fpost%2f2018-05-29-installing-python-packages-in-azure-functions%2finstalling-python-packages-in-azure-functions%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>If you don&rsquo;t know anything about Azure Functions, <a href="https://docs.microsoft.com/en-us/azure/azure-functions/" target="_blank">this</a> is a good place to start.</p>
+
+<blockquote>
+<p>Azure Functions is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events. Learn how to use Azure Functions with our quickstarts, tutorials, and samples.</p>
+</blockquote>
+
+<p>Here are some tricks to use Azure Functions with Python, which is currently (May 2018) under &ldquo;experimental&rdquo; support. Azure Functions, being serverless, are inexpensive but still very useful. I have used Azure Functions to create APIs for my data science projects (e.g., trigger a retraining, evaluate a submission online) and to create a Twitter Bot that posts a few random pictures every day. The major limitation of Azure Functions is that the free version will only run for 10-15 minutes.</p>
+
+<h4 id="installing-a-more-recent-version-of-python-for-your-azure-functions">Installing a more recent version of Python for your Azure Functions</h4>
+
+<p>The default Python version in Azure Functions is pretty old. As of this writing (May 2018), it&rsquo;s still on version 2.7. You can install newer versions of Python using the procedure below. This procedure installs Python 3.5.</p>
+
+<ol>
+<li><p>Open the <a href="https://portal.azure.com" target="_blank">Azure Portal</a></p></li>
+
+<li><p>Select your function App (usually under App Services)</p></li>
+
+<li><p>Select &ldquo;Platform Features&rdquo; on top
+<img src="/img/python-platform.png" alt="Platform Features" /></p></li>
+
+<li><p>Select &ldquo;Advanced Tools (Kudu)&rdquo;</p>
+
+<p><img src="/img/python-kudu1.png" alt="Select Kudu" /></p></li>
+
+<li><p>Select &ldquo;CMD&rdquo; on the &ldquo;Debug Console&rdquo;</p>
+
+<p><img src="/img/python-kudu.png" alt="Debug Console -&gt; CMD" /></p>
+
+<p>Now the fun part starts. Thanks to <a href="https://ourwayoflyf.com/running-python-code-on-azure-functions-app/" target="_blank">Our Way of Lyf</a> for providing instructions.</p></li>
+
+<li><p>We first download and install Python using Nuget. To see all possible versions, please check the following website: <a href="https://www.siteextensions.net/profiles/steve.dower" target="_blank">https://www.siteextensions.net/profiles/steve.dower</a></p>
+
+<pre><code class="language-bash">nuget.exe install -Source https://www.siteextensions.net/api/v2/ -OutputDirectory D:\home\site\tools python352x64 
+</code></pre>
+
+<p>For me, this step took approximately 4 minutes.</p>
+
+<blockquote>
+<p>Successfully installed &lsquo;python352x64 3.5.2.6&rsquo; to D:\home\site\tools</p>
+
+<p>Executing nuget actions took 3.99 min</p>
+</blockquote></li>
+
+<li><p>We now move Python to its proper place:</p>
+
+<pre><code class="language-bash">mv /d/home/site/tools/python352x64.3.5.2.6/content/python35/* /d/home/site/tools/
+</code></pre></li>
+</ol>
+
+<p>From now on, whatever function we write using Python in this app will use the new version. To verify, let&rsquo;s create a function using Python and check its version. Remember that in order to create Azure Functions using Python, we first have to enable &ldquo;Experimental Language Support&rdquo;). For this test, I&rsquo;ll create a function with an HTTP trigger, which I&rsquo;ll later change to a Timer trigger.</p>
+
+<p><img src="/img/python-new-function.png" alt="create new function" /></p>
+
+<pre><code class="language-python">import os
+import platform
+
+message = &quot;Using Python version {0}&quot;.format(platform.python_version())
+print(message)
+</code></pre>
+
+<blockquote>
+<p>2018-05-30T01:34:29.954 [Info] Function started (Id=c7edfee9-b370-4dfb-bf89-2912cd09a109)</p>
+
+<p>2018-05-30T01:34:35.923 [Info] Using Python version 3.5.2</p>
+
+<p>2018-05-30T01:34:35.955 [Info] Function completed (Success, Id=c7edfee9-b370-4dfb-bf89-2912cd09a109, Duration=6011ms)</p>
+</blockquote>
+
+<h4 id="installing-packages">Installing packages</h4>
+
+<p>Now that we have a recent version of Python, we can install whatever packages we want. For example, we can install pyodbc and python-twitter.</p>
+
+<pre><code class="language-bash">D:\home\site\tools\python.exe -m pip install pyodbc
+D:\home\site\tools\python.exe -m pip install python-twitter
+</code></pre>
+
+<p>With these packages installed, for example, I can connect to a SQL (or SQL Azure) database and write a Python script that tweets parts of its content.</p>
+
+<h4 id="converting-an-http-trigger-to-a-time-trigger">Converting an HTTP Trigger to a time trigger</h4>
+
+<p>By default, Python functions don&rsquo;t have a timer trigger. But that&rsquo;s no big deal. Start with an HTTP trigger (see picture above), and then go to &ldquo;Integrate&rdquo; and delete the trigger.</p>
+
+<p><img src="/img/python-delete-trigger.png" alt="Delete trigger" /></p>
+
+<p>Once you delete the trigger, you&rsquo;ll be able to add a new trigger, which can be a Timer trigger.</p>
+
+<p><img src="/img/python-new-trigger.png" alt="Timer trigger" /></p>
+
+<p>You can configure the trigger using the usual <code>cron</code> syntax:</p>
+
+<p><img src="/img/python-timer-trigger.png" alt="Configuring timer trigger" /></p>
+
+<p>In the example above, I&rsquo;m triggering the function every 15 seconds. I did not change the code from before, so this will result simply in Python printing its version to the log every 15 seconds.</p>
+
+<p><img src="/img/python-timer-trigger-results.png" alt="Configuring timer trigger" /></p>
+
+<h4 id="a-few-ideas-on-how-to-use-this">A few ideas on how to use this</h4>
+
+<p>If you know Python and have an Azure subscription, here&rsquo;s a few things that you do for free or nearly for free with this. You can:</p>
+
+<ul>
+<li><p>trigger a Python function that wakes up every day and performs some database maintentance (e.g., triggers a stored procedure that deletes old records)</p></li>
+
+<li><p>send a message in Twitter every day, for example &ldquo;Since yesterday, we&rsquo;ve acquired X followers&rdquo;</p></li>
+
+<li><p>Read new data from a database, run a model that creates a forecast and save it back to the database every 2 hours</p></li>
+</ul>
+
+<p>Serverless computing is extremely convenient: although there are limitations on what the free tier can do, they&rsquo;re not too restrictive.</p>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/data-science/">Data Science</a>
+  
+  <a class="badge badge-light" href="/tags/python/">Python</a>
+  
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  
+  <img class="portrait mr-3" src="/author/admin/avatar_hud7a4b8dda3158f2aeba31bae87b004a5_1706114_250x250_fill_q75_box_center.jpg" itemprop="image" alt="Avatar">
+  
+
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/authors/admin">Lucas A. Meyer</a></h5>
+    <h6 class="card-subtitle">Data Scientist</h6>
+    <p class="card-text" itemprop="description">Data Scientist for Finance at Microsoft</p>
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="/#contact" >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/lucas_a_meyer" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.linkedin.com/in/lucasameyer" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/RealLucasMeyer" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/post/2018-05-28-a-reflection-on-fy18-and-fy19-plans/a-reflection-on-fy18-and-fy19-plans/">A reflection on FY18 and FY19 plans</a></li>
+          
+          <li><a href="/post/2017-11-17-lenovo-p51-the-data-scientist-laptop/lenovo-p51-the-data-scientist-laptop/">Lenovo P51 - the Data Scientist&#39;s laptop</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+    <div class="article-widget">
+      <div class="post-nav">
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/post/2018-06-09-frankfurt-spring-2018/frankfurt-spring-2018/" rel="next">Frankfurt - Spring 2018</a>
+  </div>
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/post/2018-05-28-a-reflection-on-fy18-and-fy19-plans/a-reflection-on-fy18-and-fy19-plans/" rel="prev">A reflection on FY18 and FY19 plans</a>
+  </div>
+  
+</div>
+
+    </div>
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "meyerperin" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; Lucas A. Meyer 2016-present &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//meyerperin.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.7903dc64949b0cecbfa70e940e162fa7.js"></script>
+
+  </body>
+</html>
+

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science on Lucas A. Meyer - Blog</title>
+    <link>/tags/data-science/</link>
+    <description>Recent content in Data Science on Lucas A. Meyer - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
+    <lastBuildDate>Sun, 08 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Praising Conway&#39;s Data Science Venn Diagram</title>
+      <link>/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</guid>
+      <description>Drew Conway&amp;rsquo;s Data Science Venn Diagram is perhaps the most well-known description of data science.
+Drew published it more than five years ago. Since then, a ridiculous number of Venn diagrams have been created, one worse than the other.
+Five years later, people still struggle with the definition of Data Science. A recent famous example was Lyft changing the titles of their Data Scientists, Data Analysts and Research Scientists.</description>
+    </item>
+    
+    <item>
+      <title>Centralized vs. Distributed Data Science Teams</title>
+      <link>/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</link>
+      <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</guid>
+      <description>In a recent DataFramed podcast, Hugo Bowne-Anderson and Jonathan Nolis discuss whether data scientist teams should be centralized or distributed. I have my own opinions about that question.
+Should data science teams be centralized or distributed? I was happy to find that Jonathan Nolis has the same opinion as I do: that a data science team works best when distributed into client areas. In addition, we agree that if you distribute your data science team among several different client areas, you have to find a way of keeping the data scientists feeling as if they&amp;rsquo;re part of a cohesive group.</description>
+    </item>
+    
+    <item>
+      <title>Tricks using Python in Azure Functions</title>
+      <link>/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/</link>
+      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/</guid>
+      <description>If you don&amp;rsquo;t know anything about Azure Functions, this is a good place to start.
+ Azure Functions is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events. Learn how to use Azure Functions with our quickstarts, tutorials, and samples.
+ Here are some tricks to use Azure Functions with Python, which is currently (May 2018) under &amp;ldquo;experimental&amp;rdquo; support.</description>
+    </item>
+    
+    <item>
+      <title>A reflection on FY18 and FY19 plans</title>
+      <link>/post/2018-05-28-a-reflection-on-fy18-and-fy19-plans/a-reflection-on-fy18-and-fy19-plans/</link>
+      <pubDate>Mon, 28 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-05-28-a-reflection-on-fy18-and-fy19-plans/a-reflection-on-fy18-and-fy19-plans/</guid>
+      <description>Reflecting on FY18 and planning for FY19 I have worked at Microsoft for long enough that it&amp;rsquo;s easier for me to make plans in tandem with the Microsoft fiscal calendar. It runs from July to June, so we&amp;rsquo;re very close to the end of FY18 and starting FY19.
+FY18 Recap Looking back, FY18 was a year of recovery, as was FY17. We&amp;rsquo;ve had our share of health-related scares at my home, and we&amp;rsquo;re still working through some of those.</description>
+    </item>
+    
+    <item>
+      <title>Lenovo P51 - the Data Scientist&#39;s laptop</title>
+      <link>/post/2017-11-17-lenovo-p51-the-data-scientist-laptop/lenovo-p51-the-data-scientist-laptop/</link>
+      <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017-11-17-lenovo-p51-the-data-scientist-laptop/lenovo-p51-the-data-scientist-laptop/</guid>
+      <description>Recently, as part of a computer refresh, I have moved from a Microsoft Surface Pro 3 to a Lenovo P51. The Microsoft Surface Pro 3 was the right computer for me at the time I got it, but as time went by my position changed substantially, and it ceased to be appropriate for me.
+When I got the Surface, the core of my work consisted in traveling, having conference calls and light emailing and spreadsheet work.</description>
+    </item>
+    
+  </channel>
+</rss>
