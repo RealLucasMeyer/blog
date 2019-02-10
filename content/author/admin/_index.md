@@ -13,13 +13,13 @@ role = "Data Scientist"
 
 # Organizations/Affiliations.
 #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-organizations = [ { name = "University of Washington - Seattle", url = "" }, {name = "Microsoft Corporation", url = "" }]
+organizations = [ {name = "Microsoft Corporation", url = "http://www.microsoft.com/ai" }]
 
 # Short bio (displayed in user profile at end of posts)
-bio = "Data Scientist for Finance at Microsoft"
+bio = "Data Scientist @ Microsoft Finance"
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email = "lucas@meyerperin.com"
+# email = "lucas@meyerperin.com"
 
 # List (academic) interests or hobbies
 #interests = [
@@ -34,7 +34,7 @@ email = "lucas@meyerperin.com"
 
 # List qualifications (such as academic degrees)
 [[education.courses]]
-  course = "M.Sc. in Finance (incomplete Ph.D.)"
+  course = "M.Sc. in Finance (ABD Ph.D.)"
   institution = "University of Washington"
   year = 2014
 
