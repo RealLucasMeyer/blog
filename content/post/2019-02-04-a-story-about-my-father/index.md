@@ -26,7 +26,9 @@ Well, it's not necessarily a case for a *father*, but more a case for a househol
 There are a few things I remember about my father. 
 
 1) I remember that once he carried me from his bed to my bed. I was about 6 and I was amazed that somebody could carry me. I don't remember being carried by anyone else after that. I think about this when I carry my kids.
+
 2) I remember when he was supposed to give me breakfast (a task that always belonged to my mother) and that he wasn't much into it. I remember complaining about the way he was slicing the bread (and smushing it) and that it made him upset. To this day, I am careful when I'm slicing bread for my kids.
+
 3) I remember that once he gave me a videogame for Christmas that was not what I wanted. He gave me the Intellivision game [Snafu](https://en.wikipedia.org/wiki/Snafu_(video_game)), I don't remember exactly what I wanted. He was again very upset. Thinking back, I should probably have disguised my disappointment better, but I was 7. I remember that I liked the game after playing it and profusely apologized, but he didn't accept my apologies.
 
 ## Being a good detective is not always great
