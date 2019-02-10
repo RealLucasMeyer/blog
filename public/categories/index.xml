@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
-    <lastBuildDate>Fri, 08 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Blogdown</title>
       <link>/categories/blogdown/</link>
-      <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/categories/blogdown/</guid>
       <description></description>
@@ -180,6 +180,15 @@
       <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/categories/uncertainty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>/categories/blog/</link>
+      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/blog/</guid>
       <description></description>
     </item>
     

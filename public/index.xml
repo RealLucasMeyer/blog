@@ -7,8 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
-    <lastBuildDate>Fri, 08 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Feb 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>When should you be writing</title>
+      <link>/post/2019-02-10-when-should-you-be-writing/when-should-you-be-writing/</link>
+      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-10-when-should-you-be-writing/when-should-you-be-writing/</guid>
+      <description>&lt;p&gt;An old Ph.D. student motto is that you should &lt;strong&gt;always&lt;/strong&gt; be writing.
+&lt;img src=&#34;snape-always.gif&#34; alt=&#34;Snape says &amp;quot;Always&amp;quot;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Always.&lt;/p&gt;
+
+&lt;p&gt;For no good reason, I&amp;rsquo;m going to try to blog every day for 100 days. This will of course mean that there will be a lot of posts that are going to be low quality, like this one.&lt;/p&gt;
+
+&lt;p&gt;I am flabbergasted that &lt;a href=&#34;http://blog.simplejustice.us/&#34; target=&#34;_blank&#34;&gt;Scott Greenfield&lt;/a&gt; and &lt;a href=&#34;https://statmodeling.stat.columbia.edu/&#34; target=&#34;_blank&#34;&gt;Andrew Gelman&lt;/a&gt; find time to write insightful posts every day, and sometimes more than one post per day. Scott usually writes two posts per day, including weekends, on top of his parenting, which is on top of his day job.&lt;/p&gt;
+
+&lt;p&gt;One of the expected outcomes is that I&amp;rsquo;ll become better with Markdown. I&amp;rsquo;m seeing things like &lt;a href=&#34;https://github.com/StackExchange/pagedown&#34; target=&#34;_blank&#34;&gt;pagedown&lt;/a&gt; coming into play, and it seems like writing in Markdown might soon take over writing in LaTeX. A good introduction on generating almost anything from Markdown can be found in Jake Zimmerman&amp;rsquo;s &lt;a href=&#34;https://blog.jez.io/reach-for-markdown/&#34; target=&#34;_blank&#34;&gt;post&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Upgrading blogdown and Hugo Academic</title>
@@ -65,11 +84,31 @@ one needs to set an option &lt;code&gt;options(blogdown.new_bundle=TRUE)&lt;/cod
       <guid>/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</guid>
       <description>
 
-&lt;p&gt;My father passed away a few years ago. I don&amp;rsquo;t even remember exactly when. I think it was in 2013 or 2014. We were not close when he died, and I don&amp;rsquo;t remember we ever being close. To my memory, he was mostly away since I was around 7, and he left home when I was 13. Not having a father made a lot of things harder in my life, which I imagine made me more capable in some respects.&lt;/p&gt;
+&lt;p&gt;My father passed away a few years ago. I don&amp;rsquo;t even remember exactly when. I think it was in 2013 or 2014. We were not close when he died, and I don&amp;rsquo;t remember ever being close. To my memory, he was mostly away since I was around 7, and he left home for good when I was 13. Not having a father made a lot of things harder in my life, which I imagine made me more capable in some respects.&lt;/p&gt;
 
-&lt;h2 id=&#34;my-original-case-for-a-two-parent-household&#34;&gt;My original case for a two-parent household&lt;/h2&gt;
+&lt;!-- ## My original case for a two-parent household
 
-&lt;p&gt;Well, it&amp;rsquo;s not necessarily a case for a &lt;em&gt;father&lt;/em&gt;, but more a case for a household with two parents, no matter their genders. When I was a teenager, the only opinion I had was my mom&amp;rsquo;s, right or wrong. Not having another parent in the house made it more expensive for me to validate my mother&amp;rsquo;s opinions. One example was when I wanted to leave a low-income, dead-end job for another job. My mom was of the opinion that &amp;ldquo;job longevity&amp;rdquo; and loyalty were very valuable traits - that one shouldn&amp;rsquo;t leave a job after a short period of time. My questionings didn&amp;rsquo;t go very far. In that case I ended up not folowing my mother&amp;rsquo;s opinion and changed jobs. I&amp;rsquo;m sure the change had a positive impact in my career, but I was terrified.&lt;/p&gt;
+Well, it&#39;s not necessarily a case for a *father*, but more a case for a household with two parents, no matter their genders. When I was a teenager, the only opinion I had was my mom&#39;s, right or wrong. Not having another parent in the house made it more expensive for me to validate my mother&#39;s opinions. One example was when I wanted to leave a low-income, dead-end job for another job. My mom was of the opinion that &#34;job longevity&#34; and loyalty were very valuable traits - that one shouldn&#39;t leave a job after a short period of time. My questionings didn&#39;t go very far. In that case I ended up not folowing my mother&#39;s opinion and changed jobs. I&#39;m sure the change had a positive impact in my career, but I was terrified. 
+
+--&gt;
+
+&lt;h2 id=&#34;what-i-remember-about-my-father&#34;&gt;What I remember about my father&lt;/h2&gt;
+
+&lt;p&gt;There are a few things I remember about my father.&lt;/p&gt;
+
+&lt;p&gt;1) I remember that once he carried me from his bed to my bed. I was about 6 and I was amazed that somebody could carry me. I don&amp;rsquo;t remember being carried by anyone else after that. I think about this when I carry my kids.&lt;/p&gt;
+
+&lt;p&gt;2) I remember when he was supposed to give me breakfast (a task that always belonged to my mother) and that he wasn&amp;rsquo;t much into it. I remember complaining about the way he was slicing the bread (and smushing it) and that it made him upset. To this day, I am careful when I&amp;rsquo;m slicing bread for my kids.&lt;/p&gt;
+
+&lt;p&gt;3) I remember that once he gave me a videogame for Christmas that was not what I wanted. He gave me the Intellivision game &lt;a href=&#34;https://en.wikipedia.org/wiki/Snafu_(video_game)&#34; target=&#34;_blank&#34;&gt;Snafu&lt;/a&gt;, I don&amp;rsquo;t remember exactly what I wanted. He was again very upset. Thinking back, I should probably have disguised my disappointment better, but I was 7. I remember that I liked the game after playing it and profusely apologized, but he didn&amp;rsquo;t accept my apologies.&lt;/p&gt;
+
+&lt;h2 id=&#34;being-a-good-detective-is-not-always-great&#34;&gt;Being a good detective is not always great&lt;/h2&gt;
+
+&lt;p&gt;My father was a philanderer. I also remember that he would go out very frequently and leave me with my mother, so I didn&amp;rsquo;t see him very much. At some point, he got really attached to another woman (he would end up marrying her later) who had really dark, long hair. He must have told my mother that the relationship had ended, and a few months later, he traveled to a fishing trip with his friends. When he came back, I remember finding a long black hair when helping him unpack my suitcase. My mother and him had a huge fight about it. I was about 12 and didn&amp;rsquo;t immediately understand what that hair was such a big deal.&lt;/p&gt;
+
+&lt;h2 id=&#34;i-still-do-things-differently&#34;&gt;I still do things differently&lt;/h2&gt;
+
+&lt;p&gt;I make many decisions in which the main goal is simply to be different from my father. I don&amp;rsquo;t eat his favorite foods, for example. I&amp;rsquo;m careful when slicing bread for my kids, and I carry them around more than most dads. But I still can&amp;rsquo;t control &amp;ldquo;being a good detective&amp;rdquo;. Sometimes, when I find something that I shouldn&amp;rsquo;t reveal, I still can&amp;rsquo;t control myself. Hopefully, my kids will feel differently about me when the time comes. I&amp;rsquo;m working hard on it.&lt;/p&gt;
 </description>
     </item>
     
@@ -276,16 +315,6 @@ As of this writing (2018-08-23), both Azure Functions v2 and the python worker a
 &lt;p&gt;True to the famous Box aphorism that &amp;ldquo;all models are wrong but some are useful&amp;rdquo;, Conway&amp;rsquo;s Venn is not perfect. In my experience, one of the things that I usually miss is &amp;ldquo;intensity&amp;rdquo;. Someone that knows how to write a &amp;ldquo;Hello World!&amp;rdquo;, knows how to take averages, and know how to calculate compound interest has knowledge in all three areas of the Venn diagram, but is probably not the ideal person to lead a data science project in Finance. Conway&amp;rsquo;s is best used to tell you what&amp;rsquo;s missing for career development, for a team, for a project, but it will not solve all problems.&lt;/p&gt;
 
 &lt;p&gt;It will, however, solve many problems that matter, and will provide useful information very elegantly. You can&amp;rsquo;t ask much more from a model.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Privacy Policy</title>
-      <link>/privacy/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 -0400</pubDate>
-      
-      <guid>/privacy/</guid>
-      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
