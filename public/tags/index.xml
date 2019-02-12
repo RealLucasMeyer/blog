@@ -42,7 +42,7 @@
     <item>
       <title>Data Science</title>
       <link>/tags/data-science/</link>
-      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/data-science/</guid>
       <description></description>
@@ -96,7 +96,7 @@
     <item>
       <title>Florida</title>
       <link>/tags/florida/</link>
-      <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/florida/</guid>
       <description></description>
@@ -202,6 +202,15 @@
     </item>
     
     <item>
+      <title>Seattle</title>
+      <link>/tags/seattle/</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/seattle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Travel</title>
       <link>/tags/travel/</link>
       <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
@@ -216,6 +225,15 @@
       <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/uncertainty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Workplace</title>
+      <link>/tags/workplace/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/workplace/</guid>
       <description></description>
     </item>
     

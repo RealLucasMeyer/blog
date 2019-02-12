@@ -7,8 +7,142 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
-    <lastBuildDate>Sun, 10 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Feb 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The day somebody &#34;stole&#34; my work</title>
+      <link>/post/2019-02-12-the-day-somebody-stole-my-work/the-day-somebody-stole-my-work/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-12-the-day-somebody-stole-my-work/the-day-somebody-stole-my-work/</guid>
+      <description>
+
+&lt;p&gt;Part of the work of data science is to create machines that people can use to solve problems. Sometimes these machines can be re-used for other problems with little need for reconfiguration. Sometimes the people reusing one of the machines a data scientist creates will do so without letting the data scientist know until there&amp;rsquo;s a problem.&lt;/p&gt;
+
+&lt;p&gt;To protect the innocent, some details of the stories below have been changed.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-chatbot&#34;&gt;The chatbot&lt;/h2&gt;
+
+&lt;p&gt;Years ago, I wrote a chatbot to automate some really mundane question-answering for my team. Although it was not something extremely high-tech, it was the exact right tool for the job. Most chatbots I&amp;rsquo;ve seen are &amp;ldquo;Rube Goldberg machines&amp;rdquo;, like the &amp;ldquo;Self Operating Napkin&amp;rdquo; below. My chatbot really cut down on mundane manual work, and therefore was really successful.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/a/a9/Rube_Goldberg%27s_%22Self-Operating_Napkin%22_%28cropped%29.gif&#34; alt=&#34;Rube Goldberg Self-Operating Napkin&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Because of its success, my chatbot got a lot of use and it started to be shown to customers as an example of our usage of technology. &amp;ldquo;Some guy in some place&amp;rdquo;, let&amp;rsquo;s call him G, became a specialist in demonstrating the chatbot I wrote, and he would do so very well.&lt;/p&gt;
+
+&lt;p&gt;After a while, somebody had a question about my chatbot in an internal distribution list. The question went like &amp;ldquo;Can that chatbot do X?&amp;rdquo;. I answered that &amp;ldquo;No, it can&amp;rsquo;t do that - that was something that I had thought about but ended up never implementing it&amp;rdquo;. In a monumental display of corporate civility, someone replied over me saying: &amp;ldquo;You should ask G, as he is the creator of that chatbot&amp;rdquo;. I actually declined to further the discussion, and to my knowledge everybody on that thread still thinks that G is the creator of the chatbot.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;chatbot.png&#34; alt=&#34;chatbot&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That made me realize that G was not putting a lot of effort in attributing my work.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-recommendation-system&#34;&gt;The recommendation system&lt;/h2&gt;
+
+&lt;p&gt;At some point I wrote a recommendation system to solve a specific problem, let&amp;rsquo;s call it the &amp;ldquo;X Recommender&amp;rdquo;. It was not particularly well written but it did the job: it recommended X with a decent precision. However, by the time I was done, the client (let&amp;rsquo;s call them C) that needed that problem solved was moved out. I made a note to improve on that system at some point and stashed it.&lt;/p&gt;
+
+&lt;p&gt;A few years later, someone wanted to be mentored by me, and they happened to be a specialist in X. So we started building models around X, and at some point we revived the &amp;ldquo;X Recommender&amp;rdquo; to make it better.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;rec.png&#34; alt=&#34;Recommendation System&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At this point, people from C came back asking for an &amp;ldquo;X Recommender&amp;rdquo;, and they also wanted to learn how to build one. I told them how to build one, step-by-step. They did not succeed in building it for production, but built it enough for a presentation and scheduled time for us to work together to make it ready for production.&lt;/p&gt;
+
+&lt;p&gt;Meanwhile, I presented the very old &amp;ldquo;X recommender&amp;rdquo; to a group. A member of the group saw the similarities and asked me why I was taking credit for the work that C had done.&lt;/p&gt;
+
+&lt;p&gt;That made me realize that C was not putting a lot of effort in attributing my work.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-consequences-of-not-having-the-work-attributed&#34;&gt;The consequences of not having the work attributed&lt;/h2&gt;
+
+&lt;p&gt;It&amp;rsquo;s not like I&amp;rsquo;m not &lt;a href=&#34;https://treasurytoday.com/adam-smith-awards-yearbook/adam-smith-awards-yearbook-2017&#34; target=&#34;_blank&#34;&gt;recognized&lt;/a&gt; for my work, quite the opposite. I think the downside is more &amp;ldquo;societal&amp;rdquo;, or &amp;ldquo;corporate-wide&amp;rdquo;. In some sense, this is like a &lt;a href=&#34;https://en.wikipedia.org/wiki/Signalling_(economics)&#34; target=&#34;_blank&#34;&gt;signalling problem&lt;/a&gt; in which a non-expert in a particular work product signals that they&amp;rsquo;re an expert. If the signal is misinterpreted, problems that the expert could solve may end up being directed to the non-expert, and that may result in solvable problems not being solved.&lt;/p&gt;
+
+&lt;p&gt;There are upsides, however. One upside is that a lot of trivial problems and issues gets filtered from the expert and solved by the non-expert instead. Another upside is that the non-expert will likely get better over time, if only to maintain the façade. Presumably the gain in skills from the non-expert will be faster than for the expert, so overall the skills for the company overall will increase.&lt;/p&gt;
+
+&lt;h2 id=&#34;i-actually-don-t-have-an-answer&#34;&gt;I actually don&amp;rsquo;t have an answer&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;m not sure how to make this better. I have received feedback that I don&amp;rsquo;t &amp;ldquo;sell&amp;rdquo; my work enough, but it&amp;rsquo;s a complicated equation&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;math.gif&#34; alt=&#34;Complicated math&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The problem is that selling the work takes time, and that will sometimes result in less time to do high-quality data science work. It may also result in wider than optimal adoption, which will require extra support, also detracting to high-quality data science work. Perhaps it pays better, but higher-quality also generally pays better than lower-quality, so it&amp;rsquo;s not that simple.&lt;/p&gt;
+
+&lt;p&gt;Of course, I wish my work was such high-quality that this was the real problem. The likely explanation is that I rather work with models than sell them.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Where should we live</title>
+      <link>/post/2019-02-11-where-should-we-live/where-should-we-live/</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-11-where-should-we-live/where-should-we-live/</guid>
+      <description>
+
+&lt;p&gt;Because of my background, language skills and technical skills, I have the choice of living in a lot of different places.
+Two places stand out: South Florida and the Seattle area. Choosing between them has been a struggle for as long as I can remember
+and I have moved back and forth more times that it&amp;rsquo;s reasonable, and traveled back and forth more than most people could
+imagine.&lt;/p&gt;
+
+&lt;p&gt;It is still a struggle for my family at this point.&lt;/p&gt;
+
+&lt;h2 id=&#34;florida&#34;&gt;Florida&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;parkland-heron-bay.jpg&#34; alt=&#34;Parkland, FL&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Although there are several disadvantages, you should try living in Florida at some point in your life to see if it is for you.&lt;/p&gt;
+
+&lt;h3 id=&#34;advantages&#34;&gt;Advantages&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The weather is nice for most of the year (but it really sucks for 4-5 months)&lt;/li&gt;
+&lt;li&gt;There&amp;rsquo;s a lot to see: Orlando parks, Florida keys, Miami, Clearwater, Everglades&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Lots of restaurants that you don&amp;rsquo;t see in other places: Cuban, Lebanese&lt;/li&gt;
+&lt;li&gt;Brazilian supermarket, &lt;a href=&#34;https://coralspringstalk.com/eat-like-a-sheikh-at-sahara-mediterranean-market-in-coral-springs-19713&#34; target=&#34;_blank&#34;&gt;Lebanese supermarket&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;One quick hop from Fort Lauderdale or Miami to Brazil, and mostly to anywhere&lt;/li&gt;
+&lt;li&gt;People-intensive services (gardening, baby-sitting) are relatively cheap&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;disadvantages&#34;&gt;Disadvantages&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Car insurance, hurricane insurance, flood insurance and property tax are atrocious&lt;/li&gt;
+&lt;li&gt;Politicians &lt;a href=&#34;https://www.miamiherald.com/news/local/community/broward/article224080655.html&#34; target=&#34;_blank&#34;&gt;are&lt;/a&gt; &lt;a href=&#34;https://www.sun-sentinel.com/opinion/editorials/fl-op-edit-broward-superintendent-robert-runcie-20181229-story.html&#34; target=&#34;_blank&#34;&gt;worse&lt;/a&gt;
+than other places, and that&amp;rsquo;s saying &lt;a href=&#34;https://nypost.com/2019/02/11/northam-i-overreacted-in-initial-apology-for-racist-photos/&#34; target=&#34;_blank&#34;&gt;something&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The Parkland shooting resulted in a lot of bad changes in the school district:
+
+&lt;ul&gt;
+&lt;li&gt;Can&amp;rsquo;t have lunch with kids anymore&lt;/li&gt;
+&lt;li&gt;Lots of police at school, so there&amp;rsquo;s more people to &lt;a href=&#34;https://www.sun-sentinel.com/local/broward/parkland/florida-school-shooting/fl-ne-peterson-pollack-civil-hearing-20181211-story.html&#34; target=&#34;_blank&#34;&gt;do nothing and retire with a pension&lt;/a&gt; in case of trouble&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Job market sucks: almost all of my colleagues that were &lt;a href=&#34;https://www.seattletimes.com/business/microsoft/microsoft-starts-layoffs-with-reportedly-thousands-of-job-cuts/&#34; target=&#34;_blank&#34;&gt;laid off&lt;/a&gt; in Florida had to move to other states&lt;/li&gt;
+&lt;li&gt;Not many high-ranked public universities, not a lot of jobs after graduation&lt;/li&gt;
+&lt;li&gt;Hurricanes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;seattle&#34;&gt;Seattle&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;seattle.png&#34; alt=&#34;Seattle&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;advantages-1&#34;&gt;Advantages&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If you work in tech, there are a lot of jobs&lt;/li&gt;
+&lt;li&gt;The headquarters for the company I wortk for is there&lt;/li&gt;
+&lt;li&gt;The University of Washington is a powerhouse, and there are plenty of jobs after graduating&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;disadvantages-1&#34;&gt;Disadvantages&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Did you see the &lt;a href=&#34;https://wolfstreet.com/2019/01/08/housing-bubble-trouble-in-the-seattle-bellevue-metro/&#34; target=&#34;_blank&#34;&gt;house prices&lt;/a&gt; lately?&lt;/li&gt;
+&lt;li&gt;The weather sucks for most of the year&lt;/li&gt;
+&lt;li&gt;Kinda far away from everywhere&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;so-what-are-we-going-to-do&#34;&gt;So what are we going to do?&lt;/h2&gt;
+
+&lt;p&gt;We&amp;rsquo;re still thinking very hard about it, and we don&amp;rsquo;t know. We are also considering Boston (good jobs, sucky winter), and maybe something more
+adventurous like going to Europe or Asia for a short period.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>When should you be writing</title>
@@ -603,77 +737,6 @@ D:\home\site\tools\python.exe -m pip install python-twitter
 &lt;li&gt;4 presentations in local meetups&lt;/li&gt;
 &lt;li&gt;2 external conference presentations&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Lenovo P51 - the Data Scientist&#39;s laptop</title>
-      <link>/post/2017-11-17-lenovo-p51-the-data-scientist-laptop/lenovo-p51-the-data-scientist-laptop/</link>
-      <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2017-11-17-lenovo-p51-the-data-scientist-laptop/lenovo-p51-the-data-scientist-laptop/</guid>
-      <description>&lt;p&gt;Recently, as part of a computer refresh, I have moved from a Microsoft Surface Pro 3 to a Lenovo P51.
-The Microsoft Surface Pro 3 was the right computer for me at the time I
-got it, but as time went by my position changed substantially, and it ceased to be appropriate for me.&lt;/p&gt;
-
-&lt;p&gt;When I got the Surface, the core of my work consisted in traveling, having conference calls and
-light emailing and spreadsheet work. As time went by, my work went back to creating analytics,
-creating presentations about analytics, and traveling. There is where the screen of the Surface
-becomes a liability at 12 inches. I wanted something bigger.&lt;/p&gt;
-
-&lt;p&gt;And boy, is the P51 bigger. It has a 15-inch screen and a power brick that alone is twice as heavy
-as the Surface Pro. It&amp;rsquo;s big enough to have a keyboard that comes with a numeric keypad. Since I still
-have to travel a lot, I chose the P51 over the beefier 17-inch P71. The P71 won&amp;rsquo;t even fit in my
-somewhat large Osprey backpack. The P51 barely fits.&lt;/p&gt;
-
-&lt;p&gt;Due to some standardization constraints, my P51 is the 1920x1080 version with touch screen. It has
-32 Gb of RAM and a 500 Gb SSD. It has the i7 7820HQ running at 2.9 GHz and a Quadro M2200 GPU. If I
-had the option, I&amp;rsquo;d choose the 4K screen and the Xeon processor, but I did not have that option.&lt;/p&gt;
-
-&lt;p&gt;The battery life is surprisingly good. For the kind of things that I do in planes (writing blog posts,
-editing presentations, light programming), the battery seems to last well over 8h without Wi-Fi and about 7h
-with Wi-Fi. I have yet to run out of battery in a flight. I have read that the earlier version
-of the P51, the P50, would trip the circuit breaker of a plane if you tried to plug it in. I have not
-attempted to plug in the P51 yet.&lt;/p&gt;
-
-&lt;p&gt;The P51 is usable in the Premium Economy seats and, of course, in business and first class seats,
-but I have the impression that it would not fit well in the economy class of carriers that have
-a very small distance between seats (like American Airlines domestic flights), especially if the
-person in front of you reclines their seat. It works well in exit seats.&lt;/p&gt;
-
-&lt;p&gt;One gripe I had about the Surface Pro 3 was that I always had to travel with a USB hub, a mouse, and
-a couple mini-DisplayPort adapters. The P51 comes with a mechanical keyboard, the beloved TrackPoint,
-a good TouchPad, 4 USB ports, a Thunderbolt 3 port, an Ethernet port, an HDMI port, and, to my surprise,
-a mini-DisplayPort, so I get to keep all the adapters I had for the Surface.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve also considered the P51-S. The slimmer version trades off some power (it goes from quad-core to
-dual-core) for a thinner, lighter frame. I think the P51-S would also have been a solid choice, but I
-think it would force me to do most of my work from a workstation and/or a server that I&amp;rsquo;d need to
-remote into frequently, adding to the stress of versioning and synchronizing. Somewhat
-counter-intuitively, I chose the heavier computer &lt;em&gt;because&lt;/em&gt; I travel a lot, as it has enough power
-for me to do the vast majority of my work on it and use a server or workstation just for the real
-hardcore stuff.&lt;/p&gt;
-
-&lt;p&gt;In summary, the Lenovo P51 is a great computer for the traveling data scientist. It&amp;rsquo;s powerful enough
-to be used as your primary machine. For me, it&amp;rsquo;s near the top limit of a computer that is comfortable
-to travel with, but still &lt;em&gt;within&lt;/em&gt; that limit. I got used to it in no time and completely gave up my
-desktop workstation.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The three types of gifts in Buddhism</title>
-      <link>/post/2018-02-20-the-three-types-of-gifts-in-buddhism/the-three-types-of-gifts-in-buddhism/</link>
-      <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2018-02-20-the-three-types-of-gifts-in-buddhism/the-three-types-of-gifts-in-buddhism/</guid>
-      <description>&lt;p&gt;From &amp;ldquo;For a future to be possible&amp;rdquo;, by Thich Nhat Hanh:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;In Buddhism, there are three kinds of gifts. The first is the gift of material resources. The second is to help people rely on themselves, to offer them the technology and know-how to stand on their own feet. (&amp;hellip;)&lt;/p&gt;
-
-&lt;p&gt;The third is the gift of non-fear. We are afraid of many things. We feel insecure, afraid of being alone, afraid of sickness and dying. To help people not be destroyed by their fears, we practice the third kind of gift-giving.&lt;/p&gt;
-&lt;/blockquote&gt;
 </description>
     </item>
     

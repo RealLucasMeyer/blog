@@ -7,10 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
-    <lastBuildDate>Sun, 10 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The day somebody &#34;stole&#34; my work</title>
+      <link>/post/2019-02-12-the-day-somebody-stole-my-work/the-day-somebody-stole-my-work/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-12-the-day-somebody-stole-my-work/the-day-somebody-stole-my-work/</guid>
+      <description>Part of the work of data science is to create machines that people can use to solve problems. Sometimes these machines can be re-used for other problems with little need for reconfiguration. Sometimes the people reusing one of the machines a data scientist creates will do so without letting the data scientist know until there&amp;rsquo;s a problem.
+To protect the innocent, some details of the stories below have been changed.</description>
+    </item>
+    
+    <item>
+      <title>Where should we live</title>
+      <link>/post/2019-02-11-where-should-we-live/where-should-we-live/</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-11-where-should-we-live/where-should-we-live/</guid>
+      <description>Because of my background, language skills and technical skills, I have the choice of living in a lot of different places. Two places stand out: South Florida and the Seattle area. Choosing between them has been a struggle for as long as I can remember and I have moved back and forth more times that it&amp;rsquo;s reasonable, and traveled back and forth more than most people could imagine.
+It is still a struggle for my family at this point.</description>
+    </item>
     
     <item>
       <title>When should you be writing</title>
