@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
-    <lastBuildDate>Tue, 12 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/data-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why you should blog if you are a data scientist</title>
+      <link>/post/2019-02-13-why-you-should-blog-if-you-are-a-data-scientist/why-you-should-blog-if-you-are-a-data-scientist/</link>
+      <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-13-why-you-should-blog-if-you-are-a-data-scientist/why-you-should-blog-if-you-are-a-data-scientist/</guid>
+      <description>A while back, David Robinson offered the following advice on Twitter:
+When you’ve written the same code 3 times, write a function
+When you’ve given the same in-person advice 3 times, write a blog post
+&amp;mdash; David Robinson (@drob) November 9, 2017  He also followed it up with an excellent blog post aimed at aspiring data scientists. I think that the most important idea from that post is actually from a presentation he gave.</description>
+    </item>
     
     <item>
       <title>The day somebody &#34;stole&#34; my work</title>

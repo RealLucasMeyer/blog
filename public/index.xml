@@ -7,8 +7,58 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
-    <lastBuildDate>Tue, 12 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 Feb 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Why you should blog if you are a data scientist</title>
+      <link>/post/2019-02-13-why-you-should-blog-if-you-are-a-data-scientist/why-you-should-blog-if-you-are-a-data-scientist/</link>
+      <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-13-why-you-should-blog-if-you-are-a-data-scientist/why-you-should-blog-if-you-are-a-data-scientist/</guid>
+      <description>
+
+&lt;p&gt;A while back, David Robinson offered the following advice on Twitter:&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;When you’ve written the same code 3 times, write a function&lt;br&gt;&lt;br&gt;When you’ve given the same in-person advice 3 times, write a blog post&lt;/p&gt;&amp;mdash; David Robinson (@drob) &lt;a href=&#34;https://twitter.com/drob/status/928447584712253440?ref_src=twsrc%5Etfw&#34;&gt;November 9, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;He also followed it up with an &lt;a href=&#34;http://varianceexplained.org/r/start-blog/&#34; target=&#34;_blank&#34;&gt;excellent blog post&lt;/a&gt; aimed at aspiring data scientists. I think that the most important idea from that post is actually from a presentation he gave. Here&amp;rsquo;s the key idea, as reported by Amelia McNamara:&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&amp;quot;Things that are still on your computer are approximately useless.&amp;quot; -&lt;a href=&#34;https://twitter.com/drob?ref_src=twsrc%5Etfw&#34;&gt;@drob&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/eUSR?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#eUSR&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/eUSR2017?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#eUSR2017&lt;/a&gt; &lt;a href=&#34;https://t.co/nS3IBiRHBn&#34;&gt;pic.twitter.com/nS3IBiRHBn&lt;/a&gt;&lt;/p&gt;&amp;mdash; Amelia McNamara (@AmeliaMN) &lt;a href=&#34;https://twitter.com/AmeliaMN/status/926509282874585089?ref_src=twsrc%5Etfw&#34;&gt;November 3, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;In summary, things that you keep to yourself have very little value, and things that you share with the world have a lot of value. I think that&amp;rsquo;s a very cool idea for the Economics of information. For an extreme case, imagine you have a trade secret that allows you to solve a specific class of problems faster than others. In this case, it&amp;rsquo;s understandable that you want to keep the trade secret to yourself. But it make sense to advertise to the world that you can quickly solve some kinds problems faster than others. That makes your trade secret more valuable.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-discipline-of-writing-about-what-you-re-doing&#34;&gt;The discipline of writing about what you&amp;rsquo;re doing&lt;/h2&gt;
+
+&lt;p&gt;When I was a wee little kid and had just entered college, one of my first classes was &amp;ldquo;Physics Lab&amp;rdquo;, and the first class of that was to measure &amp;ldquo;gravity&amp;rdquo;, more specifically, the gravitational acceleration . Of course, mathy Computer Science studies that we were, we all knew that the gravitational acceleration would be $ g \approx 9.8 m/s^2 $.&lt;/p&gt;
+
+&lt;p&gt;Measuring it, however, it&amp;rsquo;s not very easy. First, remember that this is in the early 90s in Brazil, so digital cameras were very rare. Part of the problem is that 9.8 meters (approximately 30 feet) is quite high, so if we wanted our experiment to take around 1s, we would need a big ladder. Or, as it happened, we&amp;rsquo;d need to run an experiment that took less than a second for each run. In a class with 25 students, that was the preferred route.&lt;/p&gt;
+
+&lt;p&gt;We set up a vertical track attached to a device that would spark every &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;60&lt;/sub&gt; of a second, and we attached grid paper to the track. This is called a &lt;a href=&#34;https://cse.wwu.edu/physics/acceleration-due-gravity-behr-free-fall-apparatus-and-spark-timer&#34; target=&#34;_blank&#34;&gt;Behr free fall apparatus&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cse.wwu.edu/system/files/styles/large/private/Behr%20Free%20Fall%20Apparatus.JPG?itok=2ZjngUyN&#34; alt=&#34;Behr Free Fall Apparatus&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We would release the device from the top of the track, and the sparks would mark the grid paper. We would then manually measure the distances between the sparks and the differences between the distances would tell us the acceleration. In theory. Again, remember this is the early 90s, so there&amp;rsquo;s no Windows 95 or Excel easily available, there were several steps that were prone to error.&lt;/p&gt;
+
+&lt;p&gt;The desired outcome was not only to calculate the acceleration due to gravity, but also to generate a lab report.&lt;/p&gt;
+
+&lt;h2 id=&#34;writing-the-lab-report&#34;&gt;Writing the lab report&lt;/h2&gt;
+
+&lt;p&gt;It was a simple experiment, but there was a twist. Another class of 25 students would have to replicate the experiment following the lab report from the first 25. Oh boy. We quickly found out that the best lab reports were the ones in which the experimenter would document the experiment &lt;em&gt;as they were executing&lt;/em&gt; the experiment. Another thing that worked was going through the experiment more than once. What &lt;strong&gt;did not work&lt;/strong&gt; was to perform the experiment and then go to where the computers were to type up a report from memory.&lt;/p&gt;
+
+&lt;p&gt;I thought that was very insightful, shortly afterwards, we would learn about Donald Knuth&amp;rsquo;s proposed paradigm of &lt;a href=&#34;https://en.wikipedia.org/wiki/Literate_programming&#34; target=&#34;_blank&#34;&gt;literate programming&lt;/a&gt;, which lives on in Jupyter Notebooks and R Markdown and that is very popular in data science today. Behind it is the same concept of explanations interspersed with technical work to produce something that is reproducible and easy to understand.&lt;/p&gt;
+
+&lt;h2 id=&#34;blogging-helps-you-train-to-write-about-your-work&#34;&gt;Blogging helps you train to write about your work&lt;/h2&gt;
+
+&lt;p&gt;Besides the excellent reasons offered by David Robinson for aspiring data scientists to blog, I think experienced data scientists can also benefit from blogging. David argues that aspiring data scientists should blog for technical practice, to build a portfolio, and to get feedback. Experienced data scientists might benefit for similar reasons, but not exactly the same.&lt;/p&gt;
+
+&lt;p&gt;Similar to &amp;ldquo;practicing&amp;rdquo;, blogging about technical topics helps you learn how to communicate better about them, and also helps you learn how to write better research reports. Similar to &amp;ldquo;portfolio&amp;rdquo;, it signals a data scientist&amp;rsquo;s body of work. For an early-in-career data scientist, it may be more showing that you can do analysis, but for an experienced data scientist is more about what type of analysis you like to do. Finally, I think that &amp;ldquo;feedback&amp;rdquo; also works differently for early-in-career and experienced data scientists. I&amp;rsquo;m not sure random strangers in the internet will sweep in and correct your posts, but you can find out what people are reading and sharing. You may be surprised when you learn what parts of your work people find interesting.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>The day somebody &#34;stole&#34; my work</title>
@@ -659,84 +709,6 @@ D:\home\site\tools\python.exe -m pip install python-twitter
 &lt;/ul&gt;
 
 &lt;p&gt;Serverless computing is extremely convenient: although there are limitations on what the free tier can do, they&amp;rsquo;re not too restrictive.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A reflection on FY18 and FY19 plans</title>
-      <link>/post/2018-05-28-a-reflection-on-fy18-and-fy19-plans/a-reflection-on-fy18-and-fy19-plans/</link>
-      <pubDate>Mon, 28 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2018-05-28-a-reflection-on-fy18-and-fy19-plans/a-reflection-on-fy18-and-fy19-plans/</guid>
-      <description>
-
-&lt;h1 id=&#34;reflecting-on-fy18-and-planning-for-fy19&#34;&gt;Reflecting on FY18 and planning for FY19&lt;/h1&gt;
-
-&lt;p&gt;I have worked at Microsoft for long enough that it&amp;rsquo;s easier for me to make plans in tandem with the Microsoft fiscal calendar. It runs from July to June, so we&amp;rsquo;re very close to the end of FY18 and starting FY19.&lt;/p&gt;
-
-&lt;h2 id=&#34;fy18-recap&#34;&gt;FY18 Recap&lt;/h2&gt;
-
-&lt;p&gt;Looking back, FY18 was a year of recovery, as was FY17. We&amp;rsquo;ve had our share of health-related scares at my home, and we&amp;rsquo;re still working through some of those. However, on the positive side, it finally feels like I have some time to think (and have hope) about the future.&lt;/p&gt;
-
-&lt;p&gt;I also got a promotion right at the start of FY18, mostly because of my chatbot.&lt;/p&gt;
-
-&lt;h3 id=&#34;chatbots&#34;&gt;Chatbots&lt;/h3&gt;
-
-&lt;p&gt;In July 2018, the very beginning of FY18, a chatbot I wrote in FY17 won the &lt;a href=&#34;http://treasurytoday.com/adamsmith/2017/winners/jc-winner-microsoft&#34; target=&#34;_blank&#34;&gt;Adam Smith Judge&amp;rsquo;s Choice Award&lt;/a&gt;. That&amp;rsquo;s not me in the picture, by the way If I were to advertise this chatbot, I&amp;rsquo;d say its main feature is how fast it was created. It was written in about a week. Its main business feature is that it saves time by putting together information that took a few queries (and more than a few minutes) to combine. Although the chatbot could be replaced by a well-done report, it&amp;rsquo;s easier to train user to use a chatbot (the chatbot itself helps) than to use a report. This chatbot later became a platform for additional use cases.&lt;/p&gt;
-
-&lt;p&gt;This chatbot was the inspiration, and in some cases, the initial source code, for several other chatbots, including another one that won the Adam Smith award in 2018. One of the coolest features of this new chatbot is that it will ask the old chatbot when it doesn&amp;rsquo;t know the answer to a question.&lt;/p&gt;
-
-&lt;h3 id=&#34;forecasting&#34;&gt;Forecasting&lt;/h3&gt;
-
-&lt;p&gt;In another short project, I&amp;rsquo;ve created a time series forecasting platform that is used by several groups. Although it does not use super-recent time series forecasting algorithms and has quite a few restrictions on the data it can handle, it is general enough to solve a wide range of problems that we commonly face, so it was adopted by several groups.&lt;/p&gt;
-
-&lt;h3 id=&#34;data&#34;&gt;Data&lt;/h3&gt;
-
-&lt;p&gt;In large companies, data can always be combined in smarter and more useful ways. In FY18 we combined such data for two large opportunities: one to help streamline sales, and another one for data mastering. Both were widely adopted.&lt;/p&gt;
-
-&lt;h3 id=&#34;ai-school-advanced-projects&#34;&gt;AI School Advanced Projects&lt;/h3&gt;
-
-&lt;p&gt;In April of 2018, one of my project proposals was accepted to the AI-611 Advanced Projects course, an internal course that selects top engineers and teaches them advanced concepts in machine learning, mostly related to deep learning. The project was completed in less than two months and was recently put in production.&lt;/p&gt;
-
-&lt;h3 id=&#34;conferences&#34;&gt;Conferences&lt;/h3&gt;
-
-&lt;p&gt;With all the healthcare uncertainty, I had been out of conferences for a while. The last one I had presented was an internal conference in FY16. It&amp;rsquo;s time for a change, so I&amp;rsquo;m presenting in Baden-Baden in June 2018.&lt;/p&gt;
-
-&lt;p&gt;On the positive side, I&amp;rsquo;ve attended the &lt;a href=&#34;https://datascience.salon/miami11-18/&#34; target=&#34;_blank&#34;&gt;Data Science Salon&lt;/a&gt; in Miami, and it was way better than I expected it to be.&lt;/p&gt;
-
-&lt;h2 id=&#34;fy19-plans&#34;&gt;FY19 Plans&lt;/h2&gt;
-
-&lt;h3 id=&#34;data-science-officially&#34;&gt;Data Science, officially&lt;/h3&gt;
-
-&lt;p&gt;For many years, I&amp;rsquo;ve been (perhaos incorrectly) proud of not being in the Data Science track at Microsoft. I was able to keep my career as &amp;ldquo;Finance&amp;rdquo;. Apparently this will change in FY19, and perhaps it&amp;rsquo;s for the better. One consequence is that I&amp;rsquo;ll be expected to publish some articles and present more in conferences.&lt;/p&gt;
-
-&lt;h3 id=&#34;move&#34;&gt;Move?&lt;/h3&gt;
-
-&lt;p&gt;There are advantages and disadvantages of being in a place that is a work in progress for Data Science, like Florida currently is. One of the advantages is that I can help shape how Data Science in Florida will be, and I can know many of the people in Florida that do Data Science. One disadvantage is that there&amp;rsquo;s not that many people to talk to. Florida is also very spread out, so it&amp;rsquo;s not uncommon that when something happens, it will be 90 minutes away and of uncertain quality.&lt;/p&gt;
-
-&lt;p&gt;Another disadvantage of Florida is that where we live (Broward County) doesn&amp;rsquo;t seem to be an ideal place for K-12, and we are worried about the effect on the kids.&lt;/p&gt;
-
-&lt;p&gt;Perhaps there&amp;rsquo;s a place with better K-12 and more Data Science in our future. Seattle would make sense, given it&amp;rsquo;s where Microsoft is, but it&amp;rsquo;s expensive enough to give us pause.&lt;/p&gt;
-
-&lt;h3 id=&#34;call-for-papers&#34;&gt;Call for Papers&lt;/h3&gt;
-
-&lt;p&gt;As part of my likely move to a Data Science career profile, I&amp;rsquo;ll need to write papers and submit talks to conferences. Today I&amp;rsquo;ve created my &lt;a href=&#34;http://easychair.org&#34; target=&#34;_blank&#34;&gt;EasyChair&lt;/a&gt; account, but I was not fast enough to realize that most of 2018 is already gone. I&amp;rsquo;m likely going to need to create several proposals so I can have some acceptances in early 2019.&lt;/p&gt;
-
-&lt;p&gt;So far the ideas are:
-    * The (super-cheap) Twitter Art Bot
-    * Chatbots that talk to each other
-    * Something about our deep learning project fro AI-611
-    * Something about time-series forecasting&lt;/p&gt;
-
-&lt;h3 id=&#34;finally-a-few-challenges-for-fy19&#34;&gt;Finally, a few challenges for FY19&lt;/h3&gt;
-
-&lt;p&gt;Creativity is like breathing. You got to breath out, and you got to breath in. It may be time to breath out again, This coming fiscal year, I hope to have:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;24 blog posts, that is, at least two per month&lt;/li&gt;
-&lt;li&gt;4 presentations in local meetups&lt;/li&gt;
-&lt;li&gt;2 external conference presentations&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
