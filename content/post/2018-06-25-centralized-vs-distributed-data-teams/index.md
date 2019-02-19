@@ -23,7 +23,7 @@ I was happy to find that Jonathan Nolis has the same opinion as I do: that a dat
 
 For me, a key part of the argument to distribute data scientists in client areas relies on Drew Conway's (ancient) [Data Science Venn diagram](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram).
 
-![Data Science Venn Diagram](https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=750w)
+![Data Science Venn Diagram](data-science-venn.png)
 
 Assigning data scientists to a client area will help build the "Substantive Expertise" part of the diagram. A common trap here is "Well, we can do the same if we keep the data scientists centralized and give them specializations that match the client areas." 
 
@@ -33,7 +33,7 @@ Although I think that _can_ work, I worry about what happens when data scientist
 
 In my observations (low sample size), the client areas usually have a better sense of ROI^[In Finance circles, we use NPV, but the idea is the same] - if they invest resources on something, they expect returns. On the other hand, most centralized data science teams I've seen have two problems: data scientists hired without a clear purpose and an incentive to overengineering: a current example is to use Deep Learning where a regression would do.
 
-![Overengineering](https://cdn-images-1.medium.com/max/2000/1*YfxWi5QZkShNHS0XLuKlMQ.png)
+![Overengineering](overengineered.png)
 
 It may be simply that client areas are more mature and battle worn than centralized data science groups, at least in my experience. I think that if a data scientist is assigned to a client area and there's downtime, they'll put the data scientist to work in business intelligence or decision analysis. On the other hand, if the data scientist is assigned to a centralized data science group, they'll be pulled into a project away from their "client area specialization" or will find a way to work in something novel that's cool (as of 2018, autoencoders, GANs or something with "Bayesian" in its name). 
 
