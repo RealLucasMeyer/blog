@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
-    <lastBuildDate>Wed, 13 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/data-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MSFT vs FANG</title>
+      <link>/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</link>
+      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</guid>
+      <description>This is not investment advice. It’s just me trying out R Markdown and talking about how to look at graphs.
+  Should you invest your money in Microsoft stock or in FANG (Facebook, Amazon, Netflix, Google/Alphabet) stocks? FANG stocks have been popularized by Jim Cramer, the colorful host of Mad Money. It has been found that following the portfolio suggested by Jim Cramer underperforms the market.
+My point here, however, is not to talk about the underperformance itself, but to show how it’s possible to be misled by time-series graphs.</description>
+    </item>
     
     <item>
       <title>Why you should blog if you are a data scientist</title>

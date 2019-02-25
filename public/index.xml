@@ -7,8 +7,96 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
-    <lastBuildDate>Wed, 20 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Feb 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MSFT vs FANG</title>
+      <link>/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</link>
+      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</guid>
+      <description>
+
+
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;This is not investment advice. It’s just me trying out R Markdown and talking about how to look at graphs.&lt;/p&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Should you invest your money in Microsoft stock or in FANG (Facebook, Amazon, Netflix, Google/Alphabet) stocks? FANG stocks have been popularized by Jim Cramer, the colorful host of Mad Money. It has been found that following the portfolio suggested by Jim Cramer &lt;a href=&#34;https://www.marketwatch.com/story/jim-cramer-doesnt-beat-the-market-2016-05-13&#34;&gt;underperforms the market&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My point here, however, is not to talk about the underperformance itself, but to show how it’s possible to be misled by time-series graphs.&lt;/p&gt;
+&lt;div id=&#34;getting-the-fang-and-msft-stock-returns-over-time&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Getting the FANG and MSFT stock returns over time&lt;/h2&gt;
+&lt;p&gt;To easily obtain a time-series for stock returns, we’re going to use the &lt;code&gt;quantmod&lt;/code&gt; package.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(quantmod)
+set.seed(42)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After loading the package, we can get the time series. We’re going to make a basket of the FANG stocks composed of 25% of each of its components. This will form one of the time series. The other time series will be simply the Microsoft stocks.&lt;/p&gt;
+&lt;p&gt;To make things simpler, we’re going to be looking just at the prices, ignoring dividends except for their effect on prices. This rigs the game against Microsoft, which has relatively high dividends. An investor in Microsoft would get the dividends in addition to the price returns. The FANG stocks don’t have dividends. You should not ignore dividends when choosing investments, but ignoring them for this analysis doesn’t affect the point I’m making: time-series graphs can be misleading when they depend a lot on their starting point.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;series_start = &amp;quot;2015-01-01&amp;quot;
+series_end = &amp;quot;2019-02-22&amp;quot;
+
+# Get Prices
+msft &amp;lt;- getSymbols(&amp;quot;MSFT&amp;quot;, auto.assign = FALSE, from=series_start, to=series_end)
+fb   &amp;lt;- getSymbols(&amp;quot;FB&amp;quot;,   auto.assign = FALSE, from=series_start, to=series_end)
+amzn &amp;lt;- getSymbols(&amp;quot;AMZN&amp;quot;, auto.assign = FALSE, from=series_start, to=series_end)
+nflx &amp;lt;- getSymbols(&amp;quot;NFLX&amp;quot;, auto.assign = FALSE, from=series_start, to=series_end)
+goog &amp;lt;- getSymbols(&amp;quot;GOOG&amp;quot;, auto.assign = FALSE, from=series_start, to=series_end)
+aapl &amp;lt;- getSymbols(&amp;quot;AAPL&amp;quot;, auto.assign = FALSE, from=series_start, to=series_end)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In Finance, we use “total returns” to calculate cumulative returns. This is easily obtained by adding 1 to a series of returns. The &lt;code&gt;quantmod&lt;/code&gt; package makes it easy to calculate returns from prices with the &lt;code&gt;dailyReturn&lt;/code&gt; function. Note that for our FANG portfolio we first need to compose the portfolio with 25% of each stock before we add 1 to calculate the total returns, otherwise we’d be adding &lt;span class=&#34;math inline&#34;&gt;\(1+1+1+1=4\)&lt;/span&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Convert MSFT prices to returns and add 1 to obtain total returns
+msft_ret &amp;lt;- 1 + dailyReturn(msft)
+
+# FANG portfolio with 25% of each stock, also converted to total returns
+fb_ret   &amp;lt;- dailyReturn(fb)
+amzn_ret &amp;lt;- dailyReturn(amzn)
+nflx_ret &amp;lt;- dailyReturn(nflx)
+goog_ret &amp;lt;- dailyReturn(goog)
+fang_ret &amp;lt;- 1 + (0.25 * fb_ret + 0.25 * amzn_ret + 
+                 0.25 * nflx_ret + 0.25 * goog_ret) &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that we have returns, a typical graph is Finance is “return on an investment of USD 1,000 starting in a given date”. To calculate such returns, we start with USD 1,000 and then compound its returns using R’s &lt;code&gt;cumprod&lt;/code&gt; function. If you have a vector of returns, &lt;code&gt;cumprod&lt;/code&gt; will return the cumulative vector of returns. For example, the cumulative product of vector (&lt;span class=&#34;math inline&#34;&gt;\(1.0\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1.1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1.2\)&lt;/span&gt;) will be (&lt;span class=&#34;math inline&#34;&gt;\(1.0\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1.0 \times 1.1 = 1.1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1.1 \times 1.2 = 1.32\)&lt;/span&gt;) = (&lt;span class=&#34;math inline&#34;&gt;\(1.0\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1.1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1.32\)&lt;/span&gt;).&lt;/p&gt;
+&lt;p&gt;I’ll plot such a graph below where I’ll follow the usual practice of starting a few years in the past. In my case, I’m starting the graph on January 2nd, 2015, and you’ll see that if you had invested USD 1,000 in FANG stocks on &lt;em&gt;exactly that date&lt;/em&gt; you’d have approximately USD 4,000 while if you had made a similar investment in Microsoft stock, you would have approximately USD 2,400.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;inv_amt = 1000
+
+# Cumulative Returns
+msft_cumulative_ret &amp;lt;- xts(inv_amt*cumprod(msft_ret))
+fang_cumulative_ret &amp;lt;- xts(inv_amt*cumprod(fang_ret))
+
+# Combine series for graph
+combined_series = xts(merge(msft_cumulative_ret, fang_cumulative_ret))
+colnames(combined_series) &amp;lt;- c(&amp;quot;MSFT&amp;quot;, &amp;quot;FANG&amp;quot;)
+
+# Plot time-series graph 
+#(plot will call plot.xts because combined_series is a xts object)
+plot(combined_series, col=c(&amp;quot;blue&amp;quot;,&amp;quot;red&amp;quot;), legend.loc=&amp;quot;topleft&amp;quot;, 
+     main=&amp;quot;MSFT vs. FANG&amp;quot;, auto.legend=TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-02-23-microsoft-vs-fang/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;So it seems to be settled, the return of the FANG stocks is obviously a lot better than the return on the MSFT stock, right? Well, it turns out that a lot of the return is determined by the investment date, in this case, Jan 2nd of 2015.&lt;/p&gt;
+&lt;p&gt;My problem with the graphical representation above is that it only has two relevant dates: the original investment date and today. All the dates in the middle don’t mean much, although perhaps you could get an idea of the volatility of the investment by looking at them.&lt;/p&gt;
+&lt;p&gt;So what &lt;strong&gt;do&lt;/strong&gt; I like? My preferred way of looking into such graphs is to reverse the time-series and &lt;em&gt;then&lt;/em&gt; calculate the cumulative returns. I then reverse it again, so that time is back to its natural order. This makes the x-axis provide a lot more information. Now the graph shows how much you would have if you had invested $1000 at each of the dates in the x-axis, which is a lot more information than you had before.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Calculate the returns backwards, to find out 
+# how much I&amp;#39;d have today if I invested $1000
+# at each point of the x-axis
+msft_cumulative_ret_reverse &amp;lt;- xts(rev(inv_amt*cumprod(rev(msft_ret))))
+fang_cumulative_ret_reverse &amp;lt;- xts(rev(inv_amt*cumprod(rev(fang_ret))))
+
+# Combine and plot returns
+combined_series_reversed = xts(merge(msft_cumulative_ret_reverse,
+                                     fang_cumulative_ret_reverse))
+colnames(combined_series_reversed) &amp;lt;- c(&amp;quot;MSFT&amp;quot;, &amp;quot;FANG&amp;quot;)
+plot(combined_series_reversed, col=c(&amp;quot;blue&amp;quot;,&amp;quot;red&amp;quot;), legend.loc=&amp;quot;topleft&amp;quot;, 
+     main=&amp;quot;MSFT vs. FANG (reversed)&amp;quot;, auto.legend=TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-02-23-microsoft-vs-fang/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;What I think that is a lot more interesting is that now it’s clear that it has been a while since FANG was a lot better than MSFT. In order to get a significantly better result with FANG stocks, one has to have invested a long time ago: before July. Since then, MSFT and FANG have been mostly equivalent, with FANGs having a better run in 2016 and 2017 and Microsoft having a substantial better run than the FANG stocks for most of 2018. This is made obvious in the second graph, but it’s really unclear in the first.&lt;/p&gt;
+&lt;p&gt;Sadly, none of these provides what you would &lt;em&gt;really&lt;/em&gt; want to know: which is the best investment from now on. That is, however, something that is unknown. The Danish said it best:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“It is difficult to prophesy, particularly about the future”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Forecasts for 2019</title>
@@ -664,33 +752,6 @@ As of this writing (2018-08-23), both Azure Functions v2 and the python worker a
 &lt;li id=&#34;fn:In-Finance-circl&#34;&gt;In Finance circles, we use NPV, but the idea is the same &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:In-Finance-circl&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Frankfurt - Spring 2018</title>
-      <link>/post/2018-06-09-frankfurt-spring-2018/frankfurt-spring-2018/</link>
-      <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2018-06-09-frankfurt-spring-2018/frankfurt-spring-2018/</guid>
-      <description>
-
-&lt;p&gt;I gave two short talks for the 10th Arvato Financial Services Telekommunikationsforum in Baden-Baden. The way ticket prices worked out, it was US$ 1000 cheaper to return on Sunday than it was to return on Saturday, so I was able to spend a full day in Frankfurt.&lt;/p&gt;
-
-&lt;p&gt;I hope to come back.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/img/frankfurt.jpeg&#34; alt=&#34;Frankfurt&#34; /&gt;
-&lt;img src=&#34;/img/frankfurt-euro.jpeg&#34; alt=&#34;Euro&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;a-great-base-for-european-adventures&#34;&gt;A great base for European adventures&lt;/h2&gt;
-
-&lt;p&gt;One of the things I liked the most about Frankfurt was how integrated the transportation system was. I landed at the Frankfurt airport, where I could stay at pretty good and reasonably priced hotels (Hilton, Hilton Garden Inn and Sheraton), had a supermarket and restaurants, and could take trains and planes to anywhere else in Europe.&lt;/p&gt;
-
-&lt;p&gt;I stayed at the Hilton, which had the unexpected advantage of having a lot of British and American channels available on the TV and the truly appreciated advantage of having a good air-conditioning system.&lt;/p&gt;
-
-&lt;h2 id=&#34;frankfurt-itself&#34;&gt;Frankfurt Itself&lt;/h2&gt;
-
-&lt;p&gt;Frankfurt itself was touristic enough for me: the city center has plenty of attractions. Several museums, a Zoo, &amp;ldquo;The Cathedral&amp;rdquo;, and all those great restaurants that you expect to exist in the center of a city in Europe. Saturday had street vendors all over downtown. I could have done a better job of planning what to do, but spending a day in the city center was plenty of fun, so I just took a train from the Airport to downtown and spent the day there enjoying the museums, the downtown and the restaurants.&lt;/p&gt;
 </description>
     </item>
     

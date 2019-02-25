@@ -1,5 +1,5 @@
 ---
-title: MSFT vs FANG, an example of being misled by time-series graphs
+title: MSFT vs FANG
 author: Lucas A. Meyer
 date: '2019-02-25'
 slug: microsoft-vs-fang
@@ -11,9 +11,6 @@ tags:
   - Finance
   - Data Science
   - R
-image:
-  caption: ''
-  focal_point: ''
 ---
 
 {{% alert warning %}}
