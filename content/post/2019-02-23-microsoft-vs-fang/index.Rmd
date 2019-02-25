@@ -1,16 +1,16 @@
 ---
-title: MSFT vs FANG
-author: Lucas A. Meyer
+title: "MSFT vs FANG"
+author: "Lucas A. Meyer"
 date: '2019-02-23'
 slug: microsoft-vs-fang
-categories:
-  - Finance
-  - Data Science
-  - R
 tags:
-  - Finance
-  - Data Science
-  - R
+- Finance
+- Data Science
+- R
+categories:
+- Finance
+- Data Science
+- R
 ---
 
 {{% alert warning %}}

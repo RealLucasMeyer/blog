@@ -26,15 +26,15 @@
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Should you invest your money in Microsoft stock or in FANG (Facebook, Amazon, Netflix, Google/Alphabet) stocks? FANG stocks have been popularized by Jim Cramer, the colorful host of Mad Money. It has been found that following the portfolio suggested by Jim Cramer &lt;a href=&#34;https://www.marketwatch.com/story/jim-cramer-doesnt-beat-the-market-2016-05-13&#34;&gt;underperforms the market&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Should you invest your money in Microsoft stock or in FANG stocks (Facebook, Amazon, Netflix, Google/Alphabet)? FANG stocks have been popularized by Jim Cramer, the colorful host of Mad Money. Interestingly, it has been found that following Jim Cramer suggestions &lt;a href=&#34;https://www.marketwatch.com/story/jim-cramer-doesnt-beat-the-market-2016-05-13&#34;&gt;underperforms the market&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;My point here, however, is not to talk about the underperformance itself, but to show how it’s possible to be misled by time-series graphs.&lt;/p&gt;
 &lt;div id=&#34;getting-the-fang-and-msft-stock-returns-over-time&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Getting the FANG and MSFT stock returns over time&lt;/h2&gt;
 &lt;p&gt;To easily obtain a time-series for stock returns, we’re going to use the &lt;code&gt;quantmod&lt;/code&gt; package.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(quantmod)
 set.seed(42)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;After loading the package, we can get the time series. We’re going to make a basket of the FANG stocks composed of 25% of each of its components. This will form one of the time series. The other time series will be simply the Microsoft stocks.&lt;/p&gt;
-&lt;p&gt;To make things simpler, we’re going to be looking just at the prices, ignoring dividends except for their effect on prices. This rigs the game against Microsoft, which has relatively high dividends. An investor in Microsoft would get the dividends in addition to the price returns. The FANG stocks don’t have dividends. You should not ignore dividends when choosing investments, but ignoring them for this analysis doesn’t affect the point I’m making: time-series graphs can be misleading when they depend a lot on their starting point.&lt;/p&gt;
+&lt;p&gt;We’re going to use &lt;code&gt;quantmod&lt;/code&gt;’s &lt;code&gt;getSymbols&lt;/code&gt; to create a portfolio of the FANG stocks with equal weights (25%) for each of its components.&lt;/p&gt;
+&lt;p&gt;To make things simpler, we’re going to be looking just at the prices, ignoring dividends. This rigs the game against Microsoft, which has relatively high dividends, while FANG stocks don’t have dividends. You should not ignore dividends when choosing investments, but ignoring them for this analysis will not affect the point I’m making: time-series graphs can be misleading when they depend a lot on their starting point.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;series_start = &amp;quot;2015-01-01&amp;quot;
 series_end = &amp;quot;2019-02-22&amp;quot;
 
@@ -89,7 +89,7 @@ colnames(combined_series_reversed) &amp;lt;- c(&amp;quot;MSFT&amp;quot;, &amp;qu
 plot(combined_series_reversed, col=c(&amp;quot;blue&amp;quot;,&amp;quot;red&amp;quot;), legend.loc=&amp;quot;topleft&amp;quot;, 
      main=&amp;quot;MSFT vs. FANG (reversed)&amp;quot;, auto.legend=TRUE)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2019-02-23-microsoft-vs-fang/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;What I think that is a lot more interesting is that now it’s clear that it has been a while since FANG was a lot better than MSFT. In order to get a significantly better result with FANG stocks, one has to have invested a long time ago: before July. Since then, MSFT and FANG have been mostly equivalent, with FANGs having a better run in 2016 and 2017 and Microsoft having a substantial better run than the FANG stocks for most of 2018. This is made obvious in the second graph, but it’s really unclear in the first.&lt;/p&gt;
+&lt;p&gt;What I think that is a lot more interesting is that now it’s clear that it has been a while since FANG was a lot better than MSFT. In order to get a significantly better result with FANG stocks, one has to have invested a long time ago: before January of 2017. Since then, MSFT and FANG have been mostly equivalent, with Microsoft having a substantial better run than the FANG stocks for most of 2018. This is made obvious in the second graph, but it’s really unclear in the first.&lt;/p&gt;
 &lt;p&gt;Sadly, none of these provides what you would &lt;em&gt;really&lt;/em&gt; want to know: which is the best investment from now on. That is, however, something that is unknown. The Danish said it best:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;“It is difficult to prophesy, particularly about the future”&lt;/p&gt;
