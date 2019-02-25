@@ -1,0 +1,115 @@
+---
+title: MSFT vs FANG, an example of being misled by time-series graphs
+author: Lucas A. Meyer
+date: '2019-02-25'
+slug: microsoft-vs-fang
+categories:
+  - Finance
+  - Data Science
+  - R
+tags:
+  - Finance
+  - Data Science
+  - R
+image:
+  caption: ''
+  focal_point: ''
+---
+
+{{% alert warning %}}
+This is not investment advice. It's just me trying out R Markdown and talking about how to look at graphs.
+{{% /alert %}}
+
+Should you invest your money in Microsoft stock or in FANG (Facebook, Amazon, Netflix, Google/Alphabet) stocks? FANG stocks have been popularized by Jim Cramer, the colorful host of Mad Money. It has been found that following the portfolio suggested by Jim Cramer [underperforms the market](https://www.marketwatch.com/story/jim-cramer-doesnt-beat-the-market-2016-05-13).
+
+My point here, however, is not to talk about the underperformance itself, but to show how it's possible to be misled by time-series graphs.
+
+## Getting the FANG and MSFT stock returns over time
+
+To easily obtain a time-series for stock returns, we're going to use the `quantmod` package.
+
+```{r message=FALSE, warning=FALSE}
+library(quantmod)
+set.seed(42)
+```
+
+After loading the package, we can get the time series. We're going to make a basket of the FANG stocks composed of 25% of each of its components. This will form one of the time series. The other time series will be simply the Microsoft stocks. 
+
+To make things simpler, we're going to be looking just at the prices, ignoring dividends except for their effect on prices. This rigs the game against Microsoft, which has relatively high dividends. An investor in Microsoft would get the dividends in addition to the price returns. The FANG stocks don't have dividends. You should not ignore dividends when choosing investments, but ignoring them for this analysis doesn't affect the point I'm making: time-series graphs can be misleading when they depend a lot on their starting point.
+
+
+```{r message=FALSE, warning=FALSE}
+
+series_start = "2015-01-01"
+series_end = "2019-02-22"
+
+# Get Prices
+msft <- getSymbols("MSFT", auto.assign = FALSE, from=series_start, to=series_end)
+fb   <- getSymbols("FB",   auto.assign = FALSE, from=series_start, to=series_end)
+amzn <- getSymbols("AMZN", auto.assign = FALSE, from=series_start, to=series_end)
+nflx <- getSymbols("NFLX", auto.assign = FALSE, from=series_start, to=series_end)
+goog <- getSymbols("GOOG", auto.assign = FALSE, from=series_start, to=series_end)
+aapl <- getSymbols("AAPL", auto.assign = FALSE, from=series_start, to=series_end)
+
+```
+
+In Finance, we use "total returns" to calculate cumulative returns. This is easily obtained by adding 1 to a series of returns. The `quantmod` package makes it easy to calculate returns from prices with the `dailyReturn` function. Note that for our FANG portfolio we first need to compose the portfolio with 25% of each stock before we add 1 to calculate the total returns, otherwise we'd be adding $1+1+1+1=4$
+
+```{r}
+# Convert MSFT prices to returns and add 1 to obtain total returns
+msft_ret <- 1 + dailyReturn(msft)
+
+# FANG portfolio with 25% of each stock, also converted to total returns
+fb_ret   <- dailyReturn(fb)
+amzn_ret <- dailyReturn(amzn)
+nflx_ret <- dailyReturn(nflx)
+goog_ret <- dailyReturn(goog)
+fang_ret <- 1 + (0.25 * fb_ret + 0.25 * amzn_ret + 0.25 * nflx_ret + 0.25 * goog_ret) 
+
+```
+
+Now that we have returns, a typical graph is Finance is "return on an investment of \$1000 starting in a given date". To calculate such returns, we start with \$1000 and then compound its returns using R's `cumprod` function. If you have a vector of returns, `cumprod` will return the cumulative vector of returns. For example, the cumulative product of vector ($1.0$, $1.1$, $1.2$) will be ($1.0$, $1.0 \times 1.1 = 1.1$, $1.1 \times 1.2 = 1.32$) = ($1.0$, $1.1$, $1.32$).
+
+I'll plot such a graph below where I'll follow the usual practice of starting a few years in the past. In my case, I'm starting the graph on January 2nd, 2015, and you'll see that if you had invested \$1000 in FANG stocks on *exactly that date* you'd have approximately \$4000, while if you had made a similar investment in Microsoft stock, you would have approximately\$2400.
+
+```{r}
+inv_amt = 1000
+
+# Cumulative Returns
+msft_cumulative_ret <- xts(inv_amt*cumprod(msft_ret))
+fang_cumulative_ret <- xts(inv_amt*cumprod(fang_ret))
+
+# Combine series for graph
+combined_series = xts(merge(msft_cumulative_ret, fang_cumulative_ret))
+colnames(combined_series) <- c("MSFT", "FANG")
+
+# Plot time-series graph (plot will call plot.xts because combined_series is a xts object)
+plot(combined_series, col=c("blue","red"), legend.loc="topleft", main="MSFT vs. FANG", auto.legend=TRUE)
+
+```
+
+So it seems to be settled, the return of the FANG stocks is obviously a lot better than the return on the MSFT stock, right? Well, it turns out that a lot of the return is determined by the investment date, in this case, Jan 2nd of 2015.
+
+My problem with the graphical representation above is that it only has two relevant dates: the original investment date and today. All the dates in the middle don't mean much, although perhaps you could get an idea of the volatility of the investment by looking at them. 
+
+So what **do** I like? My preferred way of looking into such graphs is to reverse the time-series and *then* calculate the cumulative returns. I then reverse it again, so that time is back to its natural order. This makes the x-axis provide a lot more information. Now the graph shows how much you would have if you had invested \$1000 at each of the dates in the x-axis, which is a lot more information than you had before.
+
+```{r}
+
+# Calculate the returns backwards, to find out how much I'd have today if I invested $1000
+# at each point of the x-axis
+msft_cumulative_ret_reverse <- xts(rev(inv_amt*cumprod(rev(msft_ret))))
+fang_cumulative_ret_reverse <- xts(rev(inv_amt*cumprod(rev(fang_ret))))
+
+# Combine and plot returns
+combined_series_reversed = xts(merge(msft_cumulative_ret_reverse, fang_cumulative_ret_reverse))
+colnames(combined_series_reversed) <- c("MSFT", "FANG")
+plot(combined_series_reversed, col=c("blue","red"), legend.loc="topleft", main="MSFT vs. FANG (reversed)", auto.legend=TRUE)
+
+```
+
+What I think that is a lot more interesting is that now it's clear that it has been a while since FANG was a lot better than MSFT. In order to get a significantly better result with FANG stocks, one has to have invested a long time ago: before July. Since then, MSFT and FANG have been mostly equivalent, with FANGs having a better run in 2016 and 2017 and Microsoft having a substantial better run than the FANG stocks for most of 2018. This is made obvious in the second graph, but it's really unclear in the first.
+
+Sadly, none of these provides what you would *really* want to know: which is the best investment from now on. That is, however, something that is unknown. The Danish said it best: 
+
+> “It is difficult to prophesy, particularly about the future”
