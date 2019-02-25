@@ -1,32 +1,17 @@
----
-title: MSFT vs FANG
-author: Lucas A. Meyer
-date: '2019-02-23'
-slug: microsoft-vs-fang
-categories:
-  - Finance
-  - Data Science
-  - R
-tags:
-  - Finance
-  - Data Science
-  - R
----
-
 
 
 <p>{{% alert warning %}}
 This is not investment advice. It’s just me trying out R Markdown and talking about how to look at graphs.
 {{% /alert %}}</p>
-<p>Should you invest your money in Microsoft stock or in FANG (Facebook, Amazon, Netflix, Google/Alphabet) stocks? FANG stocks have been popularized by Jim Cramer, the colorful host of Mad Money. It has been found that following the portfolio suggested by Jim Cramer <a href="https://www.marketwatch.com/story/jim-cramer-doesnt-beat-the-market-2016-05-13">underperforms the market</a>.</p>
+<p>Should you invest your money in Microsoft stock or in FANG stocks (Facebook, Amazon, Netflix, Google/Alphabet)? FANG stocks have been popularized by Jim Cramer, the colorful host of Mad Money. Interestingly, it has been found that following Jim Cramer suggestions <a href="https://www.marketwatch.com/story/jim-cramer-doesnt-beat-the-market-2016-05-13">underperforms the market</a>.</p>
 <p>My point here, however, is not to talk about the underperformance itself, but to show how it’s possible to be misled by time-series graphs.</p>
 <div id="getting-the-fang-and-msft-stock-returns-over-time" class="section level2">
 <h2>Getting the FANG and MSFT stock returns over time</h2>
 <p>To easily obtain a time-series for stock returns, we’re going to use the <code>quantmod</code> package.</p>
 <pre class="r"><code>library(quantmod)
 set.seed(42)</code></pre>
-<p>After loading the package, we can get the time series. We’re going to make a basket of the FANG stocks composed of 25% of each of its components. This will form one of the time series. The other time series will be simply the Microsoft stocks.</p>
-<p>To make things simpler, we’re going to be looking just at the prices, ignoring dividends except for their effect on prices. This rigs the game against Microsoft, which has relatively high dividends. An investor in Microsoft would get the dividends in addition to the price returns. The FANG stocks don’t have dividends. You should not ignore dividends when choosing investments, but ignoring them for this analysis doesn’t affect the point I’m making: time-series graphs can be misleading when they depend a lot on their starting point.</p>
+<p>We’re going to use <code>quantmod</code>’s <code>getSymbols</code> to create a portfolio of the FANG stocks with equal weights (25%) for each of its components.</p>
+<p>To make things simpler, we’re going to be looking just at the prices, ignoring dividends. This rigs the game against Microsoft, which has relatively high dividends, while FANG stocks don’t have dividends. You should not ignore dividends when choosing investments, but ignoring them for this analysis will not affect the point I’m making: time-series graphs can be misleading when they depend a lot on their starting point.</p>
 <pre class="r"><code>series_start = &quot;2015-01-01&quot;
 series_end = &quot;2019-02-22&quot;
 
@@ -64,7 +49,7 @@ colnames(combined_series) &lt;- c(&quot;MSFT&quot;, &quot;FANG&quot;)
 #(plot will call plot.xts because combined_series is a xts object)
 plot(combined_series, col=c(&quot;blue&quot;,&quot;red&quot;), legend.loc=&quot;topleft&quot;, 
      main=&quot;MSFT vs. FANG&quot;, auto.legend=TRUE)</code></pre>
-<p><img src="/post/2019-02-23-microsoft-vs-fang/index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>So it seems to be settled, the return of the FANG stocks is obviously a lot better than the return on the MSFT stock, right? Well, it turns out that a lot of the return is determined by the investment date, in this case, Jan 2nd of 2015.</p>
 <p>My problem with the graphical representation above is that it only has two relevant dates: the original investment date and today. All the dates in the middle don’t mean much, although perhaps you could get an idea of the volatility of the investment by looking at them.</p>
 <p>So what <strong>do</strong> I like? My preferred way of looking into such graphs is to reverse the time-series and <em>then</em> calculate the cumulative returns. I then reverse it again, so that time is back to its natural order. This makes the x-axis provide a lot more information. Now the graph shows how much you would have if you had invested $1000 at each of the dates in the x-axis, which is a lot more information than you had before.</p>
@@ -80,8 +65,8 @@ combined_series_reversed = xts(merge(msft_cumulative_ret_reverse,
 colnames(combined_series_reversed) &lt;- c(&quot;MSFT&quot;, &quot;FANG&quot;)
 plot(combined_series_reversed, col=c(&quot;blue&quot;,&quot;red&quot;), legend.loc=&quot;topleft&quot;, 
      main=&quot;MSFT vs. FANG (reversed)&quot;, auto.legend=TRUE)</code></pre>
-<p><img src="/post/2019-02-23-microsoft-vs-fang/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>What I think that is a lot more interesting is that now it’s clear that it has been a while since FANG was a lot better than MSFT. In order to get a significantly better result with FANG stocks, one has to have invested a long time ago: before July. Since then, MSFT and FANG have been mostly equivalent, with FANGs having a better run in 2016 and 2017 and Microsoft having a substantial better run than the FANG stocks for most of 2018. This is made obvious in the second graph, but it’s really unclear in the first.</p>
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>What I think that is a lot more interesting is that now it’s clear that it has been a while since FANG was a lot better than MSFT. In order to get a significantly better result with FANG stocks, one has to have invested a long time ago: before January of 2017. Since then, MSFT and FANG have been mostly equivalent, with Microsoft having a substantial better run than the FANG stocks for most of 2018. This is made obvious in the second graph, but it’s really unclear in the first.</p>
 <p>Sadly, none of these provides what you would <em>really</em> want to know: which is the best investment from now on. That is, however, something that is unknown. The Danish said it best:</p>
 <blockquote>
 <p>“It is difficult to prophesy, particularly about the future”</p>
