@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
-    <lastBuildDate>Mon, 25 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>MSFT vs FANG</title>
       <link>/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</link>
-      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 23 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</guid>
       <description>This is not investment advice. It’s just me trying out R Markdown and talking about how to look at graphs.
