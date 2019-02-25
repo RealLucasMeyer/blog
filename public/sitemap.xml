@@ -4,6 +4,14 @@
     
     <url>
     
+      <loc>/post/2019-02-22-forecasts-for-2019/forecasts-for-2019/</loc>
+      <lastmod>2019-02-20T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/post/2019-02-13-why-you-should-blog-if-you-are-a-data-scientist/why-you-should-blog-if-you-are-a-data-scientist/</loc>
       <lastmod>2019-02-13T00:00:00+00:00</lastmod>
     </url>
@@ -189,6 +197,13 @@
     <url>
     
       <loc>/author/admin/</loc>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/2019-02-23-microsoft-vs-fang/</loc>
     </url>
     
   
@@ -382,6 +397,24 @@
     
     <url>
     
+      <loc>/tags/forecasts/</loc>
+      <lastmod>2019-02-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/forecasts/</loc>
+      <lastmod>2019-02-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/game-theory/</loc>
       <lastmod>2019-02-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -464,7 +497,7 @@
     <url>
     
       <loc>/</loc>
-      <lastmod>2019-02-13T00:00:00+00:00</lastmod>
+      <lastmod>2019-02-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -527,7 +560,7 @@
     <url>
     
       <loc>/post/</loc>
-      <lastmod>2019-02-13T00:00:00+00:00</lastmod>
+      <lastmod>2019-02-20T00:00:00+00:00</lastmod>
     </url>
     
   

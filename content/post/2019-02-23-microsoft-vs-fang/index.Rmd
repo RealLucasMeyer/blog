@@ -64,13 +64,14 @@ fb_ret   <- dailyReturn(fb)
 amzn_ret <- dailyReturn(amzn)
 nflx_ret <- dailyReturn(nflx)
 goog_ret <- dailyReturn(goog)
-fang_ret <- 1 + (0.25 * fb_ret + 0.25 * amzn_ret + 0.25 * nflx_ret + 0.25 * goog_ret) 
+fang_ret <- 1 + (0.25 * fb_ret + 0.25 * amzn_ret + 
+                 0.25 * nflx_ret + 0.25 * goog_ret) 
 
 ```
 
-Now that we have returns, a typical graph is Finance is "return on an investment of \$1000 starting in a given date". To calculate such returns, we start with \$1000 and then compound its returns using R's `cumprod` function. If you have a vector of returns, `cumprod` will return the cumulative vector of returns. For example, the cumulative product of vector ($1.0$, $1.1$, $1.2$) will be ($1.0$, $1.0 \times 1.1 = 1.1$, $1.1 \times 1.2 = 1.32$) = ($1.0$, $1.1$, $1.32$).
+Now that we have returns, a typical graph is Finance is "return on an investment of USD 1,000 starting in a given date". To calculate such returns, we start with USD 1,000 and then compound its returns using R's `cumprod` function. If you have a vector of returns, `cumprod` will return the cumulative vector of returns. For example, the cumulative product of vector ($1.0$, $1.1$, $1.2$) will be ($1.0$, $1.0 \times 1.1 = 1.1$, $1.1 \times 1.2 = 1.32$) = ($1.0$, $1.1$, $1.32$).
 
-I'll plot such a graph below where I'll follow the usual practice of starting a few years in the past. In my case, I'm starting the graph on January 2nd, 2015, and you'll see that if you had invested \$1000 in FANG stocks on *exactly that date* you'd have approximately \$4000, while if you had made a similar investment in Microsoft stock, you would have approximately\$2400.
+I'll plot such a graph below where I'll follow the usual practice of starting a few years in the past. In my case, I'm starting the graph on January 2nd, 2015, and you'll see that if you had invested USD 1,000 in FANG stocks on *exactly that date* you'd have approximately USD 4,000 while if you had made a similar investment in Microsoft stock, you would have approximately USD 2,400.
 
 ```{r}
 inv_amt = 1000
@@ -83,8 +84,10 @@ fang_cumulative_ret <- xts(inv_amt*cumprod(fang_ret))
 combined_series = xts(merge(msft_cumulative_ret, fang_cumulative_ret))
 colnames(combined_series) <- c("MSFT", "FANG")
 
-# Plot time-series graph (plot will call plot.xts because combined_series is a xts object)
-plot(combined_series, col=c("blue","red"), legend.loc="topleft", main="MSFT vs. FANG", auto.legend=TRUE)
+# Plot time-series graph 
+#(plot will call plot.xts because combined_series is a xts object)
+plot(combined_series, col=c("blue","red"), legend.loc="topleft", 
+     main="MSFT vs. FANG", auto.legend=TRUE)
 
 ```
 
@@ -96,15 +99,18 @@ So what **do** I like? My preferred way of looking into such graphs is to revers
 
 ```{r}
 
-# Calculate the returns backwards, to find out how much I'd have today if I invested $1000
+# Calculate the returns backwards, to find out 
+# how much I'd have today if I invested $1000
 # at each point of the x-axis
 msft_cumulative_ret_reverse <- xts(rev(inv_amt*cumprod(rev(msft_ret))))
 fang_cumulative_ret_reverse <- xts(rev(inv_amt*cumprod(rev(fang_ret))))
 
 # Combine and plot returns
-combined_series_reversed = xts(merge(msft_cumulative_ret_reverse, fang_cumulative_ret_reverse))
+combined_series_reversed = xts(merge(msft_cumulative_ret_reverse,
+                                     fang_cumulative_ret_reverse))
 colnames(combined_series_reversed) <- c("MSFT", "FANG")
-plot(combined_series_reversed, col=c("blue","red"), legend.loc="topleft", main="MSFT vs. FANG (reversed)", auto.legend=TRUE)
+plot(combined_series_reversed, col=c("blue","red"), legend.loc="topleft", 
+     main="MSFT vs. FANG (reversed)", auto.legend=TRUE)
 
 ```
 
