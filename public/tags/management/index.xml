@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Management on Lucas A. Meyer - Blog</title>
-    <link>https://www.meyerperin.com/tags/management/</link>
+    <link>/tags/management/</link>
     <description>Recent content in Management on Lucas A. Meyer - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
     <lastBuildDate>Sun, 08 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.meyerperin.com/tags/management/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/management/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Praising Conway&#39;s Data Science Venn Diagram</title>
-      <link>https://www.meyerperin.com/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</link>
+      <link>/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.meyerperin.com/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</guid>
+      <guid>/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</guid>
       <description>Drew Conway&amp;rsquo;s Data Science Venn Diagram is perhaps the most well-known description of data science.
 Drew published it more than five years ago. Since then, a ridiculous number of Venn diagrams have been created, one worse than the other.
 Five years later, people still struggle with the definition of Data Science. A recent famous example was Lyft changing the titles of their Data Scientists, Data Analysts and Research Scientists.</description>
@@ -25,10 +25,10 @@ Five years later, people still struggle with the definition of Data Science. A r
     
     <item>
       <title>Centralized vs. Distributed Data Science Teams</title>
-      <link>https://www.meyerperin.com/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</link>
+      <link>/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</link>
       <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.meyerperin.com/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</guid>
+      <guid>/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</guid>
       <description>In a recent DataFramed podcast, Hugo Bowne-Anderson and Jonathan Nolis discuss whether data scientist teams should be centralized or distributed. I have my own opinions about that question.
 Should data science teams be centralized or distributed? I was happy to find that Jonathan Nolis has the same opinion as I do: that a data science team works best when distributed into client areas. In addition, we agree that if you distribute your data science team among several different client areas, you have to find a way of keeping the data scientists feeling as if they&amp;rsquo;re part of a cohesive group.</description>
     </item>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogdown on Lucas A. Meyer - Blog</title>
-    <link>https://www.meyerperin.com/tags/blogdown/</link>
+    <link>/tags/blogdown/</link>
     <description>Recent content in Blogdown on Lucas A. Meyer - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
     <lastBuildDate>Sun, 10 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.meyerperin.com/tags/blogdown/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/blogdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>When should you be writing</title>
-      <link>https://www.meyerperin.com/post/2019-02-10-when-should-you-be-writing/when-should-you-be-writing/</link>
+      <link>/post/2019-02-10-when-should-you-be-writing/when-should-you-be-writing/</link>
       <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.meyerperin.com/post/2019-02-10-when-should-you-be-writing/when-should-you-be-writing/</guid>
+      <guid>/post/2019-02-10-when-should-you-be-writing/when-should-you-be-writing/</guid>
       <description>An old Ph.D. student motto is that you should always be writing. Always.
 For no good reason, I&amp;rsquo;m going to try to blog every day for 100 days. This will of course mean that there will be a lot of posts that are going to be low quality, like this one.
 I am flabbergasted that Scott Greenfield and Andrew Gelman find time to write insightful posts every day, and sometimes more than one post per day.</description>
@@ -25,10 +25,10 @@ I am flabbergasted that Scott Greenfield and Andrew Gelman find time to write in
     
     <item>
       <title>Upgrading blogdown and Hugo Academic</title>
-      <link>https://www.meyerperin.com/post/2019-02-08-will-it-render/will-it-render/</link>
+      <link>/post/2019-02-08-will-it-render/will-it-render/</link>
       <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.meyerperin.com/post/2019-02-08-will-it-render/will-it-render/</guid>
+      <guid>/post/2019-02-08-will-it-render/will-it-render/</guid>
       <description>I&amp;rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions.
 It was not trivial My first attempt was to simply rename the old academic theme in the themes directory and download a new one. However, there are a lot of breaking changes between version 2.4 and version 3.3. One of the main breaking changes is that now you can use page bundles instead of a single page per post.</description>
     </item>

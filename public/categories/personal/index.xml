@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Personal on Lucas A. Meyer - Blog</title>
-    <link>https://www.meyerperin.com/categories/personal/</link>
+    <link>/categories/personal/</link>
     <description>Recent content in Personal on Lucas A. Meyer - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
     <lastBuildDate>Mon, 04 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.meyerperin.com/categories/personal/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/personal/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A story about my father</title>
-      <link>https://www.meyerperin.com/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</link>
+      <link>/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</link>
       <pubDate>Mon, 04 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.meyerperin.com/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</guid>
+      <guid>/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</guid>
       <description>My father passed away a few years ago. I don&amp;rsquo;t even remember exactly when. I think it was in 2013 or 2014. We were not close when he died, and I don&amp;rsquo;t remember ever being close. To my memory, he was mostly away since I was around 7, and he left home for good when I was 13. Not having a father made a lot of things harder in my life, which I imagine made me more capable in some respects.</description>
     </item>
     

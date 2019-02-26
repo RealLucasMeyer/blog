@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Lucas A. Meyer - Blog</title>
-    <link>https://www.meyerperin.com/tags/r/</link>
+    <link>/tags/r/</link>
     <description>Recent content in R on Lucas A. Meyer - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
     <lastBuildDate>Sat, 23 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.meyerperin.com/tags/r/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>MSFT vs FANG</title>
-      <link>https://www.meyerperin.com/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</link>
+      <link>/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</link>
       <pubDate>Sat, 23 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.meyerperin.com/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</guid>
+      <guid>/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</guid>
       <description>This is not investment advice. It’s just me trying out R Markdown and talking about how to look at graphs.
   Should you invest your money in Microsoft stock or in FANG stocks (Facebook, Amazon, Netflix, Google/Alphabet)? FANG stocks have been popularized by Jim Cramer, the colorful host of Mad Money. Interestingly, it has been found that following Jim Cramer suggestions underperforms the market.
 My point here, however, is not to talk about the underperformance itself, but to show how it’s possible to be misled by time-series graphs.</description>
@@ -25,10 +25,10 @@ My point here, however, is not to talk about the underperformance itself, but to
     
     <item>
       <title>Upgrading blogdown and Hugo Academic</title>
-      <link>https://www.meyerperin.com/post/2019-02-08-will-it-render/will-it-render/</link>
+      <link>/post/2019-02-08-will-it-render/will-it-render/</link>
       <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.meyerperin.com/post/2019-02-08-will-it-render/will-it-render/</guid>
+      <guid>/post/2019-02-08-will-it-render/will-it-render/</guid>
       <description>I&amp;rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions.
 It was not trivial My first attempt was to simply rename the old academic theme in the themes directory and download a new one. However, there are a lot of breaking changes between version 2.4 and version 3.3. One of the main breaking changes is that now you can use page bundles instead of a single page per post.</description>
     </item>

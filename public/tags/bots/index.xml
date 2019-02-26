@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bots on Lucas A. Meyer - Blog</title>
-    <link>https://www.meyerperin.com/tags/bots/</link>
+    <link>/tags/bots/</link>
     <description>Recent content in Bots on Lucas A. Meyer - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
     <lastBuildDate>Thu, 23 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.meyerperin.com/tags/bots/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/bots/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Yo, Stroop!</title>
-      <link>https://www.meyerperin.com/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</link>
+      <link>/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</link>
       <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.meyerperin.com/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</guid>
+      <guid>/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</guid>
       <description>YoStroop is a bot that allows members of a slack channel to give rewards to each other, usually as a way of saying &amp;ldquo;thank you&amp;rdquo; for help and valuable contributions. It was developed using Python, Azure Functions v2.0 and Cosmos DB.
 Motivation One of the Data Science Slack channels I&amp;rsquo;m a member of tried several different tools to keep track of the valuable contributions of its members. Some of the tools that we used to to track contributions became quite expensive and we started looking for an alternative.</description>
     </item>
