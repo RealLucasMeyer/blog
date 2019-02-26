@@ -2,238 +2,184 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Lucas A. Meyer - Blog</title>
-    <link>/categories/</link>
+    <link>https://www.meyerperin.com/categories/</link>
     <description>Recent content in Categories on Lucas A. Meyer - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
     <lastBuildDate>Wed, 13 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.meyerperin.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Blog</title>
-      <link>/categories/blog/</link>
+      <link>https://www.meyerperin.com/categories/blog/</link>
       <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/blog/</guid>
+      <guid>https://www.meyerperin.com/categories/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blogdown</title>
-      <link>/categories/blogdown/</link>
+      <link>https://www.meyerperin.com/categories/blogdown/</link>
       <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/blogdown/</guid>
+      <guid>https://www.meyerperin.com/categories/blogdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bots</title>
-      <link>/categories/bots/</link>
+      <link>https://www.meyerperin.com/categories/bots/</link>
       <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/bots/</guid>
+      <guid>https://www.meyerperin.com/categories/bots/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data Science</title>
-      <link>/categories/data-science/</link>
+      <link>https://www.meyerperin.com/categories/data-science/</link>
       <pubDate>Sat, 23 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Economics</title>
-      <link>/categories/economics/</link>
-      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/economics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Experts</title>
-      <link>/categories/experts/</link>
-      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/experts/</guid>
+      <guid>https://www.meyerperin.com/categories/data-science/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Finance</title>
-      <link>/categories/finance/</link>
+      <link>https://www.meyerperin.com/categories/finance/</link>
       <pubDate>Sat, 23 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/finance/</guid>
+      <guid>https://www.meyerperin.com/categories/finance/</guid>
       <description></description>
     </item>
     
     <item>
       <title>First Amendment</title>
-      <link>/categories/first-amendment/</link>
+      <link>https://www.meyerperin.com/categories/first-amendment/</link>
       <pubDate>Tue, 23 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/categories/first-amendment/</guid>
+      <guid>https://www.meyerperin.com/categories/first-amendment/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Florida</title>
-      <link>/categories/florida/</link>
+      <link>https://www.meyerperin.com/categories/florida/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/florida/</guid>
+      <guid>https://www.meyerperin.com/categories/florida/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Forecasts</title>
-      <link>/categories/forecasts/</link>
+      <link>https://www.meyerperin.com/categories/forecasts/</link>
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/forecasts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Game Theory</title>
-      <link>/categories/game-theory/</link>
-      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/game-theory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Graph Theory</title>
-      <link>/categories/graph-theory/</link>
-      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/graph-theory/</guid>
+      <guid>https://www.meyerperin.com/categories/forecasts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Law</title>
-      <link>/categories/law/</link>
+      <link>https://www.meyerperin.com/categories/law/</link>
       <pubDate>Tue, 23 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/categories/law/</guid>
+      <guid>https://www.meyerperin.com/categories/law/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>/categories/linux/</link>
+      <link>https://www.meyerperin.com/categories/linux/</link>
       <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/linux/</guid>
+      <guid>https://www.meyerperin.com/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Management</title>
-      <link>/categories/management/</link>
+      <link>https://www.meyerperin.com/categories/management/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/management/</guid>
+      <guid>https://www.meyerperin.com/categories/management/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Personal</title>
-      <link>/categories/personal/</link>
+      <link>https://www.meyerperin.com/categories/personal/</link>
       <pubDate>Mon, 04 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/personal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Politics</title>
-      <link>/categories/politics/</link>
-      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/politics/</guid>
+      <guid>https://www.meyerperin.com/categories/personal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>/categories/python/</link>
+      <link>https://www.meyerperin.com/categories/python/</link>
       <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/python/</guid>
+      <guid>https://www.meyerperin.com/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>/categories/r/</link>
+      <link>https://www.meyerperin.com/categories/r/</link>
       <pubDate>Sat, 23 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/r/</guid>
+      <guid>https://www.meyerperin.com/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Religion</title>
-      <link>/categories/religion/</link>
+      <link>https://www.meyerperin.com/categories/religion/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/religion/</guid>
+      <guid>https://www.meyerperin.com/categories/religion/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Seattle</title>
-      <link>/categories/seattle/</link>
+      <link>https://www.meyerperin.com/categories/seattle/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/seattle/</guid>
+      <guid>https://www.meyerperin.com/categories/seattle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Travel</title>
-      <link>/categories/travel/</link>
+      <link>https://www.meyerperin.com/categories/travel/</link>
       <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/travel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Uncertainty</title>
-      <link>/categories/uncertainty/</link>
-      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/uncertainty/</guid>
+      <guid>https://www.meyerperin.com/categories/travel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Workplace</title>
-      <link>/categories/workplace/</link>
+      <link>https://www.meyerperin.com/categories/workplace/</link>
       <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/workplace/</guid>
+      <guid>https://www.meyerperin.com/categories/workplace/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blog</title>
-      <link>/categories/blog/</link>
+      <link>https://www.meyerperin.com/categories/blog/</link>
       <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/blog/</guid>
+      <guid>https://www.meyerperin.com/categories/blog/</guid>
       <description></description>
     </item>
     

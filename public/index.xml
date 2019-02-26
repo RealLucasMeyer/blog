@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lucas A. Meyer - Blog on Lucas A. Meyer - Blog</title>
-    <link>/</link>
+    <link>https://www.meyerperin.com/</link>
     <description>Recent content in Lucas A. Meyer - Blog on Lucas A. Meyer - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>MSFT vs FANG</title>
-      <link>/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</link>
+      <link>https://www.meyerperin.com/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</link>
       <pubDate>Sat, 23 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</guid>
+      <guid>https://www.meyerperin.com/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</guid>
       <description>
 
 
@@ -72,7 +72,7 @@ colnames(combined_series) &amp;lt;- c(&amp;quot;MSFT&amp;quot;, &amp;quot;FANG&a
 #(plot will call plot.xts because combined_series is a xts object)
 plot(combined_series, col=c(&amp;quot;blue&amp;quot;,&amp;quot;red&amp;quot;), legend.loc=&amp;quot;topleft&amp;quot;, 
      main=&amp;quot;MSFT vs. FANG&amp;quot;, auto.legend=TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-02-23-microsoft-vs-fang/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.meyerperin.com/post/2019-02-23-microsoft-vs-fang/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;So it seems to be settled, the return of the FANG stocks is obviously a lot better than the return on the MSFT stock, right? Well, it turns out that a lot of the return is determined by the investment date, in this case, Jan 2nd of 2015.&lt;/p&gt;
 &lt;p&gt;My problem with the graphical representation above is that it only has two relevant dates: the original investment date and today. All the dates in the middle don’t mean much, although perhaps you could get an idea of the volatility of the investment by looking at them.&lt;/p&gt;
 &lt;p&gt;So what &lt;strong&gt;do&lt;/strong&gt; I like? My preferred way of looking into such graphs is to reverse the time-series and &lt;em&gt;then&lt;/em&gt; calculate the cumulative returns. I then reverse it again, so that time is back to its natural order. This makes the x-axis provide a lot more information. Now the graph shows how much you would have if you had invested $1000 at each of the dates in the x-axis, which is a lot more information than you had before.&lt;/p&gt;
@@ -88,7 +88,7 @@ combined_series_reversed = xts(merge(msft_cumulative_ret_reverse,
 colnames(combined_series_reversed) &amp;lt;- c(&amp;quot;MSFT&amp;quot;, &amp;quot;FANG&amp;quot;)
 plot(combined_series_reversed, col=c(&amp;quot;blue&amp;quot;,&amp;quot;red&amp;quot;), legend.loc=&amp;quot;topleft&amp;quot;, 
      main=&amp;quot;MSFT vs. FANG (reversed)&amp;quot;, auto.legend=TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-02-23-microsoft-vs-fang/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.meyerperin.com/post/2019-02-23-microsoft-vs-fang/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;What I think that is a lot more interesting is that now it’s clear that it has been a while since FANG was a lot better than MSFT. In order to get a significantly better result with FANG stocks, one has to have invested a long time ago: before January of 2017. Since then, MSFT and FANG have been mostly equivalent, with Microsoft having a substantial better run than the FANG stocks for most of 2018. This is made obvious in the second graph, but it’s really unclear in the first.&lt;/p&gt;
 &lt;p&gt;Sadly, none of these provides what you would &lt;em&gt;really&lt;/em&gt; want to know: which is the best investment from now on. That is, however, something that is unknown. The Danish said it best:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -100,10 +100,10 @@ plot(combined_series_reversed, col=c(&amp;quot;blue&amp;quot;,&amp;quot;red&amp;
     
     <item>
       <title>Forecasts for 2019</title>
-      <link>/post/2019-02-22-forecasts-for-2019/forecasts-for-2019/</link>
+      <link>https://www.meyerperin.com/post/2019-02-22-forecasts-for-2019/forecasts-for-2019/</link>
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019-02-22-forecasts-for-2019/forecasts-for-2019/</guid>
+      <guid>https://www.meyerperin.com/post/2019-02-22-forecasts-for-2019/forecasts-for-2019/</guid>
       <description>
 
 &lt;p&gt;When I was (a lot) younger, one of my favorite things was to read old predictions made by psychics. They were easy to find: in Brazil, most of the magazines in dentist offices and barbershops are quite old, sometimes 2-3 years. So in 1995 it would be easy to walk into a barbershop and find the magazines from 1992 predicting 1993 and so on. As expected, most psychics are really, really bad forecasters.&lt;/p&gt;
@@ -202,10 +202,10 @@ plot(combined_series_reversed, col=c(&amp;quot;blue&amp;quot;,&amp;quot;red&amp;
     
     <item>
       <title>Why you should blog if you are a data scientist</title>
-      <link>/post/2019-02-13-why-you-should-blog-if-you-are-a-data-scientist/why-you-should-blog-if-you-are-a-data-scientist/</link>
+      <link>https://www.meyerperin.com/post/2019-02-13-why-you-should-blog-if-you-are-a-data-scientist/why-you-should-blog-if-you-are-a-data-scientist/</link>
       <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019-02-13-why-you-should-blog-if-you-are-a-data-scientist/why-you-should-blog-if-you-are-a-data-scientist/</guid>
+      <guid>https://www.meyerperin.com/post/2019-02-13-why-you-should-blog-if-you-are-a-data-scientist/why-you-should-blog-if-you-are-a-data-scientist/</guid>
       <description>
 
 &lt;p&gt;A while back, David Robinson offered the following advice on Twitter:&lt;/p&gt;
@@ -252,10 +252,10 @@ plot(combined_series_reversed, col=c(&amp;quot;blue&amp;quot;,&amp;quot;red&amp;
     
     <item>
       <title>The day somebody &#34;stole&#34; my work</title>
-      <link>/post/2019-02-12-the-day-somebody-stole-my-work/the-day-somebody-stole-my-work/</link>
+      <link>https://www.meyerperin.com/post/2019-02-12-the-day-somebody-stole-my-work/the-day-somebody-stole-my-work/</link>
       <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019-02-12-the-day-somebody-stole-my-work/the-day-somebody-stole-my-work/</guid>
+      <guid>https://www.meyerperin.com/post/2019-02-12-the-day-somebody-stole-my-work/the-day-somebody-stole-my-work/</guid>
       <description>
 
 &lt;p&gt;Part of the work of data science is to create machines that people can use to solve problems. Sometimes these machines can be re-used for other problems with little need for reconfiguration. Sometimes the people reusing one of the machines a data scientist creates will do so without letting the data scientist know until there&amp;rsquo;s a problem.&lt;/p&gt;
@@ -310,10 +310,10 @@ plot(combined_series_reversed, col=c(&amp;quot;blue&amp;quot;,&amp;quot;red&amp;
     
     <item>
       <title>Where should we live</title>
-      <link>/post/2019-02-11-where-should-we-live/where-should-we-live/</link>
+      <link>https://www.meyerperin.com/post/2019-02-11-where-should-we-live/where-should-we-live/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019-02-11-where-should-we-live/where-should-we-live/</guid>
+      <guid>https://www.meyerperin.com/post/2019-02-11-where-should-we-live/where-should-we-live/</guid>
       <description>
 
 &lt;p&gt;Because of my background, language skills and technical skills, I have the choice of living in a lot of different places.
@@ -386,10 +386,10 @@ adventurous like going to Europe or Asia for a short period.&lt;/p&gt;
     
     <item>
       <title>When should you be writing</title>
-      <link>/post/2019-02-10-when-should-you-be-writing/when-should-you-be-writing/</link>
+      <link>https://www.meyerperin.com/post/2019-02-10-when-should-you-be-writing/when-should-you-be-writing/</link>
       <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019-02-10-when-should-you-be-writing/when-should-you-be-writing/</guid>
+      <guid>https://www.meyerperin.com/post/2019-02-10-when-should-you-be-writing/when-should-you-be-writing/</guid>
       <description>&lt;p&gt;An old Ph.D. student motto is that you should &lt;strong&gt;always&lt;/strong&gt; be writing.
 &lt;img src=&#34;snape-always.gif&#34; alt=&#34;Snape says &amp;quot;Always&amp;quot;&#34; /&gt;&lt;/p&gt;
 
@@ -405,10 +405,10 @@ adventurous like going to Europe or Asia for a short period.&lt;/p&gt;
     
     <item>
       <title>Upgrading blogdown and Hugo Academic</title>
-      <link>/post/2019-02-08-will-it-render/will-it-render/</link>
+      <link>https://www.meyerperin.com/post/2019-02-08-will-it-render/will-it-render/</link>
       <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019-02-08-will-it-render/will-it-render/</guid>
+      <guid>https://www.meyerperin.com/post/2019-02-08-will-it-render/will-it-render/</guid>
       <description>
 
 &lt;p&gt;I&amp;rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions.&lt;/p&gt;
@@ -452,10 +452,10 @@ one needs to set an option &lt;code&gt;options(blogdown.new_bundle=TRUE)&lt;/cod
     
     <item>
       <title>A story about my father</title>
-      <link>/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</link>
+      <link>https://www.meyerperin.com/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</link>
       <pubDate>Mon, 04 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</guid>
+      <guid>https://www.meyerperin.com/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</guid>
       <description>
 
 &lt;p&gt;My father passed away a few years ago. I don&amp;rsquo;t even remember exactly when. I think it was in 2013 or 2014. We were not close when he died, and I don&amp;rsquo;t remember ever being close. To my memory, he was mostly away since I was around 7, and he left home for good when I was 13. Not having a father made a lot of things harder in my life, which I imagine made me more capable in some respects.&lt;/p&gt;
@@ -487,54 +487,11 @@ Well, it&#39;s not necessarily a case for a *father*, but more a case for a hous
     </item>
     
     <item>
-      <title>A model for task execution under uncertainty</title>
-      <link>/post/2019-02-03-a-model-for-task-execution-under-uncertainty/a-model-for-task-execution-under-uncertainty/</link>
-      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-02-03-a-model-for-task-execution-under-uncertainty/a-model-for-task-execution-under-uncertainty/</guid>
-      <description>
-
-
-&lt;p&gt;A company wants to execute a series of profitable tasks. Managers receive tasks and can route these tasks to either experts or non-experts. Manages’ ability determines how well they can tell experts from non-experts. Non-experts have a small chance to succeed, a chance of failure, and a small chance of catastrophic failure. Whenever non-experts succeed, managers’ ability goes &lt;em&gt;down&lt;/em&gt;. When non-experts fail catastrophically, managers’ experience will go up. Experts can have exceptional success, sucess or failure, but they’ll never fail catastrophically. When experts have exceptional success, managers will gain experience. When experts fail, managers will lose experience.&lt;/p&gt;
-&lt;p&gt;Workers (experts and non-experts) always know their true experience level. (This is a simplification, as it might be interesting for non-experts to be overly confident). Managers ability will be a standard deviation applied to the level of expertise of their employees. Competent managers will have a low standard deviation, where incompetent ones will have high standard deviation. Underutilized experts quit, reducing the company’s expert pool. Again, for simplification, experts and non-experts are paid the same (it may be interesting to reward experts and non-experts based on their perceived expertise)&lt;/p&gt;
-&lt;p&gt;This problem has been in my head for a lot longer than it should. This is a rough draft, but I think that if I do not commit it to “paper”, I won’t make progress on it.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The complicated incentives on Northam</title>
-      <link>/post/2019-02-03-the-complicated-incentives-on-northam/the-complicated-incentives-on-northam/</link>
-      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-02-03-the-complicated-incentives-on-northam/the-complicated-incentives-on-northam/</guid>
-      <description>
-
-&lt;p&gt;In February 1st 2019, it was found that the Governor of the Commonwealth of Virginia, Whatever Northam, had a picture in his medical school yearbook that contained a person in black face and another person wearing a Klu-Klux-Klan hood. Many people of all party affiliations called for his immediate resignation. By February 3rd, 2019, Northam had not yet resigned.&lt;/p&gt;
-
-&lt;p&gt;There was, of course, a lot of debate on social media. Should Northam stay? Should he go?&lt;/p&gt;
-
-&lt;h2 id=&#34;the-players&#34;&gt;The players&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Northam himself:&lt;/strong&gt; it&amp;rsquo;s hard to know his utility function, but with some assumptions we can construct a simple one. We could assume that  Northam is &amp;ldquo;untouchable&amp;rdquo; and that his career is essentially done, so he gets utility by staying in place as long as he can. We could instead assume that if he were to &amp;ldquo;fall on his sword&amp;rdquo; he would be rewarded by his party.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Democrats&lt;/strong&gt;: for the Democrats, the utility function is simple. Northam must go. If he stays, he will enrage the democratic party base. The party can replace him by another democrat that can, in theory, enact the same policies. Perhaps this replacement is not as competent as &amp;ldquo;Untainted Northam&amp;rdquo; (and this is why Northam was elected in the first place), but now Northam is tainted and can be presumed ineffective.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Society&lt;/strong&gt;: This is, presumably, the hardest one to construct an utility function for, as so much will depend on assumptions. The first assumption I&amp;rsquo;ll make will be that Northam is a competent administrator. I&amp;rsquo;m also going to assume that a racist administrator would be considered incompetent by society. Although this may seem obvious, a racist society could prefer a racist administrator to a competent one, so embedded in the &amp;ldquo;competent administrator&amp;rdquo; assumption there&amp;rsquo;s an assumption that the society is not racist. Another assumption is that racism is an immutable trait. This is the assumption I&amp;rsquo;m least comfortable with.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Other administrators&lt;/strong&gt;: these are people that could be candidates like Northam. The assumptions are that we have &amp;ldquo;competent administrators&amp;rdquo;, &amp;ldquo;racist administrators&amp;rdquo; (that could pass as competent) and &amp;ldquo;incompetent administrators&amp;rdquo;. We will assume that being in power is a desirable good, and that &amp;ldquo;racist administrators&amp;rdquo; can feign competency better than &amp;ldquo;incompetent administrators&amp;rdquo;. We will also assume that a &amp;ldquo;racist administrator&amp;rdquo; is even worse than an &amp;ldquo;incompetent administrator&amp;rdquo; for society.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;how-many-models-do-we-have-here&#34;&gt;How many models do we have here?&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Installing Arch Linux</title>
-      <link>/post/2019-01-29-installing-arch-linux/installing-arch-linux/</link>
+      <link>https://www.meyerperin.com/post/2019-01-29-installing-arch-linux/installing-arch-linux/</link>
       <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019-01-29-installing-arch-linux/installing-arch-linux/</guid>
+      <guid>https://www.meyerperin.com/post/2019-01-29-installing-arch-linux/installing-arch-linux/</guid>
       <description>
 
 &lt;p&gt;Even though I work at Microsoft and really love Windows, I&amp;rsquo;ve recently installed Arch Linux as a dual boot. A lot of data scientists and software developers I know prefer OS X, and Windows doesn&amp;rsquo;t get that much love. Although many people provide many reasons not to use Windows, I was always able to work around whatever those issues were. Sometimes this required Cygwin, Git Bash, and more recently, &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/install-win10&#34; target=&#34;_blank&#34;&gt;WSL&lt;/a&gt; (the Windows Subsystem for Linux). I can&amp;rsquo;t remember any software that I was ever unable to use in Windows: LaTeX, git, Inkscape&amp;hellip; everything I need had a decent Windows version, even if I had to compile it from source.&lt;/p&gt;
@@ -553,10 +510,10 @@ Well, it&#39;s not necessarily a case for a *father*, but more a case for a hous
     
     <item>
       <title>Example Page</title>
-      <link>/tutorial/example/</link>
+      <link>https://www.meyerperin.com/tutorial/example/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 -0400</pubDate>
       
-      <guid>/tutorial/example/</guid>
+      <guid>https://www.meyerperin.com/tutorial/example/</guid>
       <description>
 
 &lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
@@ -573,10 +530,10 @@ Well, it&#39;s not necessarily a case for a *father*, but more a case for a hous
     
     <item>
       <title>Yo, Stroop!</title>
-      <link>/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</link>
+      <link>https://www.meyerperin.com/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</link>
       <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</guid>
+      <guid>https://www.meyerperin.com/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/RealLucasMeyer/yostroop&#34; target=&#34;_blank&#34;&gt;YoStroop&lt;/a&gt; is a bot that allows members of a slack channel to give rewards to each other, usually as a way of saying &amp;ldquo;thank you&amp;rdquo; for help and valuable contributions.
@@ -644,15 +601,15 @@ As of this writing (2018-08-23), both Azure Functions v2 and the python worker a
     
     <item>
       <title>Praising Conway&#39;s Data Science Venn Diagram</title>
-      <link>/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</link>
+      <link>https://www.meyerperin.com/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</guid>
+      <guid>https://www.meyerperin.com/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</guid>
       <description>
 
 &lt;p&gt;Drew Conway&amp;rsquo;s &lt;a href=&#34;http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram&#34; target=&#34;_blank&#34;&gt;Data Science Venn Diagram&lt;/a&gt; is perhaps the most well-known description of data science.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/Data_Science_VD.png&#34; alt=&#34;Drew Conway&#39;s Data Science Venn Diagram&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.meyerperin.com/img/Data_Science_VD.png&#34; alt=&#34;Drew Conway&#39;s Data Science Venn Diagram&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Drew published it more than five years ago. Since then, a ridiculous number of Venn diagrams have been created, &lt;a href=&#34;https://www.datasciencecentral.com/profiles/blogs/the-data-science-venn-diagram-revisited&#34; target=&#34;_blank&#34;&gt;one&lt;/a&gt; &lt;a href=&#34;https://whatsthebigdata.com/2016/07/08/the-new-data-scientist-venn-diagram/&#34; target=&#34;_blank&#34;&gt;worse&lt;/a&gt; &lt;a href=&#34;https://twitter.com/kirkdborne/status/961452846821597184&#34; target=&#34;_blank&#34;&gt;than&lt;/a&gt; &lt;a href=&#34;https://twitter.com/kirkdborne/status/739446818233327616&#34; target=&#34;_blank&#34;&gt;the&lt;/a&gt; &lt;a href=&#34;https://blog.zhaw.ch/datascience/files/2014/06/SkillSet.png&#34; target=&#34;_blank&#34;&gt;other&lt;/a&gt;.&lt;/p&gt;
 
@@ -680,7 +637,7 @@ As of this writing (2018-08-23), both Azure Functions v2 and the python worker a
 
 &lt;p&gt;It can also serve as a check for inclusiveness. For example, a team of former machine learning engineers is struggling to deliver meaningful projects because they lack domain expertise. However, they can&amp;rsquo;t hire domain experts because the domain experts keep failing the machine learning interviews. Comically, the machine learning engineers think that domain expertise &amp;ldquo;is easy&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/here_to_help.png&#34; alt=&#34;Everything you don&#39;t know is easy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.meyerperin.com/img/here_to_help.png&#34; alt=&#34;Everything you don&#39;t know is easy&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The most useful part of Conway&amp;rsquo;s diagram for me is that I&amp;rsquo;ve time and again observed projects that don&amp;rsquo;t have representatives that can communicate well with each other in all three areas to fail. Conway&amp;rsquo;s diagram even makes it easy to show how the project failed (&amp;ldquo;nobody with domain expertise&amp;rdquo;, &amp;ldquo;missing knowledge of statistics&amp;rdquo;). Having a single person that can do all three is difficult, but it certainly solves the communication problem. That being hard or impossible, having specialists that can communicate with each other will usually be sufficient.&lt;/p&gt;
 
@@ -694,10 +651,10 @@ As of this writing (2018-08-23), both Azure Functions v2 and the python worker a
     
     <item>
       <title>Centralized vs. Distributed Data Science Teams</title>
-      <link>/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</link>
+      <link>https://www.meyerperin.com/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</link>
       <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</guid>
+      <guid>https://www.meyerperin.com/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</guid>
       <description>
 
 &lt;p&gt;In a recent &lt;a href=&#34;https://www.datacamp.com/community/podcast/organizing-data-science-teams&#34; target=&#34;_blank&#34;&gt;DataFramed podcast&lt;/a&gt;, &lt;a href=&#34;https://github.com/hugobowne&#34; target=&#34;_blank&#34;&gt;Hugo Bowne-Anderson&lt;/a&gt; and
@@ -752,6 +709,153 @@ As of this writing (2018-08-23), both Azure Functions v2 and the python worker a
 &lt;li id=&#34;fn:In-Finance-circl&#34;&gt;In Finance circles, we use NPV, but the idea is the same &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:In-Finance-circl&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Frankfurt - Spring 2018</title>
+      <link>https://www.meyerperin.com/post/2018-06-09-frankfurt-spring-2018/frankfurt-spring-2018/</link>
+      <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.meyerperin.com/post/2018-06-09-frankfurt-spring-2018/frankfurt-spring-2018/</guid>
+      <description>
+
+&lt;p&gt;I gave two short talks for the 10th Arvato Financial Services Telekommunikationsforum in Baden-Baden. The way ticket prices worked out, it was US$ 1000 cheaper to return on Sunday than it was to return on Saturday, so I was able to spend a full day in Frankfurt.&lt;/p&gt;
+
+&lt;p&gt;I hope to come back.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.meyerperin.com/img/frankfurt.jpeg&#34; alt=&#34;Frankfurt&#34; /&gt;
+&lt;img src=&#34;https://www.meyerperin.com/img/frankfurt-euro.jpeg&#34; alt=&#34;Euro&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-great-base-for-european-adventures&#34;&gt;A great base for European adventures&lt;/h2&gt;
+
+&lt;p&gt;One of the things I liked the most about Frankfurt was how integrated the transportation system was. I landed at the Frankfurt airport, where I could stay at pretty good and reasonably priced hotels (Hilton, Hilton Garden Inn and Sheraton), had a supermarket and restaurants, and could take trains and planes to anywhere else in Europe.&lt;/p&gt;
+
+&lt;p&gt;I stayed at the Hilton, which had the unexpected advantage of having a lot of British and American channels available on the TV and the truly appreciated advantage of having a good air-conditioning system.&lt;/p&gt;
+
+&lt;h2 id=&#34;frankfurt-itself&#34;&gt;Frankfurt Itself&lt;/h2&gt;
+
+&lt;p&gt;Frankfurt itself was touristic enough for me: the city center has plenty of attractions. Several museums, a Zoo, &amp;ldquo;The Cathedral&amp;rdquo;, and all those great restaurants that you expect to exist in the center of a city in Europe. Saturday had street vendors all over downtown. I could have done a better job of planning what to do, but spending a day in the city center was plenty of fun, so I just took a train from the Airport to downtown and spent the day there enjoying the museums, the downtown and the restaurants.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tricks using Python in Azure Functions</title>
+      <link>https://www.meyerperin.com/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/</link>
+      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.meyerperin.com/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/</guid>
+      <description>
+
+&lt;p&gt;If you don&amp;rsquo;t know anything about Azure Functions, &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/azure-functions/&#34; target=&#34;_blank&#34;&gt;this&lt;/a&gt; is a good place to start.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Azure Functions is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events. Learn how to use Azure Functions with our quickstarts, tutorials, and samples.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here are some tricks to use Azure Functions with Python, which is currently (May 2018) under &amp;ldquo;experimental&amp;rdquo; support. Azure Functions, being serverless, are inexpensive but still very useful. I have used Azure Functions to create APIs for my data science projects (e.g., trigger a retraining, evaluate a submission online) and to create a Twitter Bot that posts a few random pictures every day. The major limitation of Azure Functions is that the free version will only run for 10-15 minutes.&lt;/p&gt;
+
+&lt;h4 id=&#34;installing-a-more-recent-version-of-python-for-your-azure-functions&#34;&gt;Installing a more recent version of Python for your Azure Functions&lt;/h4&gt;
+
+&lt;p&gt;The default Python version in Azure Functions is pretty old. As of this writing (May 2018), it&amp;rsquo;s still on version 2.7. You can install newer versions of Python using the procedure below. This procedure installs Python 3.5.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Open the &lt;a href=&#34;https://portal.azure.com&#34; target=&#34;_blank&#34;&gt;Azure Portal&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Select your function App (usually under App Services)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Select &amp;ldquo;Platform Features&amp;rdquo; on top
+&lt;img src=&#34;https://www.meyerperin.com/img/python-platform.png&#34; alt=&#34;Platform Features&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Select &amp;ldquo;Advanced Tools (Kudu)&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.meyerperin.com/img/python-kudu1.png&#34; alt=&#34;Select Kudu&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Select &amp;ldquo;CMD&amp;rdquo; on the &amp;ldquo;Debug Console&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.meyerperin.com/img/python-kudu.png&#34; alt=&#34;Debug Console -&amp;gt; CMD&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now the fun part starts. Thanks to &lt;a href=&#34;https://ourwayoflyf.com/running-python-code-on-azure-functions-app/&#34; target=&#34;_blank&#34;&gt;Our Way of Lyf&lt;/a&gt; for providing instructions.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We first download and install Python using Nuget. To see all possible versions, please check the following website: &lt;a href=&#34;https://www.siteextensions.net/profiles/steve.dower&#34; target=&#34;_blank&#34;&gt;https://www.siteextensions.net/profiles/steve.dower&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;nuget.exe install -Source https://www.siteextensions.net/api/v2/ -OutputDirectory D:\home\site\tools python352x64 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For me, this step took approximately 4 minutes.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Successfully installed &amp;lsquo;python352x64 3.5.2.6&amp;rsquo; to D:\home\site\tools&lt;/p&gt;
+
+&lt;p&gt;Executing nuget actions took 3.99 min&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We now move Python to its proper place:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mv /d/home/site/tools/python352x64.3.5.2.6/content/python35/* /d/home/site/tools/
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;From now on, whatever function we write using Python in this app will use the new version. To verify, let&amp;rsquo;s create a function using Python and check its version. Remember that in order to create Azure Functions using Python, we first have to enable &amp;ldquo;Experimental Language Support&amp;rdquo;). For this test, I&amp;rsquo;ll create a function with an HTTP trigger, which I&amp;rsquo;ll later change to a Timer trigger.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.meyerperin.com/img/python-new-function.png&#34; alt=&#34;create new function&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
+import platform
+
+message = &amp;quot;Using Python version {0}&amp;quot;.format(platform.python_version())
+print(message)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;2018-05-30T01:34:29.954 [Info] Function started (Id=c7edfee9-b370-4dfb-bf89-2912cd09a109)&lt;/p&gt;
+
+&lt;p&gt;2018-05-30T01:34:35.923 [Info] Using Python version 3.5.2&lt;/p&gt;
+
+&lt;p&gt;2018-05-30T01:34:35.955 [Info] Function completed (Success, Id=c7edfee9-b370-4dfb-bf89-2912cd09a109, Duration=6011ms)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;installing-packages&#34;&gt;Installing packages&lt;/h4&gt;
+
+&lt;p&gt;Now that we have a recent version of Python, we can install whatever packages we want. For example, we can install pyodbc and python-twitter.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;D:\home\site\tools\python.exe -m pip install pyodbc
+D:\home\site\tools\python.exe -m pip install python-twitter
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With these packages installed, for example, I can connect to a SQL (or SQL Azure) database and write a Python script that tweets parts of its content.&lt;/p&gt;
+
+&lt;h4 id=&#34;converting-an-http-trigger-to-a-time-trigger&#34;&gt;Converting an HTTP Trigger to a time trigger&lt;/h4&gt;
+
+&lt;p&gt;By default, Python functions don&amp;rsquo;t have a timer trigger. But that&amp;rsquo;s no big deal. Start with an HTTP trigger (see picture above), and then go to &amp;ldquo;Integrate&amp;rdquo; and delete the trigger.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.meyerperin.com/img/python-delete-trigger.png&#34; alt=&#34;Delete trigger&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you delete the trigger, you&amp;rsquo;ll be able to add a new trigger, which can be a Timer trigger.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.meyerperin.com/img/python-new-trigger.png&#34; alt=&#34;Timer trigger&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can configure the trigger using the usual &lt;code&gt;cron&lt;/code&gt; syntax:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.meyerperin.com/img/python-timer-trigger.png&#34; alt=&#34;Configuring timer trigger&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the example above, I&amp;rsquo;m triggering the function every 15 seconds. I did not change the code from before, so this will result simply in Python printing its version to the log every 15 seconds.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.meyerperin.com/img/python-timer-trigger-results.png&#34; alt=&#34;Configuring timer trigger&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;a-few-ideas-on-how-to-use-this&#34;&gt;A few ideas on how to use this&lt;/h4&gt;
+
+&lt;p&gt;If you know Python and have an Azure subscription, here&amp;rsquo;s a few things that you do for free or nearly for free with this. You can:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;trigger a Python function that wakes up every day and performs some database maintentance (e.g., triggers a stored procedure that deletes old records)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;send a message in Twitter every day, for example &amp;ldquo;Since yesterday, we&amp;rsquo;ve acquired X followers&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Read new data from a database, run a model that creates a forecast and save it back to the database every 2 hours&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Serverless computing is extremely convenient: although there are limitations on what the free tier can do, they&amp;rsquo;re not too restrictive.&lt;/p&gt;
 </description>
     </item>
     
