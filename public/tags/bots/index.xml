@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bots on Lucas A. Meyer - Blog</title>
@@ -14,10 +14,10 @@
     
     <item>
       <title>Yo, Stroop!</title>
-      <link>/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</link>
+      <link>/post/yo-stroopwafel/</link>
       <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</guid>
+      <guid>/post/yo-stroopwafel/</guid>
       <description>YoStroop is a bot that allows members of a slack channel to give rewards to each other, usually as a way of saying &amp;ldquo;thank you&amp;rdquo; for help and valuable contributions. It was developed using Python, Azure Functions v2.0 and Cosmos DB.
 Motivation One of the Data Science Slack channels I&amp;rsquo;m a member of tried several different tools to keep track of the valuable contributions of its members. Some of the tools that we used to to track contributions became quite expensive and we started looking for an alternative.</description>
     </item>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Source Themes Academic 3.3.0">
-  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="generator" content="Hugo 0.68.3" />
 
   
 
@@ -28,7 +28,8 @@
   
     
   
-  <meta name="description" content="">
+  <meta name="description" content="I&rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions.
+It was not trivial My first attempt was to simply rename the old academic theme in the themes directory and download a new one. However, there are a lot of breaking changes between version 2.4 and version 3.3. One of the main breaking changes is that now you can use page bundles instead of a single page per post.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/will-it-render/">
@@ -127,13 +128,14 @@
   
   <meta property="twitter:card" content="summary_large_image">
   
-  <meta property="twitter:site" content="@real_lucas_meyer">
-  <meta property="twitter:creator" content="@real_lucas_meyer">
+  <meta property="twitter:site" content="@lucas_a_meyer">
+  <meta property="twitter:creator" content="@lucas_a_meyer">
   
   <meta property="og:site_name" content="Lucas A. Meyer - Blog">
   <meta property="og:url" content="/post/will-it-render/">
-  <meta property="og:title" content="Will it render | Lucas A. Meyer - Blog">
-  <meta property="og:description" content=""><meta property="og:image" content="/img/bias.jpg">
+  <meta property="og:title" content="Upgrading blogdown and Hugo Academic | Lucas A. Meyer - Blog">
+  <meta property="og:description" content="I&rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions.
+It was not trivial My first attempt was to simply rename the old academic theme in the themes directory and download a new one. However, there are a lot of breaking changes between version 2.4 and version 3.3. One of the main breaking changes is that now you can use page bundles instead of a single page per post."><meta property="og:image" content="/img/bias.jpg">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2019-02-08T00:00:00&#43;00:00">
@@ -145,7 +147,7 @@
 
   
 
-  <title>Will it render | Lucas A. Meyer - Blog</title>
+  <title>Upgrading blogdown and Hugo Academic | Lucas A. Meyer - Blog</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -304,7 +306,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Will it render</h1>
+  <h1 itemprop="name">Upgrading blogdown and Hugo Academic</h1>
 
   
 
@@ -336,7 +338,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    0 min read
+    3 min read
   </span>
   
 
@@ -367,7 +369,7 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Will%20it%20render&amp;url=%2fpost%2fwill-it-render%2f"
+         href="https://twitter.com/intent/tweet?text=Upgrading%20blogdown%20and%20Hugo%20Academic&amp;url=%2fpost%2fwill-it-render%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
@@ -381,21 +383,21 @@
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fwill-it-render%2f&amp;title=Will%20it%20render"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fwill-it-render%2f&amp;title=Upgrading%20blogdown%20and%20Hugo%20Academic"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fpost%2fwill-it-render%2f&amp;title=Will%20it%20render"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fwill-it-render%2f&amp;title=Upgrading%20blogdown%20and%20Hugo%20Academic"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Will%20it%20render&amp;body=%2fpost%2fwill-it-render%2f">
+         href="mailto:?subject=Upgrading%20blogdown%20and%20Hugo%20Academic&amp;body=%2fpost%2fwill-it-render%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -415,6 +417,8 @@
 
 
 
+  
+
 
 
 
@@ -431,7 +435,34 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
+      <p>I&rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions.</p>
+<h2 id="it-was-not-trivial">It was not trivial</h2>
+<p>My first attempt was to simply rename the old <code>academic</code> theme in the <code>themes</code> directory and download a new one. However, there
+are a lot of breaking changes between version 2.4 and version 3.3. One of the main breaking changes is that now you can use page bundles
+instead of a single page per post. This allows one to keep resources (such as images) together with each post. Now each post creates a new
+directory. The new <code>hugo-academic</code> theme comes with a script to convert your posts to the page bundle format, it&rsquo;s called <code>update-academic.sh</code>. It doesn&rsquo;t
+work on R Markdown files, but I didn&rsquo;t have any. Although this is described in the Hugo documentation as a breaking change, if you <strong>don&rsquo;t</strong> convert, 
+apparently nothing bad happens. Maybe the Hugo people and I have a different definition of breaking.</p>
+<p>The most relevant breaking change is that the configurations are now in a different directory. Instead of a single giant <code>config.toml</code> in the root 
+directory, we have several different files under the <code>config</code> directory: <code>config.toml</code>, <code>params.toml</code>, <code>menus.toml</code>. So I followed the instructions: opened my old 
+<code>config.toml</code> file in one window, and spread its configuration out into the other files. I uploaded to Netlify and was glad to see that 
+the website published.</p>
+<p>However, <code>blogdown</code> was not down with the new changes. When I opened my site in RStudio, blogdown required the <code>config.toml</code> file to be in the root of 
+the repository. I thought it would be as easy as simply moving it, but somehow, it wasn&rsquo;t. <code>blogdown</code> complained that my site was broken and suggested
+generating a new one. There&rsquo;s a  <a href="https://github.com/rstudio/blogdown/commit/de0bcf501cbdc5e81a960dd8ff3228fcb6fc807f">commit</a>
+addressing the issue, but apparently it&rsquo;s just for new sites. So I decided to create a new site, because that should be easy.</p>
+<h2 id="new-blogdown-site">New blogdown site</h2>
+<p>My next attempt was to create a new project, install <code>packrat</code>, install <code>blogdown</code> and then start a new site. It didn&rsquo;t work out. When I 
+tried to create a new site, <code>blogdown</code> complained that there was already content there (the packrat directory, I assume). So I decided to create
+yet another new site.</p>
+<h2 id="newer-blogdown-site">Newer blogdown site</h2>
+<p>So I created a yet another new site, now using blogdown in RStudio, using the option to use the <code>gcushen/hugo-academic</code> team. That one worked. I then moved my 
+configuration files to the appropriate places (<code>config.toml</code> to root and the other <code>.toml</code> files to <code>config/_default</code>). To make things work
+I moved my old <code>content</code> files to the new site - those had already converted from page to bundle using the <code>update-academic.sh</code> script.</p>
+<p>I then created a new script, but it defaults to the old, unbundled, format. I found out that in order to use the new page bundle functionality,
+one needs to set an option <code>options(blogdown.new_bundle=TRUE)</code>. I&rsquo;ve done that and then created the new post again and it create the page bundle as expected. 
+(This is actually that post).</p>
+
     </div>
 
     
@@ -464,103 +495,7 @@
 
 
 
-<div class="media author-card" itemscope itemtype="http://schema.org/Person">
-  
-  
-  <img class="portrait mr-3" src="/author/admin/avatar_hud7a4b8dda3158f2aeba31bae87b004a5_1706114_250x250_fill_q75_box_center.jpg" itemprop="image" alt="Avatar">
-  
-
-  <div class="media-body">
-    <h5 class="card-title" itemprop="name"><a href="/authors/admin">Lucas A. Meyer</a></h5>
-    <h6 class="card-subtitle">Data Scientist</h6>
-    <p class="card-text" itemprop="description">Data Scientist for Finance at Microsoft</p>
-    <ul class="network-icon" aria-hidden="true">
       
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="/#contact" >
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="https://twitter.com/lucas_a_meyer" target="_blank" rel="noopener">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="https://www.linkedin.com/in/lucasameyer" target="_blank" rel="noopener">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="https://github.com/RealLucasMeyer" target="_blank" rel="noopener">
-          <i class="fab fa-github"></i>
-        </a>
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-
-
-      
-      
-      <div class="article-widget">
-        <div class="hr-light"></div>
-        <h3>Related</h3>
-        <ul>
-          
-          <li><a href="/post/2019-02-08-will-it-render/will-it-render/">Will it render</a></li>
-          
-        </ul>
-      </div>
       
     
 
@@ -568,10 +503,15 @@
     <div class="article-widget">
       <div class="post-nav">
   
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/post/when-should-you-be-writing/" rel="next">When should you be writing</a>
+  </div>
+  
   
   <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="/post/2019-02-08-will-it-render/will-it-render/" rel="prev">Will it render</a>
+    <a href="/post/a-story-about-my-father/" rel="prev">A story about my father</a>
   </div>
   
 </div>
@@ -611,13 +551,9 @@
 <div class="container">
   <footer class="site-footer">
   
-  <p class="powered-by">
-    <a href="/privacy/">Privacy Policy</a>
-  </p>
-  
 
   <p class="powered-by">
-    &copy; Lucas A. Meyer 2016-present &middot; 
+    © Lucas A. Meyer 2016-present &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -765,7 +701,7 @@
     
     
     
-    <script src="/js/academic.min.7903dc64949b0cecbfa70e940e162fa7.js"></script>
+    <script src="/js/academic.min.5a5a24ced9b2ca86c6dcfa54239274f6.js"></script>
 
   </body>
 </html>

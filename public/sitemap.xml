@@ -1,10 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     
     <url>
     
-      <loc>/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</loc>
+      <loc>/post/being-a-libertarian-during-covid-19/</loc>
+      <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/</loc>
+      <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/economics/</loc>
+      <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/economics/</loc>
+      <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/</loc>
+      <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/politics/</loc>
+      <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/politics/</loc>
+      <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/</loc>
+      <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/</loc>
+      <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/data-science/</loc>
       <lastmod>2019-02-23T00:00:00+00:00</lastmod>
     </url>
     
@@ -12,7 +83,55 @@
     
     <url>
     
-      <loc>/post/2019-02-22-forecasts-for-2019/forecasts-for-2019/</loc>
+      <loc>/categories/data-science/</loc>
+      <lastmod>2019-02-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/finance/</loc>
+      <lastmod>2019-02-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/finance/</loc>
+      <lastmod>2019-02-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/microsoft-vs-fang/</loc>
+      <lastmod>2019-02-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/r/</loc>
+      <lastmod>2019-02-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/r/</loc>
+      <lastmod>2019-02-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/forecasts/</loc>
       <lastmod>2019-02-20T00:00:00+00:00</lastmod>
     </url>
     
@@ -20,7 +139,23 @@
     
     <url>
     
-      <loc>/post/2019-02-13-why-you-should-blog-if-you-are-a-data-scientist/why-you-should-blog-if-you-are-a-data-scientist/</loc>
+      <loc>/categories/forecasts/</loc>
+      <lastmod>2019-02-20T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/forecasts-for-2019/</loc>
+      <lastmod>2019-02-20T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/blog/</loc>
       <lastmod>2019-02-13T00:00:00+00:00</lastmod>
     </url>
     
@@ -28,7 +163,23 @@
     
     <url>
     
-      <loc>/post/2019-02-12-the-day-somebody-stole-my-work/the-day-somebody-stole-my-work/</loc>
+      <loc>/categories/blog/</loc>
+      <lastmod>2019-02-13T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/why-you-should-blog-if-you-are-a-data-scientist/</loc>
+      <lastmod>2019-02-13T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/the-day-somebody-stole-my-work/</loc>
       <lastmod>2019-02-12T00:00:00+00:00</lastmod>
     </url>
     
@@ -36,7 +187,23 @@
     
     <url>
     
-      <loc>/post/2019-02-11-where-should-we-live/where-should-we-live/</loc>
+      <loc>/tags/workplace/</loc>
+      <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/workplace/</loc>
+      <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/florida/</loc>
       <lastmod>2019-02-11T00:00:00+00:00</lastmod>
     </url>
     
@@ -44,7 +211,39 @@
     
     <url>
     
-      <loc>/post/2019-02-10-when-should-you-be-writing/when-should-you-be-writing/</loc>
+      <loc>/categories/florida/</loc>
+      <lastmod>2019-02-11T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/seattle/</loc>
+      <lastmod>2019-02-11T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/seattle/</loc>
+      <lastmod>2019-02-11T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/where-should-we-live/</loc>
+      <lastmod>2019-02-11T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/blogdown/</loc>
       <lastmod>2019-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -52,7 +251,23 @@
     
     <url>
     
-      <loc>/post/2019-02-08-will-it-render/will-it-render/</loc>
+      <loc>/categories/blogdown/</loc>
+      <lastmod>2019-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/when-should-you-be-writing/</loc>
+      <lastmod>2019-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/will-it-render/</loc>
       <lastmod>2019-02-08T00:00:00+00:00</lastmod>
     </url>
     
@@ -60,7 +275,7 @@
     
     <url>
     
-      <loc>/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</loc>
+      <loc>/post/a-story-about-my-father/</loc>
       <lastmod>2019-02-04T00:00:00+00:00</lastmod>
     </url>
     
@@ -68,7 +283,23 @@
     
     <url>
     
-      <loc>/post/2019-02-03-a-model-for-task-execution-under-uncertainty/a-model-for-task-execution-under-uncertainty/</loc>
+      <loc>/tags/personal/</loc>
+      <lastmod>2019-02-04T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/personal/</loc>
+      <lastmod>2019-02-04T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/a-model-for-task-execution-under-uncertainty/</loc>
       <lastmod>2019-02-03T00:00:00+00:00</lastmod>
     </url>
     
@@ -76,7 +307,7 @@
     
     <url>
     
-      <loc>/post/2019-02-03-the-complicated-incentives-on-northam/the-complicated-incentives-on-northam/</loc>
+      <loc>/tags/experts/</loc>
       <lastmod>2019-02-03T00:00:00+00:00</lastmod>
     </url>
     
@@ -84,7 +315,95 @@
     
     <url>
     
-      <loc>/post/2019-01-29-installing-arch-linux/installing-arch-linux/</loc>
+      <loc>/categories/experts/</loc>
+      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/game-theory/</loc>
+      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/game-theory/</loc>
+      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/graph-theory/</loc>
+      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/graph-theory/</loc>
+      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/the-complicated-incentives-on-northam/</loc>
+      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/uncertainty/</loc>
+      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/uncertainty/</loc>
+      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/arch/</loc>
+      <lastmod>2019-01-29T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/installing-arch-linux/</loc>
+      <lastmod>2019-01-29T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/linux/</loc>
+      <lastmod>2019-01-29T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/linux/</loc>
       <lastmod>2019-01-29T00:00:00+00:00</lastmod>
     </url>
     
@@ -108,7 +427,7 @@
     
     <url>
     
-      <loc>/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</loc>
+      <loc>/tags/bots/</loc>
       <lastmod>2018-08-23T00:00:00+00:00</lastmod>
     </url>
     
@@ -116,7 +435,23 @@
     
     <url>
     
-      <loc>/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</loc>
+      <loc>/categories/bots/</loc>
+      <lastmod>2018-08-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/yo-stroopwafel/</loc>
+      <lastmod>2018-08-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/management/</loc>
       <lastmod>2018-07-08T00:00:00+00:00</lastmod>
     </url>
     
@@ -124,7 +459,23 @@
     
     <url>
     
-      <loc>/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</loc>
+      <loc>/categories/management/</loc>
+      <lastmod>2018-07-08T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/praising-conway-s-data-science-venn-diagram/</loc>
+      <lastmod>2018-07-08T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/centralized-vs-distributed-data-teams/</loc>
       <lastmod>2018-06-25T00:00:00+00:00</lastmod>
     </url>
     
@@ -132,7 +483,7 @@
     
     <url>
     
-      <loc>/post/2018-06-09-frankfurt-spring-2018/frankfurt-spring-2018/</loc>
+      <loc>/post/frankfurt-spring-2018/</loc>
       <lastmod>2018-06-09T00:00:00+00:00</lastmod>
     </url>
     
@@ -140,7 +491,23 @@
     
     <url>
     
-      <loc>/post/2018-05-29-installing-python-packages-in-azure-functions/installing-python-packages-in-azure-functions/</loc>
+      <loc>/tags/travel/</loc>
+      <lastmod>2018-06-09T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/travel/</loc>
+      <lastmod>2018-06-09T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/python/</loc>
       <lastmod>2018-05-29T00:00:00+00:00</lastmod>
     </url>
     
@@ -148,7 +515,23 @@
     
     <url>
     
-      <loc>/post/2018-05-28-a-reflection-on-fy18-and-fy19-plans/a-reflection-on-fy18-and-fy19-plans/</loc>
+      <loc>/categories/python/</loc>
+      <lastmod>2018-05-29T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/installing-python-packages-in-azure-functions/</loc>
+      <lastmod>2018-05-29T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/a-reflection-on-fy18-and-fy19-plans/</loc>
       <lastmod>2018-05-28T00:00:00+00:00</lastmod>
     </url>
     
@@ -156,7 +539,7 @@
     
     <url>
     
-      <loc>/post/2017-11-17-lenovo-p51-the-data-scientist-laptop/lenovo-p51-the-data-scientist-laptop/</loc>
+      <loc>/tags/hardware/</loc>
       <lastmod>2017-11-17T00:00:00+00:00</lastmod>
     </url>
     
@@ -164,7 +547,15 @@
     
     <url>
     
-      <loc>/post/2018-02-20-the-three-types-of-gifts-in-buddhism/the-three-types-of-gifts-in-buddhism/</loc>
+      <loc>/post/lenovo-p51-the-data-scientist-laptop/</loc>
+      <lastmod>2017-11-17T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/religion/</loc>
       <lastmod>2017-09-25T00:00:00+00:00</lastmod>
     </url>
     
@@ -172,8 +563,40 @@
     
     <url>
     
-      <loc>/post/2017-09-11-hurricane-irma/hurricane-irma/</loc>
+      <loc>/categories/religion/</loc>
+      <lastmod>2017-09-25T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/the-three-types-of-gifts-in-buddhism/</loc>
+      <lastmod>2017-09-25T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/hurricane-irma/</loc>
       <lastmod>2017-09-11T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/deep-learning/</loc>
+      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/demo/</loc>
+      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
     </url>
     
   
@@ -196,7 +619,47 @@
     
     <url>
     
-      <loc>/post/2018-02-23-my-complicated-relationship-with-the-second-amendment/my-complicated-relationship-with-the-second-amendment/</loc>
+      <loc>/project/</loc>
+      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/first-amendment/</loc>
+      <lastmod>2016-02-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/first-amendment/</loc>
+      <lastmod>2016-02-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/law/</loc>
+      <lastmod>2016-02-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/law/</loc>
+      <lastmod>2016-02-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/my-complicated-relationship-with-the-second-amendment/</loc>
       <lastmod>2016-02-23T00:00:00+00:00</lastmod>
     </url>
     
@@ -211,17 +674,7 @@
     
     <url>
     
-      <loc>/tags/arch/</loc>
-      <lastmod>2019-01-29T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/author/</loc>
-      <priority>0</priority>
+      <loc>/authors/admin/</loc>
     </url>
     
   
@@ -229,366 +682,13 @@
     <url>
     
       <loc>/authors/</loc>
-      <priority>0</priority>
     </url>
     
   
     
     <url>
     
-      <loc>/categories/blog/</loc>
-      <lastmod>2019-02-13T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/blogdown/</loc>
-      <lastmod>2019-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/blogdown/</loc>
-      <lastmod>2019-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/bots/</loc>
-      <lastmod>2018-08-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/bots/</loc>
-      <lastmod>2018-08-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/</loc>
-      <lastmod>2019-02-13T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/data-science/</loc>
-      <lastmod>2019-02-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/data-science/</loc>
-      <lastmod>2019-02-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/deep-learning/</loc>
-      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/demo/</loc>
-      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/economics/</loc>
-      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/economics/</loc>
-      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/experts/</loc>
-      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/experts/</loc>
-      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/finance/</loc>
-      <lastmod>2019-02-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/finance/</loc>
-      <lastmod>2019-02-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/first-amendment/</loc>
-      <lastmod>2016-02-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/first-amendment/</loc>
-      <lastmod>2016-02-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/florida/</loc>
-      <lastmod>2019-02-11T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/florida/</loc>
-      <lastmod>2019-02-11T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/forecasts/</loc>
-      <lastmod>2019-02-20T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/forecasts/</loc>
-      <lastmod>2019-02-20T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/game-theory/</loc>
-      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/game-theory/</loc>
-      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/graph-theory/</loc>
-      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/graph-theory/</loc>
-      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/hardware/</loc>
-      <lastmod>2017-11-17T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/law/</loc>
-      <lastmod>2016-02-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/law/</loc>
-      <lastmod>2016-02-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/linux/</loc>
-      <lastmod>2019-01-29T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/linux/</loc>
-      <lastmod>2019-01-29T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/</loc>
-      <lastmod>2019-02-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/management/</loc>
-      <lastmod>2018-07-08T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/management/</loc>
-      <lastmod>2018-07-08T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/personal/</loc>
-      <lastmod>2019-02-04T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/personal/</loc>
-      <lastmod>2019-02-04T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/politics/</loc>
-      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/politics/</loc>
-      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/post/</loc>
-      <lastmod>2019-02-23T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/project/</loc>
-      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
-      <priority>0</priority>
+      <loc>/author/</loc>
     </url>
     
   
@@ -596,7 +696,6 @@
     <url>
     
       <loc>/publication_types/</loc>
-      <priority>0</priority>
     </url>
     
   
@@ -610,42 +709,6 @@
     
     <url>
     
-      <loc>/categories/python/</loc>
-      <lastmod>2018-05-29T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/python/</loc>
-      <lastmod>2018-05-29T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/r/</loc>
-      <lastmod>2019-02-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/r/</loc>
-      <lastmod>2019-02-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/talk/</loc>
     </url>
     
@@ -653,44 +716,7 @@
     
     <url>
     
-      <loc>/categories/religion/</loc>
-      <lastmod>2017-09-25T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/religion/</loc>
-      <lastmod>2017-09-25T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/seattle/</loc>
-      <lastmod>2019-02-11T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/seattle/</loc>
-      <lastmod>2019-02-11T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/slides/</loc>
-      <priority>0</priority>
     </url>
     
   
@@ -698,95 +724,6 @@
     <url>
     
       <loc>/slides/example-slides/</loc>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/</loc>
-      <lastmod>2019-01-29T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/travel/</loc>
-      <lastmod>2018-06-09T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/travel/</loc>
-      <lastmod>2018-06-09T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/uncertainty/</loc>
-      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/uncertainty/</loc>
-      <lastmod>2019-02-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/workplace/</loc>
-      <lastmod>2019-02-12T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/workplace/</loc>
-      <lastmod>2019-02-12T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/authors/admin/</loc>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/blog/</loc>
-      <lastmod>2019-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/blog/</loc>
-      <lastmod>2019-02-13T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   

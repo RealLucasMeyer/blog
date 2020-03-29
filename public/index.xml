@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lucas A. Meyer - Blog on Lucas A. Meyer - Blog</title>
@@ -7,752 +6,79 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Lucas A. Meyer 2016-present</copyright>
-    <lastBuildDate>Sat, 23 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>MSFT vs FANG</title>
-      <link>/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</link>
-      <pubDate>Sat, 23 Feb 2019 00:00:00 +0000</pubDate>
+      <title>Posts</title>
+      <link>/post/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019-02-23-microsoft-vs-fang/microsoft-vs-fang/</guid>
-      <description>
-
-
-&lt;div class=&#34;alert alert-warning&#34;&gt;
-  &lt;div&gt;
-    &lt;p&gt;This is not investment advice. It’s just me trying out R Markdown and talking about how to look at graphs.&lt;/p&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Should you invest your money in Microsoft stock or in FANG stocks (Facebook, Amazon, Netflix, Google/Alphabet)? FANG stocks have been popularized by Jim Cramer, the colorful host of Mad Money. Interestingly, it has been found that following Jim Cramer suggestions &lt;a href=&#34;https://www.marketwatch.com/story/jim-cramer-doesnt-beat-the-market-2016-05-13&#34;&gt;underperforms the market&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;My point here, however, is not to talk about the underperformance itself, but to show how it’s possible to be misled by time-series graphs.&lt;/p&gt;
-&lt;div id=&#34;getting-the-fang-and-msft-stock-returns-over-time&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Getting the FANG and MSFT stock returns over time&lt;/h2&gt;
-&lt;p&gt;To easily obtain a time-series for stock returns, we’re going to use the &lt;code&gt;quantmod&lt;/code&gt; package.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(quantmod)
-set.seed(42)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We’re going to use &lt;code&gt;quantmod&lt;/code&gt;’s &lt;code&gt;getSymbols&lt;/code&gt; to create a portfolio of the FANG stocks with equal weights (25%) for each of its components.&lt;/p&gt;
-&lt;p&gt;To make things simpler, we’re going to be looking just at the prices, ignoring dividends. This rigs the game against Microsoft, which has relatively high dividends, while FANG stocks don’t have dividends. You should not ignore dividends when choosing investments, but ignoring them for this analysis will not affect the point I’m making: time-series graphs can be misleading when they depend a lot on their starting point.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;series_start = &amp;quot;2015-01-01&amp;quot;
-series_end = &amp;quot;2019-02-22&amp;quot;
-
-# Get Prices
-msft &amp;lt;- getSymbols(&amp;quot;MSFT&amp;quot;, auto.assign = FALSE, from=series_start, to=series_end)
-fb   &amp;lt;- getSymbols(&amp;quot;FB&amp;quot;,   auto.assign = FALSE, from=series_start, to=series_end)
-amzn &amp;lt;- getSymbols(&amp;quot;AMZN&amp;quot;, auto.assign = FALSE, from=series_start, to=series_end)
-nflx &amp;lt;- getSymbols(&amp;quot;NFLX&amp;quot;, auto.assign = FALSE, from=series_start, to=series_end)
-goog &amp;lt;- getSymbols(&amp;quot;GOOG&amp;quot;, auto.assign = FALSE, from=series_start, to=series_end)
-aapl &amp;lt;- getSymbols(&amp;quot;AAPL&amp;quot;, auto.assign = FALSE, from=series_start, to=series_end)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In Finance, we use “total returns” to calculate cumulative returns. This is easily obtained by adding 1 to a series of returns. The &lt;code&gt;quantmod&lt;/code&gt; package makes it easy to calculate returns from prices with the &lt;code&gt;dailyReturn&lt;/code&gt; function. Note that for our FANG portfolio we first need to compose the portfolio with 25% of each stock before we add 1 to calculate the total returns, otherwise we’d be adding &lt;span class=&#34;math inline&#34;&gt;\(1+1+1+1=4\)&lt;/span&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Convert MSFT prices to returns and add 1 to obtain total returns
-msft_ret &amp;lt;- 1 + dailyReturn(msft)
-
-# FANG portfolio with 25% of each stock, also converted to total returns
-fb_ret   &amp;lt;- dailyReturn(fb)
-amzn_ret &amp;lt;- dailyReturn(amzn)
-nflx_ret &amp;lt;- dailyReturn(nflx)
-goog_ret &amp;lt;- dailyReturn(goog)
-fang_ret &amp;lt;- 1 + (0.25 * fb_ret + 0.25 * amzn_ret + 
-                 0.25 * nflx_ret + 0.25 * goog_ret) &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now that we have returns, a typical graph is Finance is “return on an investment of USD 1,000 starting in a given date”. To calculate such returns, we start with USD 1,000 and then compound its returns using R’s &lt;code&gt;cumprod&lt;/code&gt; function. If you have a vector of returns, &lt;code&gt;cumprod&lt;/code&gt; will return the cumulative vector of returns. For example, the cumulative product of vector (&lt;span class=&#34;math inline&#34;&gt;\(1.0\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1.1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1.2\)&lt;/span&gt;) will be (&lt;span class=&#34;math inline&#34;&gt;\(1.0\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1.0 \times 1.1 = 1.1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1.1 \times 1.2 = 1.32\)&lt;/span&gt;) = (&lt;span class=&#34;math inline&#34;&gt;\(1.0\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1.1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1.32\)&lt;/span&gt;).&lt;/p&gt;
-&lt;p&gt;I’ll plot such a graph below where I’ll follow the usual practice of starting a few years in the past. In my case, I’m starting the graph on January 2nd, 2015, and you’ll see that if you had invested USD 1,000 in FANG stocks on &lt;em&gt;exactly that date&lt;/em&gt; you’d have approximately USD 4,000 while if you had made a similar investment in Microsoft stock, you would have approximately USD 2,400.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;inv_amt = 1000
-
-# Cumulative Returns
-msft_cumulative_ret &amp;lt;- xts(inv_amt*cumprod(msft_ret))
-fang_cumulative_ret &amp;lt;- xts(inv_amt*cumprod(fang_ret))
-
-# Combine series for graph
-combined_series = xts(merge(msft_cumulative_ret, fang_cumulative_ret))
-colnames(combined_series) &amp;lt;- c(&amp;quot;MSFT&amp;quot;, &amp;quot;FANG&amp;quot;)
-
-# Plot time-series graph 
-#(plot will call plot.xts because combined_series is a xts object)
-plot(combined_series, col=c(&amp;quot;blue&amp;quot;,&amp;quot;red&amp;quot;), legend.loc=&amp;quot;topleft&amp;quot;, 
-     main=&amp;quot;MSFT vs. FANG&amp;quot;, auto.legend=TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-02-23-microsoft-vs-fang/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;So it seems to be settled, the return of the FANG stocks is obviously a lot better than the return on the MSFT stock, right? Well, it turns out that a lot of the return is determined by the investment date, in this case, Jan 2nd of 2015.&lt;/p&gt;
-&lt;p&gt;My problem with the graphical representation above is that it only has two relevant dates: the original investment date and today. All the dates in the middle don’t mean much, although perhaps you could get an idea of the volatility of the investment by looking at them.&lt;/p&gt;
-&lt;p&gt;So what &lt;strong&gt;do&lt;/strong&gt; I like? My preferred way of looking into such graphs is to reverse the time-series and &lt;em&gt;then&lt;/em&gt; calculate the cumulative returns. I then reverse it again, so that time is back to its natural order. This makes the x-axis provide a lot more information. Now the graph shows how much you would have if you had invested $1000 at each of the dates in the x-axis, which is a lot more information than you had before.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Calculate the returns backwards, to find out 
-# how much I&amp;#39;d have today if I invested $1000
-# at each point of the x-axis
-msft_cumulative_ret_reverse &amp;lt;- xts(rev(inv_amt*cumprod(rev(msft_ret))))
-fang_cumulative_ret_reverse &amp;lt;- xts(rev(inv_amt*cumprod(rev(fang_ret))))
-
-# Combine and plot returns
-combined_series_reversed = xts(merge(msft_cumulative_ret_reverse,
-                                     fang_cumulative_ret_reverse))
-colnames(combined_series_reversed) &amp;lt;- c(&amp;quot;MSFT&amp;quot;, &amp;quot;FANG&amp;quot;)
-plot(combined_series_reversed, col=c(&amp;quot;blue&amp;quot;,&amp;quot;red&amp;quot;), legend.loc=&amp;quot;topleft&amp;quot;, 
-     main=&amp;quot;MSFT vs. FANG (reversed)&amp;quot;, auto.legend=TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-02-23-microsoft-vs-fang/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;What I think that is a lot more interesting is that now it’s clear that it has been a while since FANG was a lot better than MSFT. In order to get a significantly better result with FANG stocks, one has to have invested a long time ago: before January of 2017. Since then, MSFT and FANG have been mostly equivalent, with Microsoft having a substantial better run than the FANG stocks for most of 2018. This is made obvious in the second graph, but it’s really unclear in the first.&lt;/p&gt;
-&lt;p&gt;Sadly, none of these provides what you would &lt;em&gt;really&lt;/em&gt; want to know: which is the best investment from now on. That is, however, something that is unknown. The Danish said it best:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“It is difficult to prophesy, particularly about the future”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/div&gt;
-</description>
+      <guid>/post/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Forecasts for 2019</title>
-      <link>/post/2019-02-22-forecasts-for-2019/forecasts-for-2019/</link>
-      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-02-22-forecasts-for-2019/forecasts-for-2019/</guid>
-      <description>
-
-&lt;p&gt;When I was (a lot) younger, one of my favorite things was to read old predictions made by psychics. They were easy to find: in Brazil, most of the magazines in dentist offices and barbershops are quite old, sometimes 2-3 years. So in 1995 it would be easy to walk into a barbershop and find the magazines from 1992 predicting 1993 and so on. As expected, most psychics are really, really bad forecasters.&lt;/p&gt;
-
-&lt;p&gt;One of the interesting things, however, is that they essentially subjected themselves to a pre-registered experiment. They would publish their predictions in 1992 about 1993, and at the end of 1993 one could easily verify their accuracy. That always struck me as odd - it doesn&amp;rsquo;t seem to be a good business practice if you&amp;rsquo;re a psychic. Maybe they &lt;strong&gt;really&lt;/strong&gt; believed in their powers, or maybe they knew their customers wouldn&amp;rsquo;t care.&lt;/p&gt;
-
-&lt;p&gt;One downside is that (of course) they didn&amp;rsquo;t provide confidence levels on their predictions - their confidence was assumed to be 100%. For a pre-registered somewhat more scientific forecast, it&amp;rsquo;s better to provide confidence levels.&lt;/p&gt;
-
-&lt;h2 id=&#34;my-forecasts-for-2019&#34;&gt;My forecasts for 2019&lt;/h2&gt;
-
-&lt;h3 id=&#34;personal&#34;&gt;Personal&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;My weight at the end of 2019 will be 10 pounds lower than my weight at the end of 2018 (60% confidence)&lt;/li&gt;
-&lt;li&gt;Same as above, but 20 pounds lower (40%)&lt;/li&gt;
-&lt;li&gt;I&amp;rsquo;ll remain happily married (100%)&lt;/li&gt;
-&lt;li&gt;We&amp;rsquo;ll move away from Florida (80%)&lt;/li&gt;
-&lt;li&gt;Conditional on moving from Florida, we move to Seattle (90%)&lt;/li&gt;
-&lt;li&gt;I travel internationally at least one more time (80%) (this excludes my Jan/Feb Singapore trip)&lt;/li&gt;
-&lt;li&gt;Conditional on traveling internationally again, I visit a country I&amp;rsquo;ve never been to before (30%)&lt;/li&gt;
-&lt;li&gt;I run more than 20 miles in the year (80%)&lt;/li&gt;
-&lt;li&gt;I run more than 50 miles in the year (20%)&lt;/li&gt;
-&lt;li&gt;I end the year with more than 400 followers on Twitter (80%)&lt;/li&gt;
-&lt;li&gt;I end the year with more than 500 followers on Twitter (60%)&lt;/li&gt;
-&lt;li&gt;I end the year with more than 750 followers on Twitter (10%)&lt;/li&gt;
-&lt;li&gt;We get a dog (20%)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;work&#34;&gt;Work&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;I remain at Microsoft (100%)&lt;/li&gt;
-&lt;li&gt;I don&amp;rsquo;t get promoted (100%)&lt;/li&gt;
-&lt;li&gt;My rewards are between 140% and 160% of my target (70%)&lt;/li&gt;
-&lt;li&gt;My rewards are above 160% (20%)&lt;/li&gt;
-&lt;li&gt;My rewards are below 140% (10%)&lt;/li&gt;
-&lt;li&gt;I remain at Microsoft Finance (80%)&lt;/li&gt;
-&lt;li&gt;I remain at Microsoft Treasury (65%)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;finance-and-economics&#34;&gt;Finance and Economics&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;The S&amp;amp;P 500 has a positive year (80%)&lt;/li&gt;
-&lt;li&gt;The S&amp;amp;P 500 grows more than 10% from the beginning of the year (50%)&lt;/li&gt;
-&lt;li&gt;Microsoft ends the year as the most valuable publicly traded company in the US (60%)&lt;/li&gt;
-&lt;li&gt;US unemployment at the end of 2019 is lower than at the end of 2018 (60%)&lt;/li&gt;
-&lt;li&gt;US GDP growth is above 2% (70%)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;politics&#34;&gt;Politics&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Brexit finally happens (99%)&lt;/li&gt;
-&lt;li&gt;Nicolás Maduro leaves the presidency in Venezuela (90%)&lt;/li&gt;
-&lt;li&gt;Venezuela and Brazilian/Colombian forces fight each other (20%)&lt;/li&gt;
-&lt;li&gt;Trump remains president of the United States (100%)&lt;/li&gt;
-&lt;li&gt;The Mueller report is released and provides a pathway for impeaching Trump (80%)&lt;/li&gt;
-&lt;li&gt;Trump is impeached by congress (40%) (#3 implies that the Senate saves Trump)&lt;/li&gt;
-&lt;li&gt;There&amp;rsquo;s at least one terrorist attack with more than 20 casualties in Europe around the summer (May-Sep) (70%)&lt;/li&gt;
-&lt;li&gt;Theresa May leaves her position in the UK government (90%)&lt;/li&gt;
-&lt;li&gt;Bolsonaro remains the president of Brazil by the end of 2019 (100%)&lt;/li&gt;
-&lt;li&gt;No other country announces leaving the EU (95%)&lt;/li&gt;
-&lt;li&gt;MBS remains in power in Saudi Arabia (99%)&lt;/li&gt;
-&lt;li&gt;Oil prices are lower in 2019 (65%)&lt;/li&gt;
-&lt;li&gt;Bitcoin prices finish 2018 more than 100% above where they started (60%)&lt;/li&gt;
-&lt;li&gt;Bitcoin prices finish 2018 above where they started (90%)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;sports&#34;&gt;Sports&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Palmeiras wins the Brazilian soccer league (15%)&lt;/li&gt;
-&lt;li&gt;Palmeiras finishes in the top 5 (80%)&lt;/li&gt;
-&lt;li&gt;Patriots go to the playoffs (in early 2020) (90%)&lt;/li&gt;
-&lt;li&gt;Seahawks go to the playoffs (70%)&lt;/li&gt;
-&lt;li&gt;Conditional on going to the playoffs, Seahawks go as a wildcard (80%)&lt;/li&gt;
-&lt;li&gt;Seahawks are not NFC champs (95%)&lt;/li&gt;
-&lt;li&gt;Miami Dolphins don&amp;rsquo;t have a winning season (70%)&lt;/li&gt;
-&lt;li&gt;Luis Felipe Scolari leaves Palmeiras as a coach (80%)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;weather&#34;&gt;Weather&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;2019 temperatures are cooler than 2018 (80%)&lt;/li&gt;
-&lt;li&gt;There&amp;rsquo;s at least one major (Cat 3 or above) hurricane making landfall in the United States (70%)&lt;/li&gt;
-&lt;li&gt;In Florida (30%)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;This is probably enough for a first attempt. Let&amp;rsquo;s see how it goes by February 2020.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Why you should blog if you are a data scientist</title>
-      <link>/post/2019-02-13-why-you-should-blog-if-you-are-a-data-scientist/why-you-should-blog-if-you-are-a-data-scientist/</link>
-      <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-02-13-why-you-should-blog-if-you-are-a-data-scientist/why-you-should-blog-if-you-are-a-data-scientist/</guid>
-      <description>
-
-&lt;p&gt;A while back, David Robinson offered the following advice on Twitter:&lt;/p&gt;
-
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;When you’ve written the same code 3 times, write a function&lt;br&gt;&lt;br&gt;When you’ve given the same in-person advice 3 times, write a blog post&lt;/p&gt;&amp;mdash; David Robinson (@drob) &lt;a href=&#34;https://twitter.com/drob/status/928447584712253440?ref_src=twsrc%5Etfw&#34;&gt;November 9, 2017&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;He also followed it up with an &lt;a href=&#34;http://varianceexplained.org/r/start-blog/&#34; target=&#34;_blank&#34;&gt;excellent blog post&lt;/a&gt; aimed at aspiring data scientists. I think that the most important idea from that post is actually from a presentation he gave. Here&amp;rsquo;s the key idea, as reported by Amelia McNamara:&lt;/p&gt;
-
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&amp;quot;Things that are still on your computer are approximately useless.&amp;quot; -&lt;a href=&#34;https://twitter.com/drob?ref_src=twsrc%5Etfw&#34;&gt;@drob&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/eUSR?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#eUSR&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/eUSR2017?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#eUSR2017&lt;/a&gt; &lt;a href=&#34;https://t.co/nS3IBiRHBn&#34;&gt;pic.twitter.com/nS3IBiRHBn&lt;/a&gt;&lt;/p&gt;&amp;mdash; Amelia McNamara (@AmeliaMN) &lt;a href=&#34;https://twitter.com/AmeliaMN/status/926509282874585089?ref_src=twsrc%5Etfw&#34;&gt;November 3, 2017&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;In summary, things that you keep to yourself have very little value, and things that you share with the world have a lot of value. I think that&amp;rsquo;s a very cool idea for the Economics of information. For an extreme case, imagine you have a trade secret that allows you to solve a specific class of problems faster than others. In this case, it&amp;rsquo;s understandable that you want to keep the trade secret to yourself. But it make sense to advertise to the world that you can quickly solve some kinds problems faster than others. That makes your trade secret more valuable.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-discipline-of-writing-about-what-you-re-doing&#34;&gt;The discipline of writing about what you&amp;rsquo;re doing&lt;/h2&gt;
-
-&lt;p&gt;When I was a wee little kid and had just entered college, one of my first classes was &amp;ldquo;Physics Lab&amp;rdquo;, and the first class of that was to measure &amp;ldquo;gravity&amp;rdquo;, more specifically, the gravitational acceleration . Of course, mathy Computer Science studies that we were, we all knew that the gravitational acceleration would be $ g \approx 9.8 m/s^2 $.&lt;/p&gt;
-
-&lt;p&gt;Measuring it, however, it&amp;rsquo;s not very easy. First, remember that this is in the early 90s in Brazil, so digital cameras were very rare. Part of the problem is that 9.8 meters (approximately 30 feet) is quite high, so if we wanted our experiment to take around 1s, we would need a big ladder. Or, as it happened, we&amp;rsquo;d need to run an experiment that took less than a second for each run. In a class with 25 students, that was the preferred route.&lt;/p&gt;
-
-&lt;p&gt;We set up a vertical track attached to a device that would spark every &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;60&lt;/sub&gt; of a second, and we attached grid paper to the track. This is called a &lt;a href=&#34;https://cse.wwu.edu/physics/acceleration-due-gravity-behr-free-fall-apparatus-and-spark-timer&#34; target=&#34;_blank&#34;&gt;Behr free fall apparatus&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://cse.wwu.edu/system/files/styles/large/private/Behr%20Free%20Fall%20Apparatus.JPG?itok=2ZjngUyN&#34; alt=&#34;Behr Free Fall Apparatus&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We would release the device from the top of the track, and the sparks would mark the grid paper. We would then manually measure the distances between the sparks and the differences between the distances would tell us the acceleration. In theory. Again, remember this is the early 90s, so there&amp;rsquo;s no Windows 95 or Excel easily available, there were several steps that were prone to error.&lt;/p&gt;
-
-&lt;p&gt;The desired outcome was not only to calculate the acceleration due to gravity, but also to generate a lab report.&lt;/p&gt;
-
-&lt;h2 id=&#34;writing-the-lab-report&#34;&gt;Writing the lab report&lt;/h2&gt;
-
-&lt;p&gt;It was a simple experiment, but there was a twist. Another class of 25 students would have to replicate the experiment following the lab report from the first 25. Oh boy. We quickly found out that the best lab reports were the ones in which the experimenter would document the experiment &lt;em&gt;as they were executing&lt;/em&gt; the experiment. Another thing that worked was going through the experiment more than once. What &lt;strong&gt;did not work&lt;/strong&gt; was to perform the experiment and then go to where the computers were to type up a report from memory.&lt;/p&gt;
-
-&lt;p&gt;I thought that was very insightful, shortly afterwards, we would learn about Donald Knuth&amp;rsquo;s proposed paradigm of &lt;a href=&#34;https://en.wikipedia.org/wiki/Literate_programming&#34; target=&#34;_blank&#34;&gt;literate programming&lt;/a&gt;, which lives on in Jupyter Notebooks and R Markdown and that is very popular in data science today. Behind it is the same concept of explanations interspersed with technical work to produce something that is reproducible and easy to understand.&lt;/p&gt;
-
-&lt;h2 id=&#34;blogging-helps-you-train-to-write-about-your-work&#34;&gt;Blogging helps you train to write about your work&lt;/h2&gt;
-
-&lt;p&gt;Besides the excellent reasons offered by David Robinson for aspiring data scientists to blog, I think experienced data scientists can also benefit from blogging. David argues that aspiring data scientists should blog for technical practice, to build a portfolio, and to get feedback. Experienced data scientists might benefit for similar reasons, but not exactly the same.&lt;/p&gt;
-
-&lt;p&gt;Similar to &amp;ldquo;practicing&amp;rdquo;, blogging about technical topics helps you learn how to communicate better about them, and also helps you learn how to write better research reports. Similar to &amp;ldquo;portfolio&amp;rdquo;, it signals a data scientist&amp;rsquo;s body of work. For an early-in-career data scientist, it may be more showing that you can do analysis, but for an experienced data scientist is more about what type of analysis you like to do. Finally, I think that &amp;ldquo;feedback&amp;rdquo; also works differently for early-in-career and experienced data scientists. I&amp;rsquo;m not sure random strangers in the internet will sweep in and correct your posts, but you can find out what people are reading and sharing. You may be surprised when you learn what parts of your work people find interesting.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The day somebody &#34;stole&#34; my work</title>
-      <link>/post/2019-02-12-the-day-somebody-stole-my-work/the-day-somebody-stole-my-work/</link>
-      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-02-12-the-day-somebody-stole-my-work/the-day-somebody-stole-my-work/</guid>
-      <description>
-
-&lt;p&gt;Part of the work of data science is to create machines that people can use to solve problems. Sometimes these machines can be re-used for other problems with little need for reconfiguration. Sometimes the people reusing one of the machines a data scientist creates will do so without letting the data scientist know until there&amp;rsquo;s a problem.&lt;/p&gt;
-
-&lt;p&gt;To protect the innocent, some details of the stories below have been changed.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-chatbot&#34;&gt;The chatbot&lt;/h2&gt;
-
-&lt;p&gt;Years ago, I wrote a chatbot to automate some really mundane question-answering for my team. Although it was not something extremely high-tech, it was the exact right tool for the job. Most chatbots I&amp;rsquo;ve seen are &amp;ldquo;Rube Goldberg machines&amp;rdquo;, like the &amp;ldquo;Self Operating Napkin&amp;rdquo; below. My chatbot really cut down on mundane manual work, and therefore was really successful.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/a/a9/Rube_Goldberg%27s_%22Self-Operating_Napkin%22_%28cropped%29.gif&#34; alt=&#34;Rube Goldberg Self-Operating Napkin&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Because of its success, my chatbot got a lot of use and it started to be shown to customers as an example of our usage of technology. &amp;ldquo;Some guy in some place&amp;rdquo;, let&amp;rsquo;s call him G, became a specialist in demonstrating the chatbot I wrote, and he would do so very well.&lt;/p&gt;
-
-&lt;p&gt;After a while, somebody had a question about my chatbot in an internal distribution list. The question went like &amp;ldquo;Can that chatbot do X?&amp;rdquo;. I answered that &amp;ldquo;No, it can&amp;rsquo;t do that - that was something that I had thought about but ended up never implementing it&amp;rdquo;. In a monumental display of corporate civility, someone replied over me saying: &amp;ldquo;You should ask G, as he is the creator of that chatbot&amp;rdquo;. I actually declined to further the discussion, and to my knowledge everybody on that thread still thinks that G is the creator of the chatbot.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;chatbot.png&#34; alt=&#34;chatbot&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;That made me realize that G was not putting a lot of effort in attributing my work.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-recommendation-system&#34;&gt;The recommendation system&lt;/h2&gt;
-
-&lt;p&gt;At some point I wrote a recommendation system to solve a specific problem, let&amp;rsquo;s call it the &amp;ldquo;X Recommender&amp;rdquo;. It was not particularly well written but it did the job: it recommended X with a decent precision. However, by the time I was done, the client (let&amp;rsquo;s call them C) that needed that problem solved was moved out. I made a note to improve on that system at some point and stashed it.&lt;/p&gt;
-
-&lt;p&gt;A few years later, someone wanted to be mentored by me, and they happened to be a specialist in X. So we started building models around X, and at some point we revived the &amp;ldquo;X Recommender&amp;rdquo; to make it better.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;rec.png&#34; alt=&#34;Recommendation System&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;At this point, people from C came back asking for an &amp;ldquo;X Recommender&amp;rdquo;, and they also wanted to learn how to build one. I told them how to build one, step-by-step. They did not succeed in building it for production, but built it enough for a presentation and scheduled time for us to work together to make it ready for production.&lt;/p&gt;
-
-&lt;p&gt;Meanwhile, I presented the very old &amp;ldquo;X recommender&amp;rdquo; to a group. A member of the group saw the similarities and asked me why I was taking credit for the work that C had done.&lt;/p&gt;
-
-&lt;p&gt;That made me realize that C was not putting a lot of effort in attributing my work.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-consequences-of-not-having-the-work-attributed&#34;&gt;The consequences of not having the work attributed&lt;/h2&gt;
-
-&lt;p&gt;It&amp;rsquo;s not like I&amp;rsquo;m not &lt;a href=&#34;https://treasurytoday.com/adam-smith-awards-yearbook/adam-smith-awards-yearbook-2017&#34; target=&#34;_blank&#34;&gt;recognized&lt;/a&gt; for my work, quite the opposite. I think the downside is more &amp;ldquo;societal&amp;rdquo;, or &amp;ldquo;corporate-wide&amp;rdquo;. In some sense, this is like a &lt;a href=&#34;https://en.wikipedia.org/wiki/Signalling_(economics)&#34; target=&#34;_blank&#34;&gt;signalling problem&lt;/a&gt; in which a non-expert in a particular work product signals that they&amp;rsquo;re an expert. If the signal is misinterpreted, problems that the expert could solve may end up being directed to the non-expert, and that may result in solvable problems not being solved.&lt;/p&gt;
-
-&lt;p&gt;There are upsides, however. One upside is that a lot of trivial problems and issues gets filtered from the expert and solved by the non-expert instead. Another upside is that the non-expert will likely get better over time, if only to maintain the façade. Presumably the gain in skills from the non-expert will be faster than for the expert, so overall the skills for the company overall will increase.&lt;/p&gt;
-
-&lt;h2 id=&#34;i-actually-don-t-have-an-answer&#34;&gt;I actually don&amp;rsquo;t have an answer&lt;/h2&gt;
-
-&lt;p&gt;I&amp;rsquo;m not sure how to make this better. I have received feedback that I don&amp;rsquo;t &amp;ldquo;sell&amp;rdquo; my work enough, but it&amp;rsquo;s a complicated equation&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;math.gif&#34; alt=&#34;Complicated math&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The problem is that selling the work takes time, and that will sometimes result in less time to do high-quality data science work. It may also result in wider than optimal adoption, which will require extra support, also detracting to high-quality data science work. Perhaps it pays better, but higher-quality also generally pays better than lower-quality, so it&amp;rsquo;s not that simple.&lt;/p&gt;
-
-&lt;p&gt;Of course, I wish my work was such high-quality that this was the real problem. The likely explanation is that I rather work with models than sell them.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Where should we live</title>
-      <link>/post/2019-02-11-where-should-we-live/where-should-we-live/</link>
-      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-02-11-where-should-we-live/where-should-we-live/</guid>
-      <description>
-
-&lt;p&gt;Because of my background, language skills and technical skills, I have the choice of living in a lot of different places.
-Two places stand out: South Florida and the Seattle area. Choosing between them has been a struggle for as long as I can remember
-and I have moved back and forth more times that it&amp;rsquo;s reasonable, and traveled back and forth more than most people could
-imagine.&lt;/p&gt;
-
-&lt;p&gt;It is still a struggle for my family at this point.&lt;/p&gt;
-
-&lt;h2 id=&#34;florida&#34;&gt;Florida&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;parkland-heron-bay.jpg&#34; alt=&#34;Parkland, FL&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Although there are several disadvantages, you should try living in Florida at some point in your life to see if it is for you.&lt;/p&gt;
-
-&lt;h3 id=&#34;advantages&#34;&gt;Advantages&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The weather is nice for most of the year (but it really sucks for 4-5 months)&lt;/li&gt;
-&lt;li&gt;There&amp;rsquo;s a lot to see: Orlando parks, Florida keys, Miami, Clearwater, Everglades&amp;hellip;&lt;/li&gt;
-&lt;li&gt;Lots of restaurants that you don&amp;rsquo;t see in other places: Cuban, Lebanese&lt;/li&gt;
-&lt;li&gt;Brazilian supermarket, &lt;a href=&#34;https://coralspringstalk.com/eat-like-a-sheikh-at-sahara-mediterranean-market-in-coral-springs-19713&#34; target=&#34;_blank&#34;&gt;Lebanese supermarket&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;One quick hop from Fort Lauderdale or Miami to Brazil, and mostly to anywhere&lt;/li&gt;
-&lt;li&gt;People-intensive services (gardening, baby-sitting) are relatively cheap&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;disadvantages&#34;&gt;Disadvantages&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Car insurance, hurricane insurance, flood insurance and property tax are atrocious&lt;/li&gt;
-&lt;li&gt;Politicians &lt;a href=&#34;https://www.miamiherald.com/news/local/community/broward/article224080655.html&#34; target=&#34;_blank&#34;&gt;are&lt;/a&gt; &lt;a href=&#34;https://www.sun-sentinel.com/opinion/editorials/fl-op-edit-broward-superintendent-robert-runcie-20181229-story.html&#34; target=&#34;_blank&#34;&gt;worse&lt;/a&gt;
-than other places, and that&amp;rsquo;s saying &lt;a href=&#34;https://nypost.com/2019/02/11/northam-i-overreacted-in-initial-apology-for-racist-photos/&#34; target=&#34;_blank&#34;&gt;something&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;The Parkland shooting resulted in a lot of bad changes in the school district:
-
-&lt;ul&gt;
-&lt;li&gt;Can&amp;rsquo;t have lunch with kids anymore&lt;/li&gt;
-&lt;li&gt;Lots of police at school, so there&amp;rsquo;s more people to &lt;a href=&#34;https://www.sun-sentinel.com/local/broward/parkland/florida-school-shooting/fl-ne-peterson-pollack-civil-hearing-20181211-story.html&#34; target=&#34;_blank&#34;&gt;do nothing and retire with a pension&lt;/a&gt; in case of trouble&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Job market sucks: almost all of my colleagues that were &lt;a href=&#34;https://www.seattletimes.com/business/microsoft/microsoft-starts-layoffs-with-reportedly-thousands-of-job-cuts/&#34; target=&#34;_blank&#34;&gt;laid off&lt;/a&gt; in Florida had to move to other states&lt;/li&gt;
-&lt;li&gt;Not many high-ranked public universities, not a lot of jobs after graduation&lt;/li&gt;
-&lt;li&gt;Hurricanes&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;seattle&#34;&gt;Seattle&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;seattle.png&#34; alt=&#34;Seattle&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;advantages-1&#34;&gt;Advantages&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;If you work in tech, there are a lot of jobs&lt;/li&gt;
-&lt;li&gt;The headquarters for the company I wortk for is there&lt;/li&gt;
-&lt;li&gt;The University of Washington is a powerhouse, and there are plenty of jobs after graduating&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;disadvantages-1&#34;&gt;Disadvantages&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Did you see the &lt;a href=&#34;https://wolfstreet.com/2019/01/08/housing-bubble-trouble-in-the-seattle-bellevue-metro/&#34; target=&#34;_blank&#34;&gt;house prices&lt;/a&gt; lately?&lt;/li&gt;
-&lt;li&gt;The weather sucks for most of the year&lt;/li&gt;
-&lt;li&gt;Kinda far away from everywhere&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;so-what-are-we-going-to-do&#34;&gt;So what are we going to do?&lt;/h2&gt;
-
-&lt;p&gt;We&amp;rsquo;re still thinking very hard about it, and we don&amp;rsquo;t know. We are also considering Boston (good jobs, sucky winter), and maybe something more
-adventurous like going to Europe or Asia for a short period.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>When should you be writing</title>
-      <link>/post/2019-02-10-when-should-you-be-writing/when-should-you-be-writing/</link>
-      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-02-10-when-should-you-be-writing/when-should-you-be-writing/</guid>
-      <description>&lt;p&gt;An old Ph.D. student motto is that you should &lt;strong&gt;always&lt;/strong&gt; be writing.
-&lt;img src=&#34;snape-always.gif&#34; alt=&#34;Snape says &amp;quot;Always&amp;quot;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Always.&lt;/p&gt;
-
-&lt;p&gt;For no good reason, I&amp;rsquo;m going to try to blog every day for 100 days. This will of course mean that there will be a lot of posts that are going to be low quality, like this one.&lt;/p&gt;
-
-&lt;p&gt;I am flabbergasted that &lt;a href=&#34;http://blog.simplejustice.us/&#34; target=&#34;_blank&#34;&gt;Scott Greenfield&lt;/a&gt; and &lt;a href=&#34;https://statmodeling.stat.columbia.edu/&#34; target=&#34;_blank&#34;&gt;Andrew Gelman&lt;/a&gt; find time to write insightful posts every day, and sometimes more than one post per day. Scott usually writes two posts per day, including weekends, on top of his parenting, which is on top of his day job.&lt;/p&gt;
-
-&lt;p&gt;One of the expected outcomes is that I&amp;rsquo;ll become better with Markdown. I&amp;rsquo;m seeing things like &lt;a href=&#34;https://github.com/StackExchange/pagedown&#34; target=&#34;_blank&#34;&gt;pagedown&lt;/a&gt; coming into play, and it seems like writing in Markdown might soon take over writing in LaTeX. A good introduction on generating almost anything from Markdown can be found in Jake Zimmerman&amp;rsquo;s &lt;a href=&#34;https://blog.jez.io/reach-for-markdown/&#34; target=&#34;_blank&#34;&gt;post&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Upgrading blogdown and Hugo Academic</title>
-      <link>/post/2019-02-08-will-it-render/will-it-render/</link>
-      <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-02-08-will-it-render/will-it-render/</guid>
-      <description>
-
-&lt;p&gt;I&amp;rsquo;ve just updated my site to the new blogdown (0.10) and the new Hugo Academic (3.3) versions.&lt;/p&gt;
-
-&lt;h2 id=&#34;it-was-not-trivial&#34;&gt;It was not trivial&lt;/h2&gt;
-
-&lt;p&gt;My first attempt was to simply rename the old &lt;code&gt;academic&lt;/code&gt; theme in the &lt;code&gt;themes&lt;/code&gt; directory and download a new one. However, there
-are a lot of breaking changes between version 2.4 and version 3.3. One of the main breaking changes is that now you can use page bundles
-instead of a single page per post. This allows one to keep resources (such as images) together with each post. Now each post creates a new
-directory. The new &lt;code&gt;hugo-academic&lt;/code&gt; theme comes with a script to convert your posts to the page bundle format, it&amp;rsquo;s called &lt;code&gt;update-academic.sh&lt;/code&gt;. It doesn&amp;rsquo;t
-work on R Markdown files, but I didn&amp;rsquo;t have any. Although this is described in the Hugo documentation as a breaking change, if you &lt;strong&gt;don&amp;rsquo;t&lt;/strong&gt; convert,
-apparently nothing bad happens. Maybe the Hugo people and I have a different definition of breaking.&lt;/p&gt;
-
-&lt;p&gt;The most relevant breaking change is that the configurations are now in a different directory. Instead of a single giant &lt;code&gt;config.toml&lt;/code&gt; in the root
-directory, we have several different files under the &lt;code&gt;config&lt;/code&gt; directory: &lt;code&gt;config.toml&lt;/code&gt;, &lt;code&gt;params.toml&lt;/code&gt;, &lt;code&gt;menus.toml&lt;/code&gt;. So I followed the instructions: opened my old
-&lt;code&gt;config.toml&lt;/code&gt; file in one window, and spread its configuration out into the other files. I uploaded to Netlify and was glad to see that
-the website published.&lt;/p&gt;
-
-&lt;p&gt;However, &lt;code&gt;blogdown&lt;/code&gt; was not down with the new changes. When I opened my site in RStudio, blogdown required the &lt;code&gt;config.toml&lt;/code&gt; file to be in the root of
-the repository. I thought it would be as easy as simply moving it, but somehow, it wasn&amp;rsquo;t. &lt;code&gt;blogdown&lt;/code&gt; complained that my site was broken and suggested
-generating a new one. There&amp;rsquo;s a  &lt;a href=&#34;https://github.com/rstudio/blogdown/commit/de0bcf501cbdc5e81a960dd8ff3228fcb6fc807f&#34; target=&#34;_blank&#34;&gt;commit&lt;/a&gt;
-addressing the issue, but apparently it&amp;rsquo;s just for new sites. So I decided to create a new site, because that should be easy.&lt;/p&gt;
-
-&lt;h2 id=&#34;new-blogdown-site&#34;&gt;New blogdown site&lt;/h2&gt;
-
-&lt;p&gt;My next attempt was to create a new project, install &lt;code&gt;packrat&lt;/code&gt;, install &lt;code&gt;blogdown&lt;/code&gt; and then start a new site. It didn&amp;rsquo;t work out. When I
-tried to create a new site, &lt;code&gt;blogdown&lt;/code&gt; complained that there was already content there (the packrat directory, I assume). So I decided to create
-yet another new site.&lt;/p&gt;
-
-&lt;h2 id=&#34;newer-blogdown-site&#34;&gt;Newer blogdown site&lt;/h2&gt;
-
-&lt;p&gt;So I created a yet another new site, now using blogdown in RStudio, using the option to use the &lt;code&gt;gcushen/hugo-academic&lt;/code&gt; team. That one worked. I then moved my
-configuration files to the appropriate places (&lt;code&gt;config.toml&lt;/code&gt; to root and the other &lt;code&gt;.toml&lt;/code&gt; files to &lt;code&gt;config/_default&lt;/code&gt;). To make things work
-I moved my old &lt;code&gt;content&lt;/code&gt; files to the new site - those had already converted from page to bundle using the &lt;code&gt;update-academic.sh&lt;/code&gt; script.&lt;/p&gt;
-
-&lt;p&gt;I then created a new script, but it defaults to the old, unbundled, format. I found out that in order to use the new page bundle functionality,
-one needs to set an option &lt;code&gt;options(blogdown.new_bundle=TRUE)&lt;/code&gt;. I&amp;rsquo;ve done that and then created the new post again and it create the page bundle as expected.
-(This is actually that post).&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A story about my father</title>
-      <link>/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</link>
-      <pubDate>Mon, 04 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-02-04-a-story-about-my-father/a-story-about-my-father/</guid>
-      <description>
-
-&lt;p&gt;My father passed away a few years ago. I don&amp;rsquo;t even remember exactly when. I think it was in 2013 or 2014. We were not close when he died, and I don&amp;rsquo;t remember ever being close. To my memory, he was mostly away since I was around 7, and he left home for good when I was 13. Not having a father made a lot of things harder in my life, which I imagine made me more capable in some respects.&lt;/p&gt;
-
-&lt;!-- ## My original case for a two-parent household
-
-Well, it&#39;s not necessarily a case for a *father*, but more a case for a household with two parents, no matter their genders. When I was a teenager, the only opinion I had was my mom&#39;s, right or wrong. Not having another parent in the house made it more expensive for me to validate my mother&#39;s opinions. One example was when I wanted to leave a low-income, dead-end job for another job. My mom was of the opinion that &#34;job longevity&#34; and loyalty were very valuable traits - that one shouldn&#39;t leave a job after a short period of time. My questionings didn&#39;t go very far. In that case I ended up not folowing my mother&#39;s opinion and changed jobs. I&#39;m sure the change had a positive impact in my career, but I was terrified. 
-
---&gt;
-
-&lt;h2 id=&#34;what-i-remember-about-my-father&#34;&gt;What I remember about my father&lt;/h2&gt;
-
-&lt;p&gt;There are a few things I remember about my father.&lt;/p&gt;
-
-&lt;p&gt;1) I remember that once he carried me from his bed to my bed. I was about 6 and I was amazed that somebody could carry me. I don&amp;rsquo;t remember being carried by anyone else after that. I think about this when I carry my kids.&lt;/p&gt;
-
-&lt;p&gt;2) I remember when he was supposed to give me breakfast (a task that always belonged to my mother) and that he wasn&amp;rsquo;t much into it. I remember complaining about the way he was slicing the bread (and smushing it) and that it made him upset. To this day, I am careful when I&amp;rsquo;m slicing bread for my kids.&lt;/p&gt;
-
-&lt;p&gt;3) I remember that once he gave me a videogame for Christmas that was not what I wanted. He gave me the Intellivision game &lt;a href=&#34;https://en.wikipedia.org/wiki/Snafu_(video_game)&#34; target=&#34;_blank&#34;&gt;Snafu&lt;/a&gt;, I don&amp;rsquo;t remember exactly what I wanted. He was again very upset. Thinking back, I should probably have disguised my disappointment better, but I was 7. I remember that I liked the game after playing it and profusely apologized, but he didn&amp;rsquo;t accept my apologies.&lt;/p&gt;
-
-&lt;h2 id=&#34;being-a-good-detective-is-not-always-great&#34;&gt;Being a good detective is not always great&lt;/h2&gt;
-
-&lt;p&gt;My father was a philanderer. I also remember that he would go out very frequently and leave me with my mother, so I didn&amp;rsquo;t see him very much. At some point, he got really attached to another woman (he would end up marrying her later) who had really dark, long hair. He must have told my mother that the relationship had ended, and a few months later, he traveled to a fishing trip with his friends. When he came back, I remember finding a long black hair when helping him unpack my suitcase. My mother and him had a huge fight about it. I was about 12 and didn&amp;rsquo;t immediately understand what that hair was such a big deal.&lt;/p&gt;
-
-&lt;h2 id=&#34;i-still-do-things-differently&#34;&gt;I still do things differently&lt;/h2&gt;
-
-&lt;p&gt;I make many decisions in which the main goal is simply to be different from my father. I don&amp;rsquo;t eat his favorite foods, for example. I&amp;rsquo;m careful when slicing bread for my kids, and I carry them around more than most dads. But I still can&amp;rsquo;t control &amp;ldquo;being a good detective&amp;rdquo;. Sometimes, when I find something that I shouldn&amp;rsquo;t reveal, I still can&amp;rsquo;t control myself. Hopefully, my kids will feel differently about me when the time comes. I&amp;rsquo;m working hard on it.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A model for task execution under uncertainty</title>
-      <link>/post/2019-02-03-a-model-for-task-execution-under-uncertainty/a-model-for-task-execution-under-uncertainty/</link>
-      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-02-03-a-model-for-task-execution-under-uncertainty/a-model-for-task-execution-under-uncertainty/</guid>
-      <description>
-
-
-&lt;p&gt;A company wants to execute a series of profitable tasks. Managers receive tasks and can route these tasks to either experts or non-experts. Manages’ ability determines how well they can tell experts from non-experts. Non-experts have a small chance to succeed, a chance of failure, and a small chance of catastrophic failure. Whenever non-experts succeed, managers’ ability goes &lt;em&gt;down&lt;/em&gt;. When non-experts fail catastrophically, managers’ experience will go up. Experts can have exceptional success, sucess or failure, but they’ll never fail catastrophically. When experts have exceptional success, managers will gain experience. When experts fail, managers will lose experience.&lt;/p&gt;
-&lt;p&gt;Workers (experts and non-experts) always know their true experience level. (This is a simplification, as it might be interesting for non-experts to be overly confident). Managers ability will be a standard deviation applied to the level of expertise of their employees. Competent managers will have a low standard deviation, where incompetent ones will have high standard deviation. Underutilized experts quit, reducing the company’s expert pool. Again, for simplification, experts and non-experts are paid the same (it may be interesting to reward experts and non-experts based on their perceived expertise)&lt;/p&gt;
-&lt;p&gt;This problem has been in my head for a lot longer than it should. This is a rough draft, but I think that if I do not commit it to “paper”, I won’t make progress on it.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The complicated incentives on Northam</title>
-      <link>/post/2019-02-03-the-complicated-incentives-on-northam/the-complicated-incentives-on-northam/</link>
-      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-02-03-the-complicated-incentives-on-northam/the-complicated-incentives-on-northam/</guid>
-      <description>
-
-&lt;p&gt;In February 1st 2019, it was found that the Governor of the Commonwealth of Virginia, Whatever Northam, had a picture in his medical school yearbook that contained a person in black face and another person wearing a Klu-Klux-Klan hood. Many people of all party affiliations called for his immediate resignation. By February 3rd, 2019, Northam had not yet resigned.&lt;/p&gt;
-
-&lt;p&gt;There was, of course, a lot of debate on social media. Should Northam stay? Should he go?&lt;/p&gt;
-
-&lt;h2 id=&#34;the-players&#34;&gt;The players&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Northam himself:&lt;/strong&gt; it&amp;rsquo;s hard to know his utility function, but with some assumptions we can construct a simple one. We could assume that  Northam is &amp;ldquo;untouchable&amp;rdquo; and that his career is essentially done, so he gets utility by staying in place as long as he can. We could instead assume that if he were to &amp;ldquo;fall on his sword&amp;rdquo; he would be rewarded by his party.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Democrats&lt;/strong&gt;: for the Democrats, the utility function is simple. Northam must go. If he stays, he will enrage the democratic party base. The party can replace him by another democrat that can, in theory, enact the same policies. Perhaps this replacement is not as competent as &amp;ldquo;Untainted Northam&amp;rdquo; (and this is why Northam was elected in the first place), but now Northam is tainted and can be presumed ineffective.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Society&lt;/strong&gt;: This is, presumably, the hardest one to construct an utility function for, as so much will depend on assumptions. The first assumption I&amp;rsquo;ll make will be that Northam is a competent administrator. I&amp;rsquo;m also going to assume that a racist administrator would be considered incompetent by society. Although this may seem obvious, a racist society could prefer a racist administrator to a competent one, so embedded in the &amp;ldquo;competent administrator&amp;rdquo; assumption there&amp;rsquo;s an assumption that the society is not racist. Another assumption is that racism is an immutable trait. This is the assumption I&amp;rsquo;m least comfortable with.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Other administrators&lt;/strong&gt;: these are people that could be candidates like Northam. The assumptions are that we have &amp;ldquo;competent administrators&amp;rdquo;, &amp;ldquo;racist administrators&amp;rdquo; (that could pass as competent) and &amp;ldquo;incompetent administrators&amp;rdquo;. We will assume that being in power is a desirable good, and that &amp;ldquo;racist administrators&amp;rdquo; can feign competency better than &amp;ldquo;incompetent administrators&amp;rdquo;. We will also assume that a &amp;ldquo;racist administrator&amp;rdquo; is even worse than an &amp;ldquo;incompetent administrator&amp;rdquo; for society.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;how-many-models-do-we-have-here&#34;&gt;How many models do we have here?&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Installing Arch Linux</title>
-      <link>/post/2019-01-29-installing-arch-linux/installing-arch-linux/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-01-29-installing-arch-linux/installing-arch-linux/</guid>
-      <description>
-
-&lt;p&gt;Even though I work at Microsoft and really love Windows, I&amp;rsquo;ve recently installed Arch Linux as a dual boot. A lot of data scientists and software developers I know prefer OS X, and Windows doesn&amp;rsquo;t get that much love. Although many people provide many reasons not to use Windows, I was always able to work around whatever those issues were. Sometimes this required Cygwin, Git Bash, and more recently, &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/install-win10&#34; target=&#34;_blank&#34;&gt;WSL&lt;/a&gt; (the Windows Subsystem for Linux). I can&amp;rsquo;t remember any software that I was ever unable to use in Windows: LaTeX, git, Inkscape&amp;hellip; everything I need had a decent Windows version, even if I had to compile it from source.&lt;/p&gt;
-
-&lt;p&gt;Weirdly, because I can do so much with Windows, I find that I take too many shortcuts. The most damaging shortcuts are the ones that damage reproducibility, especially when creating documentation for my projects. It&amp;rsquo;s too easy to copy and paste into PowerPoint and be done with the communications for a talk. Some of my talks, especially about my &lt;a href=&#34;https://treasurytoday.com/asa-2017-winners/judges-choice-winner-microsoft&#34; target=&#34;_blank&#34;&gt;most successful product&lt;/a&gt;, have many similar versions with one or two slides changed. Someone asks me for a slightly shorter or slightly longer talk and I suddenly have a new file with one or two extra (or hidden) slides that I may need to maintain. It&amp;rsquo;s not lost on me that this is a lack of discipline on my part, but if you were to invite me to a &lt;a href=&#34;https://en.wikipedia.org/wiki/Brigadeiro&#34; target=&#34;_blank&#34;&gt;brigadeiro&lt;/a&gt; store, it would be hypocritical of you to accuse me of having no self-control.&lt;/p&gt;
-
-&lt;h2 id=&#34;why-arch&#34;&gt;Why Arch&lt;/h2&gt;
-
-&lt;p&gt;I first got into contact with Arch through a German friend back in 2010. When trying to install it, I quickly learned that Arch requires you to understand what you&amp;rsquo;re doing, and especially, that if you &lt;strong&gt;don&amp;rsquo;t&lt;/strong&gt; understand what you&amp;rsquo;re doing, things break. Over time, I found that although some things have a steep learning curve, the return on the time investment was very positive. I also tried Ubuntu, Fedora and Red Hat, and although I could get productive more quickly, keeping them configured to my taste later was harder - when something broke it took me longer to understand what it was.&lt;/p&gt;
-
-&lt;p&gt;There are several things that still don&amp;rsquo;t work well in Linux. One of the most vexing is having a high-DPI display. It&amp;rsquo;s somewhat hard to configure it. It works well in KDE, but KDE has tearing issues. It doesn&amp;rsquo;t work too well in GNOME unless you use Wayland, which brings a host of different issues. You can make everything a lot worse by using the NVidia proprietary driver with Wayland, but it&amp;rsquo;s needed if you want to use the GPU efficiently.&lt;/p&gt;
-
-&lt;p&gt;So although I managed to configure my Arch installation to use GNOME under Wayland and use the NVidia proprietary driver, it&amp;rsquo;s very unstable. Native applications tend to run, but many applications crash in comical ways: resizing Google Chrome under Wayland is a sure way to cause a crash, for example.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Example Page</title>
-      <link>/tutorial/example/</link>
+      <title>Overview</title>
+      <link>/tutorial/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 -0400</pubDate>
       
-      <guid>/tutorial/example/</guid>
-      <description>
-
-&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
-
-&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
-
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
-
-&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
-
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Yo, Stroop!</title>
-      <link>/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</link>
-      <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2018-08-23-yo-stroopwafel/yo-stroopwafel/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/RealLucasMeyer/yostroop&#34; target=&#34;_blank&#34;&gt;YoStroop&lt;/a&gt; is a bot that allows members of a slack channel to give rewards to each other, usually as a way of saying &amp;ldquo;thank you&amp;rdquo; for help and valuable contributions.
-It was developed using Python, Azure Functions v2.0 and Cosmos DB.&lt;/p&gt;
-
-&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
-
-&lt;p&gt;One of the Data Science Slack channels I&amp;rsquo;m a member of tried several different tools to keep track of the valuable contributions of its members. Some of the tools that we used to to track contributions became quite expensive and we started looking for an alternative. Since most people in the channel can program in R and Python, I thought we might develop our own Slack bot. Developing a Slack Bot is really straightforward. You essentially need a HTTP server that will receive JSONs and call Web APIs. I wanted to create a Slack bot that was:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Written in a language that most Data Scientists are familiar with (e.g. Python or R)&lt;/li&gt;
-&lt;li&gt;Virtually free to run&lt;/li&gt;
-&lt;li&gt;Serverless&lt;/li&gt;
-&lt;li&gt;Based on very well known technologies (e.g., &lt;code&gt;pyodbc&lt;/code&gt; for databases)&lt;/li&gt;
-&lt;li&gt;Easy to modify from GitHub with no hassle&lt;/li&gt;
-&lt;li&gt;Developed and maintained in any major platform: Windows, macOS or Linux&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;I have failed to achieve almost all of the goals above, but maybe will achieve most in the near future.&lt;/p&gt;
-
-&lt;h2 id=&#34;azure-functions-v2&#34;&gt;Azure Functions v2&lt;/h2&gt;
-
-&lt;p&gt;Microsoft recently released a &lt;a href=&#34;https://github.com/Azure/azure-functions-python-worker&#34; target=&#34;_blank&#34;&gt;Python worker&lt;/a&gt; for the
-&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/azure-functions/functions-versions&#34; target=&#34;_blank&#34;&gt;Azure Functions runtime v2&lt;/a&gt;.
-As of this writing (2018-08-23), both Azure Functions v2 and the python worker are in &amp;ldquo;preview mode&amp;rdquo;. The Azure Functions v1 runtime supports development and hosting only in the portal or on Windows. The v2 runtime runs on .NET Core, and therefore can run on Windows, macOS and Linux. Microsoft provides a
-&lt;a href=&#34;https://github.com/Azure/azure-functions-core-tools&#34; target=&#34;_blank&#34;&gt;set of tools&lt;/a&gt; based on Node.JS and .NET Core that make it easy to develop in any platform. That takes care of objectives #1, #3 and #6. Although knocking off three objectives simply by selecting Azure Functions v2 sounded very promising to begin with, that&amp;rsquo;s as many objectives as I could achieve.&lt;/p&gt;
-
-&lt;h3 id=&#34;linux-host&#34;&gt;Linux host&lt;/h3&gt;
-
-&lt;p&gt;Regardless of the platform you develop on, Python function apps need to be hosted on
-&lt;a href=&#34;https://blogs.msdn.microsoft.com/appserviceteam/2017/11/15/functions-on-linux-preview/&#34; target=&#34;_blank&#34;&gt;Azure Functions on Linux&lt;/a&gt;. Running on Linux has a couple downsides:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;You have to access the Azure Portal using a
-&lt;a href=&#34;https://ms.portal.azure.com/?websitesextension_pythonFunctions=true&#34; target=&#34;_blank&#34;&gt;secret code&lt;/a&gt; to enable Azure to offer Linux hosts&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;As of this writing (2018-08-23), Linux hosts can only be dedicated. Azure Functions can normally run in two modes: &amp;ldquo;Consumption&amp;rdquo; and &amp;ldquo;Dedicated&amp;rdquo;. Consumption is virtually free, but the &amp;ldquo;dedicated&amp;rdquo; mode costs approximately $35 per month for the cheapest version. According to the &lt;a href=&#34;https://github.com/Azure/azure-functions-python-worker/blob/dev/README.md&#34; target=&#34;_blank&#34;&gt;README&lt;/a&gt; the &amp;ldquo;Consumption&amp;rdquo; mode is upcoming, and I have a small allowance due to my MSDN subscription, so I caved.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;And there goes objective #2. But it seems temporary, so we&amp;rsquo;re probably good.&lt;/p&gt;
-
-&lt;h3 id=&#34;developing-a-slack-bot&#34;&gt;Developing a Slack Bot&lt;/h3&gt;
-
-&lt;p&gt;A Slack bot is essentially an HTTP server that will receive JSONs and perform actions through HTTP requests. Azure Functions have an HTTP Trigger template, so this takes care of most of the plumbing. I created a Slack app using the instructions &lt;a href=&#34;https://api.slack.com/bot-users&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. This bot subscribes to events, which are sent to an URL. I&amp;rsquo;ve created the HTTP Server that provides that URL using the instructions on &lt;a href=&#34;https://github.com/Azure/azure-functions-python-worker/wiki/Create-Function-(CLI)&#34; target=&#34;_blank&#34;&gt;how to create a function using the command line interface&lt;/a&gt;, and creating a &lt;a href=&#34;https://github.com/Azure/azure-functions-python-worker/tree/dev/tests/http_functions&#34; target=&#34;_blank&#34;&gt;sample based on the HttpTrigger&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Specifically, my Azure Function receives JSONs for each message, parses them to see if they have a &lt;code&gt;:stroopwafel:&lt;/code&gt;, and if they do, parses the mentions (@user) in the message. For each mention, we log a :stroopwafel: gift in a database, from which we can build reports at the end of a period.&lt;/p&gt;
-
-&lt;h3 id=&#34;pyodbc&#34;&gt;PyODBC&lt;/h3&gt;
-
-&lt;p&gt;The original idea was tha whenever a message mentioned a &lt;code&gt;:stroopwafel:&lt;/code&gt;, the bot would use &lt;code&gt;pyodbc&lt;/code&gt; to save the message in a database. Databases are usually not free, but Azure offers SQL Server for as low as $5 per month, and that seemed acceptable. The problem is that &lt;code&gt;pyodbc&lt;/code&gt; does not have a linux wheel, and currently Azure Functions for Linux &lt;a href=&#34;https://github.com/Azure/azure-functions-core-tools/issues/640&#34; target=&#34;_blank&#34;&gt;requires wheels&lt;/a&gt;. There&amp;rsquo;s a way of compiling the package on the fly, but it currently has a bug. And I don&amp;rsquo;t know how long it will take to fix that bug.&lt;/p&gt;
-
-&lt;p&gt;I searched for alternatives to PyODBC, and the best alternative was to use &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/cosmos-db/introduction&#34; target=&#34;_blank&#34;&gt;Cosmos DB&lt;/a&gt;, since its Python package &lt;code&gt;pydocumentdb&lt;/code&gt; has a wheel. The downside is that the cheapest Cosmos DB plan as of this writing costs $25. And now we&amp;rsquo;re far away from objective #2, and we&amp;rsquo;re also not doing great with objective #4. However, I found Cosmos DB a pleasure to use.&lt;/p&gt;
-
-&lt;h3 id=&#34;github&#34;&gt;GitHub&lt;/h3&gt;
-
-&lt;p&gt;Once I was done with my development, which &lt;a href=&#34;https://github.com/Azure/azure-functions-core-tools&#34; target=&#34;_blank&#34;&gt;Azure Functions Core Tools&lt;/a&gt; made really convenient by setting a local test server whenever I run &lt;code&gt;func host start&lt;/code&gt;, I pushed &lt;a href=&#34;https://github.com/RealLucasMeyer/yostroop&#34; target=&#34;_blank&#34;&gt;my repository to GitHub&lt;/a&gt; and configured the Azure Function app to consume it using Continuous Deployment, which is something that you can set up in Azure with just a few clicks. However, &lt;a href=&#34;https://github.com/Azure/azure-functions-core-tools/issues/640&#34; target=&#34;_blank&#34;&gt;it doesn&amp;rsquo;t yet work&lt;/a&gt; (sad trombone). Luckily, deploying without GitHub is not that bad. Again, Azure Functions Core Tools provides a command-line interface utility that pushes your application to the server: &lt;code&gt;func azure functionapp publish &amp;lt;app-name&amp;gt;&lt;/code&gt;, and you&amp;rsquo;re done in a couple of minutes. But I also don&amp;rsquo;t fulfill objective #5.&lt;/p&gt;
-
-&lt;h2 id=&#34;verdict&#34;&gt;Verdict&lt;/h2&gt;
-
-&lt;p&gt;Although I was so far unable to fulfill half of my initial objectives, it looks like I&amp;rsquo;ll get there soon. There&amp;rsquo;s something magical about Azure Functions. It does a lot of the hard work for you, and if you&amp;rsquo;re familiar with one of the many languages available, you can deploy your program to production really fast. I had never developed a Slack bot before, and I&amp;rsquo;ve started the bot during a sleepless night and finished it in an afternoon. All in, it took me less than two days of work to get an app to production. There are still some kinks to be worked out but Azure Functions v2 has already proved to be useful to me.&lt;/p&gt;
-
-&lt;p&gt;I wrote about Azure Functions before, specifically about &lt;a href=&#34;https://meyerperin.com/post/installing-python-packages-in-azure-functions/&#34; target=&#34;_blank&#34;&gt;using Python in Azure Functions v1&lt;/a&gt;. Azure Functions can be very useful for Data Scientists: it&amp;rsquo;s an easy way to deploy a model to production, perform scheduled maintenance, update datasets on a schedule, etc. With v2, Python became a first class player. I&amp;rsquo;m sure I&amp;rsquo;ll use it a lot.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Praising Conway&#39;s Data Science Venn Diagram</title>
-      <link>/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</link>
-      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2018-07-08-praising-conway-s-data-science-venn-diagram/praising-conway-s-data-science-venn-diagram/</guid>
-      <description>
-
-&lt;p&gt;Drew Conway&amp;rsquo;s &lt;a href=&#34;http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram&#34; target=&#34;_blank&#34;&gt;Data Science Venn Diagram&lt;/a&gt; is perhaps the most well-known description of data science.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/img/Data_Science_VD.png&#34; alt=&#34;Drew Conway&#39;s Data Science Venn Diagram&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Drew published it more than five years ago. Since then, a ridiculous number of Venn diagrams have been created, &lt;a href=&#34;https://www.datasciencecentral.com/profiles/blogs/the-data-science-venn-diagram-revisited&#34; target=&#34;_blank&#34;&gt;one&lt;/a&gt; &lt;a href=&#34;https://whatsthebigdata.com/2016/07/08/the-new-data-scientist-venn-diagram/&#34; target=&#34;_blank&#34;&gt;worse&lt;/a&gt; &lt;a href=&#34;https://twitter.com/kirkdborne/status/961452846821597184&#34; target=&#34;_blank&#34;&gt;than&lt;/a&gt; &lt;a href=&#34;https://twitter.com/kirkdborne/status/739446818233327616&#34; target=&#34;_blank&#34;&gt;the&lt;/a&gt; &lt;a href=&#34;https://blog.zhaw.ch/datascience/files/2014/06/SkillSet.png&#34; target=&#34;_blank&#34;&gt;other&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Five years later, people still struggle with the definition of Data Science. A recent famous example was Lyft &lt;a href=&#34;https://eng.lyft.com/whats-in-a-name-ce42f419d16c&#34; target=&#34;_blank&#34;&gt;changing the titles&lt;/a&gt; of their Data Scientists, Data Analysts and Research Scientists.&lt;/p&gt;
-
-&lt;h2 id=&#34;should-we-care&#34;&gt;Should we care?&lt;/h2&gt;
-
-&lt;p&gt;There&amp;rsquo;s a lot of information asymmetry in the Data Science market, the position being so new, and &lt;a href=&#34;https://www.jstor.org/stable/1882010&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Michael Spence signaling&amp;rdquo;&lt;/a&gt; matters. Having a &amp;ldquo;Data Scientist&amp;rdquo; title from a reputable company is an important signal. For example, a medium-sized company might not be aware that Lyft &lt;a href=&#34;https://eng.lyft.com/whats-in-a-name-ce42f419d16c&#34; target=&#34;_blank&#34;&gt;recently changed&lt;/a&gt; their data analysts title to &amp;ldquo;Data Scientist&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;Part of the problem is that the &amp;ldquo;Data Scientist&amp;rdquo; title is itself poorly defined, as shown by the litany of Venn and not-Venn diagrams listed above. A short, non-comprehensive list of alternative titles for Data Scientists I&amp;rsquo;ve met in the last month:&lt;/p&gt;
-
+      <guid>/tutorial/</guid>
+      <description>&lt;p&gt;This feature can be used for publishing content such as:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Tableau/Power BI Report Designer&lt;/li&gt;
-&lt;li&gt;Machine Learning Researcher&lt;/li&gt;
-&lt;li&gt;Python Programmer who knows how to call scikit-learn functions&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Project or software documentation&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Online courses&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tutorials&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;Using the same name for vastly different abilities makes matching between employers and employees difficult. In addition, it may make career progression difficult. For example, job responsibilities and objectives are likely to be related to a company&amp;rsquo;s interpretation of the title of &amp;ldquo;Data Scientist&amp;rdquo;. Employees in that company may be &amp;ldquo;Data Scientists&amp;rdquo; under other interpretations, and may be really good, but may have their performance evaluated under different guidelines: &lt;em&gt;&amp;ldquo;I know your ML model saved $1B for our company, but the color scheme of your Tableau reports is horrible!&amp;rdquo;&lt;/em&gt; As per the (not really) Albert Einstein&amp;rsquo;s quote &amp;ldquo;(&amp;hellip;) if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid.&amp;rdquo;&lt;/p&gt;
-
-&lt;h2 id=&#34;conway-s-venn-to-the-rescue&#34;&gt;Conway&amp;rsquo;s Venn to the rescue!&lt;/h2&gt;
-
-&lt;p&gt;Here&amp;rsquo;s where I think Conway&amp;rsquo;s Venn diagram comes to the rescue in a useful way. We could rule out the Tableau Designer if they lack programming or statistical skills. We could rule out the ML Researcher if they don&amp;rsquo;t have domain expertise. We could rule out the Python programmer if they don&amp;rsquo;t know Math and/or have domain expertise. Perhaps this makes Data Scientists hard to find (it would justify their salary)!&lt;/p&gt;
-
-&lt;p&gt;Depending what the company you work for was before the Data Science profession started, a lot of people from different jobs may have re-branded themselves as data scientists. I think Conway&amp;rsquo;s diagram is helpful as it points to where people should focus their development in order to be more effective as data scientists. For example, former Economists most likely need more hacking skills, former computer scientists need more Statistics and domain expertise, and former management/technical consultants likely need more Statistics.&lt;/p&gt;
-
-&lt;p&gt;It can also serve as a check for inclusiveness. For example, a team of former machine learning engineers is struggling to deliver meaningful projects because they lack domain expertise. However, they can&amp;rsquo;t hire domain experts because the domain experts keep failing the machine learning interviews. Comically, the machine learning engineers think that domain expertise &amp;ldquo;is easy&amp;rdquo;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/img/here_to_help.png&#34; alt=&#34;Everything you don&#39;t know is easy&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The most useful part of Conway&amp;rsquo;s diagram for me is that I&amp;rsquo;ve time and again observed projects that don&amp;rsquo;t have representatives that can communicate well with each other in all three areas to fail. Conway&amp;rsquo;s diagram even makes it easy to show how the project failed (&amp;ldquo;nobody with domain expertise&amp;rdquo;, &amp;ldquo;missing knowledge of statistics&amp;rdquo;). Having a single person that can do all three is difficult, but it certainly solves the communication problem. That being hard or impossible, having specialists that can communicate with each other will usually be sufficient.&lt;/p&gt;
-
-&lt;h2 id=&#34;but-conway-s-venn-is-missing-something&#34;&gt;But Conway&amp;rsquo;s Venn is missing something!!!&lt;/h2&gt;
-
-&lt;p&gt;True to the famous Box aphorism that &amp;ldquo;all models are wrong but some are useful&amp;rdquo;, Conway&amp;rsquo;s Venn is not perfect. In my experience, one of the things that I usually miss is &amp;ldquo;intensity&amp;rdquo;. Someone that knows how to write a &amp;ldquo;Hello World!&amp;rdquo;, knows how to take averages, and know how to calculate compound interest has knowledge in all three areas of the Venn diagram, but is probably not the ideal person to lead a data science project in Finance. Conway&amp;rsquo;s is best used to tell you what&amp;rsquo;s missing for career development, for a team, for a project, but it will not solve all problems.&lt;/p&gt;
-
-&lt;p&gt;It will, however, solve many problems that matter, and will provide useful information very elegantly. You can&amp;rsquo;t ask much more from a model.&lt;/p&gt;
+&lt;p&gt;The parent folder may be renamed, for example, to &lt;code&gt;docs&lt;/code&gt; for project documentation or &lt;code&gt;course&lt;/code&gt; for creating an online course.&lt;/p&gt;
+&lt;p&gt;To disable this feature, either delete the parent folder, or set &lt;code&gt;draft = true&lt;/code&gt; in the front matter of all its pages.&lt;/p&gt;
+&lt;p&gt;After renaming or deleting the parent folder, you may wish to update any &lt;code&gt;[[menu.main]]&lt;/code&gt; menu links to it in the &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Centralized vs. Distributed Data Science Teams</title>
-      <link>/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</link>
-      <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
+      <title>Projects</title>
+      <link>/project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>/post/2018-06-25-centralized-vs-distributed-data-teams/centralized-vs-distributed-data-teams/</guid>
-      <description>
-
-&lt;p&gt;In a recent &lt;a href=&#34;https://www.datacamp.com/community/podcast/organizing-data-science-teams&#34; target=&#34;_blank&#34;&gt;DataFramed podcast&lt;/a&gt;, &lt;a href=&#34;https://github.com/hugobowne&#34; target=&#34;_blank&#34;&gt;Hugo Bowne-Anderson&lt;/a&gt; and
-&lt;a href=&#34;https://github.com/jnolis&#34; target=&#34;_blank&#34;&gt;Jonathan Nolis&lt;/a&gt; discuss whether data scientist teams should be centralized or distributed. I have my own opinions about that question.&lt;/p&gt;
-
-&lt;h2 id=&#34;should-data-science-teams-be-centralized-or-distributed&#34;&gt;Should data science teams be centralized or distributed?&lt;/h2&gt;
-
-&lt;p&gt;I was happy to find that Jonathan Nolis has the same opinion as I do: that a data science team works best when distributed into client areas. In addition, we agree that if you distribute your data science team among several different client areas, you have to find a way of keeping the data scientists feeling as if they&amp;rsquo;re part of a cohesive group. And that&amp;rsquo;s hard.&lt;/p&gt;
-
-&lt;p&gt;For me, a key part of the argument to distribute data scientists in client areas relies on Drew Conway&amp;rsquo;s (ancient) &lt;a href=&#34;http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram&#34; target=&#34;_blank&#34;&gt;Data Science Venn diagram&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;data-science-venn.png&#34; alt=&#34;Data Science Venn Diagram&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Assigning data scientists to a client area will help build the &amp;ldquo;Substantive Expertise&amp;rdquo; part of the diagram. A common trap here is &amp;ldquo;Well, we can do the same if we keep the data scientists centralized and give them specializations that match the client areas.&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;Although I think that &lt;em&gt;can&lt;/em&gt; work, I worry about what happens when data scientists have downtime.&lt;/p&gt;
-
-&lt;h3 id=&#34;incentives-for-client-areas-and-centralized-data-science-teams&#34;&gt;Incentives for client areas and centralized data science teams&lt;/h3&gt;
-
-&lt;p&gt;In my observations (low sample size), the client areas usually have a better sense of ROI&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:In-Finance-circl&#34;&gt;&lt;a href=&#34;#fn:In-Finance-circl&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; - if they invest resources on something, they expect returns. On the other hand, most centralized data science teams I&amp;rsquo;ve seen have two problems: data scientists hired without a clear purpose and an incentive to overengineering: a current example is to use Deep Learning where a regression would do.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;overengineered.png&#34; alt=&#34;Overengineering&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It may be simply that client areas are more mature and battle worn than centralized data science groups, at least in my experience. I think that if a data scientist is assigned to a client area and there&amp;rsquo;s downtime, they&amp;rsquo;ll put the data scientist to work in business intelligence or decision analysis. On the other hand, if the data scientist is assigned to a centralized data science group, they&amp;rsquo;ll be pulled into a project away from their &amp;ldquo;client area specialization&amp;rdquo; or will find a way to work in something novel that&amp;rsquo;s cool (as of 2018, autoencoders, GANs or something with &amp;ldquo;Bayesian&amp;rdquo; in its name).&lt;/p&gt;
-
-&lt;p&gt;And here the ROI appears again: as the data scientist works through the BI project, they&amp;rsquo;ll learn more about the data and more about the business and its data, and that investment has a large likelihood of return in their next project in the same group. Whereas if they spend this time learning a new technique, the return is uncertain.&lt;/p&gt;
-
-&lt;h3 id=&#34;but-wait-if-you-do-that-data-scientists-will-never-learn-something-new&#34;&gt;But wait, if you do that, data scientists will never learn something new&lt;/h3&gt;
-
-&lt;p&gt;Here&amp;rsquo;s where the hard part of keeping a data scientist community pays off. That community may be weekly &amp;ldquo;Lunch &amp;amp; Learns&amp;rdquo; if the number of data scientists is small, or quarterly conferences if the number of data scientists is very big and your company is very, very rich.&lt;/p&gt;
-
-&lt;p&gt;If you don&amp;rsquo;t forcefully push towards having such a community, it&amp;rsquo;s very likely that data scientists will reinvent the wheel over and over again, and if their time is as precious as their high salary indicates, that will be a waste of money. For example, if you have 5 data scientists It&amp;rsquo;s better to spend $50k on travel to bring them together a few times a year than to have one of them wasting three months reinventing something that another of them already done.&lt;/p&gt;
-
-&lt;h3 id=&#34;where-i-disagree-with-jonathan-nolis&#34;&gt;Where I disagree with Jonathan Nolis&lt;/h3&gt;
-
-&lt;p&gt;In the podcast, Jonathan suggests that the data scientists should be assigned to client areas and report &amp;ldquo;solid line&amp;rdquo; to a Chief Data Scientist, while reporting &amp;ldquo;dotted line&amp;rdquo; to the client areas. I would do the opposite. However, listening to the podcast, it seems that Jonathan didn&amp;rsquo;t have a strong opinion that one is better than the other, and again in agreement, neither do I.&lt;/p&gt;
-
-&lt;p&gt;One big advantage of having a &amp;ldquo;solid line&amp;rdquo; group of data scientists is career advancement. It&amp;rsquo;s easier to compare data scientists with other data scientists. Leaving them in the client areas will require to compare them with other members of the client area, and they may be seen as wizards (and overvalued) or &amp;ldquo;too hard to understand&amp;rdquo;, and be undervalued.&lt;/p&gt;
-
-&lt;p&gt;One disadvantage is estimating the value of the data scientist to the client area. Data scientists that are more creative in their value calculations or less scrupulous are probably going to get ahead. I&amp;rsquo;ve lost count of the times that a data science project saved more revenue than the customer ever had.&lt;/p&gt;
-
-&lt;h3 id=&#34;so-what-do-i-do&#34;&gt;So, what do I do?&lt;/h3&gt;
-
-&lt;p&gt;Honestly, if you&amp;rsquo;re starting a data science team, your best bet is to hire someone like Jonathan or Drew Conway to plan the team for you. You&amp;rsquo;re going to spend a lot of money on Data Science, and it&amp;rsquo;s important to make sure that it will be well spent.&lt;/p&gt;
-
-&lt;p&gt;If you&amp;rsquo;re on a budget and all you can invest is the time to read some blog posts, well&amp;hellip; you probably don&amp;rsquo;t have enough money to hire data scientists. But if you do, I recommend assigning them to the client areas and keeping them there. Even when they&amp;rsquo;re not doing modeling or machine learning, they&amp;rsquo;re learning more about the business and its data.&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:In-Finance-circl&#34;&gt;In Finance circles, we use NPV, but the idea is the same &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:In-Finance-circl&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
+      <guid>/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Authors</title>
+      <link>/author/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/author/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>/publication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>/talk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>/slides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/slides/</guid>
+      <description></description>
     </item>
     
   </channel>

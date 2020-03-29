@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Graph Theory on Lucas A. Meyer - Blog</title>
@@ -14,10 +14,10 @@
     
     <item>
       <title>A model for task execution under uncertainty</title>
-      <link>/post/2019-02-03-a-model-for-task-execution-under-uncertainty/a-model-for-task-execution-under-uncertainty/</link>
+      <link>/post/a-model-for-task-execution-under-uncertainty/</link>
       <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019-02-03-a-model-for-task-execution-under-uncertainty/a-model-for-task-execution-under-uncertainty/</guid>
+      <guid>/post/a-model-for-task-execution-under-uncertainty/</guid>
       <description>A company wants to execute a series of profitable tasks. Managers receive tasks and can route these tasks to either experts or non-experts. Manages’ ability determines how well they can tell experts from non-experts. Non-experts have a small chance to succeed, a chance of failure, and a small chance of catastrophic failure. Whenever non-experts succeed, managers’ ability goes down. When non-experts fail catastrophically, managers’ experience will go up. Experts can have exceptional success, sucess or failure, but they’ll never fail catastrophically.</description>
     </item>
     
